@@ -9,7 +9,7 @@ declare module '@mui/material/styles' {
     colorLightBlue: Palette['primary'];
     colorBlue: Palette['primary'];
     colorBrightBlue: Palette['primary'];
-    coffee: Palette['primary'];
+    beige: Palette['primary'];
     chocolate: Palette['primary'];
   }
 
@@ -21,7 +21,7 @@ declare module '@mui/material/styles' {
     colorLightBlue?: PaletteOptions['primary'];
     colorBlue?: PaletteOptions['primary'];
     colorBrightBlue?: PaletteOptions['primary'];
-    coffee?: PaletteOptions['primary'];
+    beige?: PaletteOptions['primary'];
     chocolate?: PaletteOptions['primary'];
   }
 }

@@ -14,7 +14,7 @@ const Social: React.FC = () => {
         aria-label="github"
         target="_blank"
         rel="noopener">
-        <GitHubIcon color="secondary" />
+        <GitHubIcon color="primary" />
       </IconButton>
       <IconButton
         href="https://www.linkedin.com/in/tina-semashko/"
@@ -22,7 +22,7 @@ const Social: React.FC = () => {
         aria-label="linkedin"
         target="_blank"
         rel="noopener">
-        <LinkedInIcon color="secondary" />
+        <LinkedInIcon color="primary" />
       </IconButton>
       <IconButton
         href="https://www.facebook.com/akateria/"
@@ -30,7 +30,7 @@ const Social: React.FC = () => {
         aria-label="facebook"
         target="_blank"
         rel="noopener">
-        <FacebookIcon color="secondary" />
+        <FacebookIcon color="primary" />
       </IconButton>
     </S.SocialLinks>
   );

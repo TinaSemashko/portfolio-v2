@@ -1,6 +1,5 @@
 import { styled } from '@mui/material/styles';
-import img from '../../images/fon_footer.webp';
-import { Button } from '@mui/material';
+import PrimaryButton from '../primaryButton';
 
 export const MainContainer = styled('div')<{ isParallax: boolean }>`
   position: ${({ isParallax }) => (isParallax ? 'fixed' : 'inherit')};
@@ -8,47 +7,37 @@ export const MainContainer = styled('div')<{ isParallax: boolean }>`
   left: 0;
   width: 100%;
   z-index: -1;
-  background-image: url(${img});
-  background-repeat: no-repeat;
-  background-size: cover;
   background-color: ${({ theme }) => theme.palette.colorBlack.main};
-  color: #00f7ff;
-  min-height: 40vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  min-height: 15vh;
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  grid-template-rows: 80% 20%;
 
-  @media (max-width: 1200px) {
-    min-height: 30vh;
+  /* @media (max-width: 1200px) {
+    min-height: 20vh;
   }
 
   @media (max-width: 960px) {
     min-height: 20vh;
-  }
-`;
-
-export const WorkInquiryBox = styled('div')`
-  margin-top: 2vh;
-  width: 60%;
-  background: #ffe4c42a;
-  padding: 3vh;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-evenly;
-
-  @media (max-width: 1200px) {
-    padding: 2vh;
-  }
+  } */
 `;
 
 export const SocialLinks = styled('div')`
+  grid-column: 3;
+  grid-row: 1 / span 2;
   display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const ButtonWork = styled(Button)`
-  border: 4px solid;
-  border-image: linear-gradient(45deg, black, rgb(224, 220, 220)) 1;
+export const Langs = styled('div')`
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  justify-self: stretch;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const FlexBox = styled('div')`
@@ -59,4 +48,49 @@ export const FlexBox = styled('div')`
   padding-right: 8vw;
   width: 100%;
   height: 4vh;
+  grid-column: 1 / span 3;
+  grid-row: 2;
+`;
+
+export const StyledButton = styled(PrimaryButton)`
+  grid-column: 2;
+  grid-row: 1;
+  text-transform: uppercase;
+  position: relative;
+  align-self: center;
+  justify-self: center;
+
+  &.MuiButton-root {
+    margin-top: 1vh;
+  }
+
+  ${({ theme }) => theme.breakpoints.down('md')} {
+    grid-column: 2;
+  }
+`;
+
+export const TitreColor = styled('div')`
+  transition: 500ms;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; //dedcdca9
+  background-clip: text;
+
+  background: linear-gradient(45deg, #ffffff, #444444, #ffffff, #444444, #ffffff);
+
+  background-size: 3200px 200px;
+  animation: gradient 20s linear infinite;
+  color: transparent;
+  background-clip: text;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 0%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
 `;

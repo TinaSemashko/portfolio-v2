@@ -1,8 +1,8 @@
-import { styled } from "@mui/material/styles";
+import { styled } from '@mui/material/styles';
 
-export const MainContainer = styled("div")``;
+export const MainContainer = styled('div')``;
 
-export const List = styled("span")<{
+export const List = styled('span')<{
   colorPrime: boolean;
   iconWithoutSlash: boolean;
 }>`
@@ -10,12 +10,15 @@ export const List = styled("span")<{
   padding: 0;
   margin: 0;
   margin-bottom: 20%;
+  display: flex;
+  flex-direction: ${({ iconWithoutSlash }) => (iconWithoutSlash ? 'column' : 'row')};
   li {
     list-style-type: none;
     display: inline-block;
-    text-transform: "uppercase";
+    text-transform: 'uppercase';
+    padding-top: ${({ iconWithoutSlash }) => (iconWithoutSlash ? '1vh' : '0')};
     &:not(:first-of-type) {
-      padding-left: 2.1vw;
+      padding-left: ${({ iconWithoutSlash }) => (iconWithoutSlash ? '0' : '2.1vw')};
     }
     &:first-of-type ::after {
       padding-left: 2.1vw;
@@ -23,7 +26,7 @@ export const List = styled("span")<{
   }
 `;
 
-export const LangGridContainer = styled("div")`
+export const LangGridContainer = styled('div')`
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 100%;
@@ -32,19 +35,18 @@ export const LangGridContainer = styled("div")`
   color: ${({ theme }) => theme.palette.colorBlack.main};
 `;
 
-export const LanguageButton = styled("span")<{ selected: boolean }>`
-  color: ${({ selected, theme }) => (selected ? "#ffe4c4" : "#00f7ff")};
+export const LanguageButton = styled('span')<{ selected: boolean }>`
+  color: ${({ selected, theme }) => (selected ? theme.palette.colorBlue.main : theme.palette.primary.main)};
   &:hover {
     color: #01767a;
   }
   font-weight: 950;
   grid-column: 1;
   grid-row: 1;
-  /* padding-top: 12vh; */
 `;
 
-export const Lamp = styled("img")<{ colorPrime: boolean }>`
-  display: ${({ colorPrime }) => (colorPrime ? "block" : "none")};
+export const Lamp = styled('img')<{ colorPrime: boolean }>`
+  display: ${({ colorPrime }) => (colorPrime ? 'block' : 'none')};
   text-align: center;
   grid-column: 1;
   grid-row: 1;

@@ -8,14 +8,6 @@ import * as S from './langButton.styled';
 const languages: string[] = ['en', 'fr', 'uk'];
 const langAlias: string[] = ['English', 'Français', 'Українська'];
 
-const fontSizeAlias = {
-  xs: '0.7rem',
-  sm: '1rem',
-  md: '1rem',
-  lg: '1.1rem',
-  xl: '1.2rem',
-};
-
 type Props = {
   colorPrime: boolean;
   iconWithoutSlash?: boolean;
@@ -79,7 +71,7 @@ export const LangButton: React.FC<Props> = ({ colorPrime, iconWithoutSlash = fal
           <Typography
             variant="h6"
             sx={{
-              fontSize: fontSizeAlias,
+              fontSize: '1.2rem',
             }}>
             <S.List colorPrime={colorPrime} iconWithoutSlash={iconWithoutSlash}>
               {languages.map((item, index) => (

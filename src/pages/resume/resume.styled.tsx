@@ -103,7 +103,7 @@ export const ButtonCV = styled(Button)`
   border: 2px dashed;
   border-color: ${({ theme }) => theme.palette.chocolate.main};
   border-radius: 15px;
-  background-color: ${({ theme }) => theme.palette.coffee.main};
+  background-color: ${({ theme }) => theme.palette.beige.main};
   box-shadow: 0 0 0 4px #7c3b30, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
   transition: 0.1s ease-in-out, 0.4s color;
 
@@ -168,7 +168,7 @@ export const FlexInformationContainer = styled(BackgroundMain)`
 export const Line = styled(BackgroundMain)`
   width: 62.5%;
   height: 10vh;
-  background-color: ${({ theme }) => theme.palette.coffee.main};
+  background-color: ${({ theme }) => theme.palette.beige.main};
   text-align: center;
   display: flex;
   justify-content: space-evenly;
@@ -352,7 +352,7 @@ export const CoursesTitle = styled('div')`
   margin-top: 8vh;
   grid-column: 1 / span 3;
   text-align: center;
-  color: ${({ theme }) => theme.palette.coffee.main};
+  color: ${({ theme }) => theme.palette.beige.main};
 `;
 
 export const Courses = styled('ul')`

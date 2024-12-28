@@ -15,17 +15,13 @@
     "show_more": "Show more"
   },
   "main": {
-    "title": "Welcome! My name is Tina, full-stack developer",
-    "subtitle1": "This cat is called Stitch",
-    "subtitle2": "Nice to meet you",
-    "text": "Are you looking for a web development specialist? I can create a website for you using the latest technologies, such as React and Node, to ensure flexible and secure applications. I offer the development of commercial applications of any complexity, from a single-page showcase site to a large online store or e-commerce platform. If necessary, I can assemble a team to tackle large-scale projects.",
-    "text1": "I will provide you with several mockups to choose your site's style, taking into account all your web design preferences. I will also apply my SEO expertise to ensure users can find your site quickly on the internet. Web development is my passion, and I will do everything to create a high-quality, aesthetically pleasing, and secure application for you. Contact me now for more information and a personalized offer.",
-    "title2ecran": "\"Choose a job you love",
-    "subtitle2ecran": "and you will never have to work ",
-    "subtitle12ecran": "a day in your life.\"",
+    "title": "Tina",
+    "subtitle1": "full-stack developer",
+    "title2ecran": "\"Choose a job you love and you will never have to work a day in your life.\" Confucius",
     "author2ecran": "Confucius",
     "lang": "Language",
-    "backToTop": "Back to top"
+    "backToTop": "Back to top",
+    "buttonMore": "My projects"
   },
   "about": {
     "title": "Hi! I'm Tina, ",

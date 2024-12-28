@@ -22,16 +22,16 @@ declare module '@mui/material/styles' {
 export let theme = createTheme({
   palette: {
     primary: {
-      main: '#816c6e',
+      main: '#6B99C3',
     },
     secondary: {
-      main: '#e5dee5',
+      main: '#E4E5EA',
     },
     colorBlack: {
-      main: '#000000',
+      main: '#0C151C',
     },
-    coffee: {
-      main: '#98716a',
+    beige: {
+      main: '#D2D2D4',
     },
     chocolate: {
       main: '#7c3b30',
@@ -46,10 +46,10 @@ export let theme = createTheme({
       main: '#C2C3C5',
     },
     colorLightBlue: {
-      main: '#5986BC',
+      main: '#acbdd3',
     },
     colorBlue: {
-      main: '#042D5E',
+      main: '#16354D',
     },
     colorBrightBlue: {
       main: '#00f7ff',
@@ -58,11 +58,11 @@ export let theme = createTheme({
   typography: {
     fontFamily: ['Helvetica', 'Arial', 'Roboto', 'sans-serif'].join(','),
     h1: {
-      fontFamily: 'Kurale , sans-serif, Arial',
+      fontFamily: 'Roboto Flex, serif, Arial',
       fontDisplay: 'optional',
     },
     h2: {
-      fontFamily: 'Kurale , sans-serif, Arial',
+      fontFamily: 'Helvetica, serif, Arial',
       fontDisplay: 'optional',
     },
     h3: {
@@ -86,15 +86,18 @@ export let theme = createTheme({
       fontDisplay: 'optional',
     },
     body2: {
-      fontFamily: 'Special Elite, sans-serif, Arial',
+      fontFamily: 'Roboto, sans-serif, Arial',
       fontDisplay: 'optional',
     },
     subtitle1: {
-      fontFamily: 'Helvetica, serif, Arial',
+      fontFamily: 'Roboto Flex, serif, Arial',
       fontDisplay: 'optional',
-      fontSize: '0.8rem',
-      '@media (max-width:750px)': {
-        fontSize: '0.5rem',
+      fontSize: '40rem',
+      '@media (max-width:1500px)': {
+        fontSize: '10rem',
+      },
+      '@media (max-width:1200px)': {
+        fontSize: '5rem',
       },
     },
   },

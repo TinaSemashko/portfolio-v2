@@ -15,17 +15,13 @@
     "show_more": "Show more"
   },
   "main": {
-    "title": "Bienvenue ! Je m'appelle Tina, full-stack développeur",
-    "subtitle1": "Ce chat s'appelle Stitch",
-    "subtitle2": "Enchantée de faire votre connaissance",
-    "text": "Vous cherchez un spécialiste en création de sites web ? Je peux réaliser pour vous un site en utilisant les technologies les plus récentes telles que React.js et Node.js, ce qui permet de créer des applications flexibles et sécurisées. Je propose le développement d'applications commerciales de toute complexité, allant d'un site vitrine d'une page à une grande boutique en ligne ou une plateforme e-commerce, Si nécessaire, je peux mobiliser une équipe pour accomplir des projets de grande envergure.",
-    "text1": "Je vous proposerai plusieurs maquettes pour choisir le style du site et prendrai en compte toutes vos préférences en matière de design web. J'appliquerai également mes connaissances en SEO afin que les utilisateurs puissent trouver votre site plus rapidement sur Internet. Le développement web est ma passion et je mettrai tout en œuvre pour créer une application de qualité, esthétique et sécurisée pour vous. Contactez-moi dès maintenant pour obtenir plus d'informations et une offre personnalisée.",
-    "title2ecran": "\"Choisissez un travail que vous aimez,",
-    "subtitle2ecran": "et vous n'aurez pas à travailler ",
-    "subtitle12ecran": "un seul jour de votre vie.\"",
+    "title": "Tina",
+    "subtitle1": "full-stack développeur",
+    "title2ecran": "\"Choisissez un travail que vous aimez, et vous n'aurez pas à travailler un seul jour de votre vie.\" Confucius",
     "author2ecran": "Confucius",
     "lang": "Langue",
-    "backToTop": "Haut de page"
+    "backToTop": "Haut de page",
+    "buttonMore": "Mes projets"
   },
   "about": {
     "title": "Salut ! Je suis Tina, ",

@@ -17,16 +17,6 @@ const fontSizeFooter = {
   xxl: '1.2rem',
 };
 
-const fontSizeTitre = {
-  xxs: '0.9rem',
-  xs: '0.9rem',
-  sm: '1.2rem',
-  md: '1.3rem',
-  lg: '1.5rem',
-  xl: '1.6rem',
-  xxl: '1.6rem',
-};
-
 const Home: React.FC = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -38,39 +28,21 @@ const Home: React.FC = () => {
 
   return (
     <S.MainContainer isParallax={isParallax}>
-      <S.WorkInquiryBox>
-        <div>
-          <Typography
-            variant="h4"
-            textAlign="center"
-            sx={{
-              fontSize: fontSizeTitre,
-            }}>
-            {t('footer.work')}
-          </Typography>
-          <Typography variant="h5" textAlign="center" sx={{ fontSize: fontSizeFooter, color: '#008388' }}>
-            {t('footer.work_sub')}
-          </Typography>
-        </div>
-        <S.ButtonWork onClick={() => navigate(Routes.contact)}>
-          <Typography
-            variant="h5"
-            textAlign="center"
-            sx={{
-              fontSize: fontSizeFooter,
-            }}>
-            {t('footer.contact')}
-          </Typography>
-        </S.ButtonWork>
-      </S.WorkInquiryBox>
-      <Social />
-      <S.FlexBox>
+      <S.StyledButton label={t('footer.contact')} onClick={() => navigate(Routes.contact)} />
+      <S.SocialLinks>
+        <Social />
+      </S.SocialLinks>
+      <S.Langs>
         <LangButton colorPrime={false} iconWithoutSlash={true} selectMode={false} />
-        <Typography variant="h6" textAlign="center" sx={{ fontSize: fontSizeFooter, zIndex: '100' }}>
+      </S.Langs>
+      <S.TitreColor>
+        <Typography
+          variant="h6"
+          textAlign="center"
+          sx={{ fontSize: fontSizeFooter, zIndex: '100', gridColumn: '2', alignSelf: 'end' }}>
           {t('footer.rights')}
         </Typography>
-        <div></div>
-      </S.FlexBox>
+      </S.TitreColor>
     </S.MainContainer>
   );
 };
