@@ -58,11 +58,11 @@ export let theme = createTheme({
   typography: {
     fontFamily: ['Helvetica', 'Arial', 'Roboto', 'sans-serif'].join(','),
     h1: {
-      fontFamily: 'Roboto Flex, serif, Arial',
+      fontFamily: 'Jura, serif, Arial',
       fontDisplay: 'optional',
     },
     h2: {
-      fontFamily: 'Helvetica, serif, Arial',
+      fontFamily: 'Jura, serif, Arial',
       fontDisplay: 'optional',
     },
     h3: {

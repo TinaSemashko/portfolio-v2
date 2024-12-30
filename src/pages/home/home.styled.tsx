@@ -69,6 +69,7 @@ export const Titre = styled(Typography)`
   grid-row: 1 / span 2;
   color: ${({ theme }) => theme.palette.colorBlack.main};
   text-transform: uppercase;
+  font-family: 'Roboto Flex', serif;
   z-index: 10;
   padding-top: 10vh;
   font-size: 40rem;
@@ -82,7 +83,6 @@ export const SubTitre = styled(Typography)`
   grid-row: 4;
   color: ${({ theme }) => theme.palette.colorBlue.main};
   text-transform: lowercase;
-  font-family: 'Jura', serif;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-column: 1;

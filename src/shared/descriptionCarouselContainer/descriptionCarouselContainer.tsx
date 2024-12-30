@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, Dialog, Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { Carousel3d } from '../../types/projects';
 import CloseIcon from '@mui/icons-material/Close';
-import Carousel from '../../pages/projects/carousel';
+import { openLink } from '../utils';
+import DialogCarousel from '../dialog';
 
 import * as S from './descriptionCarouselContainer.styled';
 
@@ -37,20 +38,16 @@ const DescriptionCarouselContainer: React.FC<Props> = ({ project, onCloseDescrip
   const [linkProject, setlinkProject] = useState<string | null>('');
   const [openCarousel, setOpenCarousel] = useState(false);
   const [carouselBack, setCarouselBack] = useState(false);
-  console.log(project);
+
   useEffect(() => {
     if (project) {
       setlinkProject(project && project.linkProject);
     }
   }, [project]);
 
-  const openLink = (link: string) => {
-    const newWindow = window.open(link, '_blank', 'noopener,noreferrer');
-    if (newWindow) newWindow.opener = null;
-  };
-
   const handleClose = (): void => {
     setOpenCarousel(false);
+    setCarouselBack(false);
   };
 
   const handleCloseFlip = (): void => {
@@ -138,13 +135,12 @@ const DescriptionCarouselContainer: React.FC<Props> = ({ project, onCloseDescrip
           {project?.descriptions}
         </Typography>
       </S.DiscriptionCarouselCont>
-      <Dialog open={openCarousel} onClose={handleClose} fullScreen>
-        <S.ColorContainer>
-          <CloseIcon color="primary" sx={{ fontSize: '2rem' }} onClick={handleClose} />
-        </S.ColorContainer>
-
-        <Carousel projectName={project?.projectName} back={carouselBack} />
-      </Dialog>
+      <DialogCarousel
+        open={openCarousel}
+        handleClose={handleClose}
+        carouselBack={carouselBack}
+        projectName={project?.projectName ?? ''}
+      />
     </S.Description>
   );
 };

@@ -11,7 +11,7 @@ type Props = {
 
 export const PrimaryButton: React.FC<ButtonProps & Props> = ({ label, isLoading, ...rest }) => (
   <S.StyledButton {...rest}>
-    <Typography variant="h5" component="span">
+    <Typography variant="h5" component="span" style={{ flex: 1, textAlign: 'center' }}>
       {label}
     </Typography>
     {isLoading && <Spinner color="secondary" />}

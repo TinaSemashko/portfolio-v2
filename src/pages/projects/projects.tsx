@@ -1,21 +1,27 @@
 import { useEffect, useState } from 'react';
-import { Button, ImageList, ImageListItem, ImageListItemBar, Link, Typography, useMediaQuery } from '@mui/material';
+import { ImageList, Link, Typography, useMediaQuery } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
-import { Carousel3d } from '../../types/projects';
+import { Carousel3d, DataListMenu } from '../../types/projects';
 import { imagesCarousel } from '../../shared/carousel3D/dataCarousel';
 import Carousel from '../../shared/carousel3D/carousel3d';
 import { theme } from '../../app/app';
-import { useNavigate } from 'react-router';
-import { Routes } from '../../app/routes';
 import ProjectsMobile from './projectsMobile';
+import LaunchIcon from '@mui/icons-material/Launch';
+import CastIcon from '@mui/icons-material/Cast';
+import CastConnectedIcon from '@mui/icons-material/CastConnected';
+import ContextMenuButton from '../../shared/contextMenuButton';
+import { openLink } from '../../shared/utils';
+import DialogCarousel from '../../shared/dialog';
 
 import * as S from './projects.styled';
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
-  const [imageMap, setImageMap] = useState<Carousel3d[]>([]);
+  const [openCarousel, setOpenCarousel] = useState(false);
+  const [carouselBack, setCarouselBack] = useState(false);
+  const [selectedProjectName, setSelectedProjectName] = useState<string | null>(null);
+  const [imageMapList, setImageMapList] = useState<Carousel3d[]>([]);
   const [showCarousel, setshowCarousel] = useState<boolean>(false);
   const smScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const mdScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -24,21 +30,53 @@ const Projects: React.FC = () => {
     const tempCar = imagesCarousel.map((el: Carousel3d, index: number) => {
       return {
         ...el,
-        src: require(`../../images/${el.imageName}`),
+        src: require(`../../images/${el.imageNameList}`),
       };
     });
 
-    setImageMap(tempCar);
+    setImageMapList(tempCar);
   }, []);
+
+  const handleClose = (): void => {
+    setOpenCarousel(false);
+    setCarouselBack(false);
+    setSelectedProjectName(null);
+  };
+
+  const openCarouselDialog = (projectName: string): void => {
+    setSelectedProjectName(projectName);
+    setOpenCarousel(true);
+  };
+
+  const dataListMenu = (item: Carousel3d): DataListMenu[] => [
+    {
+      MenuIcon: LaunchIcon,
+      title: t('carousel2d.button_project'),
+      variantTypography: 'body1',
+      disabled: !item.openProject,
+      clickHandler: () => openLink(item.linkProject),
+    },
+    {
+      MenuIcon: CastIcon,
+      title: t('carousel2d.button_screenshots'),
+      variantTypography: 'body1',
+      disabled: false,
+      clickHandler: () => openCarouselDialog(item.projectName),
+    },
+    {
+      MenuIcon: CastConnectedIcon,
+      title: t('carousel2d.button_screenshots_back'),
+      variantTypography: 'body1',
+      disabled: false,
+      clickHandler: () => {
+        openCarouselDialog(item.projectName);
+        setCarouselBack(true);
+      },
+    },
+  ];
 
   const handleCarousel = () => {
     setshowCarousel(!showCarousel);
-  };
-
-  const openDescription = (project: Carousel3d): void => {
-    navigate(Routes.cartproject, {
-      state: { cartproject: { project } },
-    });
   };
 
   return (
@@ -52,12 +90,10 @@ const Projects: React.FC = () => {
         />
       </Helmet>
       <Typography
-        variant="h1"
+        variant="h2"
         sx={{
           pb: 4,
           color: smScreen ? 'primary.main' : 'colorBlack.main',
-          textShadow:
-            '0px 3px 0px rgba(84, 83, 83, 0.545),0px 7px 10px rgba(0,0,0,0.15), 0px 10px 2px rgba(0,0,0,0.15), 0px 14px 30px rgba(0,0,0,0.2)',
         }}>
         {t('projects.title')}
       </Typography>
@@ -76,35 +112,51 @@ const Projects: React.FC = () => {
         <ProjectsMobile />
       ) : (
         <>
-          <Button variant="contained" onClick={handleCarousel}>
-            {showCarousel ? t('projects.list') : t('projects.carousel')}
-          </Button>
+          <S.StyledButtonCarousel
+            label={showCarousel ? t('projects.list') : t('projects.carousel')}
+            onClick={handleCarousel}
+          />
+          <Typography variant="h6">{t('projects.realProjects')}</Typography>
           {showCarousel ? (
             <S.CarouselContainer>
               <Carousel />
             </S.CarouselContainer>
           ) : (
-            <ImageList cols={mdScreen ? 2 : 3} gap={mdScreen ? 20 : 50} sx={{ width: '95%', height: '100%' }}>
-              {imageMap.map(item => (
-                <ImageListItem key={item.src} sx={{ cursor: 'pointer' }}>
-                  <img
+            <ImageList
+              variant="masonry"
+              cols={mdScreen ? 2 : 3}
+              gap={mdScreen ? 20 : 10}
+              sx={{ width: '80%', height: '100%', border: 'solid', borderColor: 'beige.main', p: 1.5 }}>
+              {imageMapList.map(item => (
+                <S.StyledListItem key={item.src}>
+                  <S.ThreeDotsBox>
+                    <ContextMenuButton dataListMenu={dataListMenu(item)} orientation="horizontal" />
+                  </S.ThreeDotsBox>
+                  <S.StyledImage
+                    className="styled-image"
+                    commercial={item.commercial}
                     srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
                     src={`${item.src}?w=248&fit=crop&auto=format`}
-                    alt={item.projectName}
+                    alt={item.alt}
                     loading="lazy"
-                    onClick={() => openDescription(item)}
                   />
-                  <ImageListItemBar
-                    title={<Typography variant="h3">{item.projectTitre}</Typography>}
-                    // subtitle={
-                    //   <Typography variant="subtitle1" component="span" sx={{ width: '50%' }}>
-                    //     {item.descriptions}
-                    //   </Typography>
-                    // }
-                    position="below"
-                  />
-                </ImageListItem>
+                  <S.Description className="description">
+                    {item.projectTitre}
+                    <br />
+                    <br />
+                    {item.alt}
+                    <br />
+                    <br />
+                    {item.descriptions}
+                  </S.Description>
+                </S.StyledListItem>
               ))}
+              <DialogCarousel
+                open={openCarousel}
+                handleClose={handleClose}
+                carouselBack={carouselBack}
+                projectName={selectedProjectName || ''}
+              />
             </ImageList>
           )}
         </>

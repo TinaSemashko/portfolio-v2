@@ -1,25 +1,78 @@
 import { styled } from '@mui/material/styles';
-import img from '../../images/fon_projects.webp';
+import PrimaryButton from '../../shared/primaryButton';
+import { ImageListItem } from '@mui/material';
 
 export const MainContainer = styled('div')`
   text-align: center;
   padding-top: 10vh;
   min-height: 100vh;
-  background-image: url(${img});
-  background-size: cover;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
-  margin-bottom: 40vh;
+  margin-bottom: 15vh;
 
-  @media (max-width: 1200px) {
-    margin-bottom: 30vh;
+  background-color: ${({ theme }) => theme.palette.secondary.main};
+`;
+
+export const StyledListItem = styled(ImageListItem)`
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  position: relative;
+
+  &:hover .styled-image {
+    opacity: 0.1;
   }
 
-  @media (max-width: 960px) {
-    margin-bottom: 20vh;
+  &:hover .description {
+    opacity: 1;
   }
+`;
+
+export const ThreeDotsBox = styled('div')`
+  justify-self: center;
+  z-index: 20;
+  grid-column: 1;
+  grid-row: 1;
+  color: ${({ theme }) => theme.palette.colorOrange.main};
+  cursor: pointer;
+
+  & .MuiSvgIcon-root {
+    height: 3rem;
+  }
+
+  @media (max-width: 750px) {
+    width: 20%;
+    justify-self: end;
+    align-self: center;
+  }
+`;
+
+export const StyledImage = styled('img')<{ commercial: boolean }>`
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  border: solid 4px;
+  border-color: ${({ theme, commercial }) =>
+    commercial ? theme.palette.primary.main : theme.palette.colorOrange.main};
+  transition: opacity 0.3s ease;
+  opacity: 1;
+`;
+
+export const Description = styled('div')`
+  width: 95%;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+  z-index: 10;
+  color: ${({ theme }) => theme.palette.colorBlue.main};
+  opacity: 0;
+  transition: opacity 0.3s ease;
+`;
+
+export const StyledButtonCarousel = styled(PrimaryButton)`
+  text-transform: uppercase;
 `;
 
 export const CarouselContainer = styled('div')`

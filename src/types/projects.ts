@@ -1,3 +1,6 @@
+import { SvgIconTypeMap, TypographyVariant } from '@mui/material';
+import { OverridableComponent } from '@mui/material/OverridableComponent';
+
 export type Carousel3d = {
   imageName: string;
   src: string;
@@ -12,6 +15,8 @@ export type Carousel3d = {
   openProject: boolean;
   openGit: boolean;
   openVideo: boolean;
+  imageNameList: string;
+  commercial: boolean;
 };
 
 export type CarouselImg = {
@@ -29,3 +34,11 @@ export type CarouselProjectImg = {
   alt: string;
   projectName: string;
 };
+
+export interface DataListMenu {
+  MenuIcon: OverridableComponent<SvgIconTypeMap<object, 'svg'>>;
+  title: string;
+  variantTypography: TypographyVariant;
+  disabled: boolean;
+  clickHandler: () => void;
+}

@@ -15,6 +15,8 @@ export const imagesCarousel: Carousel3d[] = [
     openProject: true,
     openGit: false,
     openVideo: true,
+    imageNameList: 'img1l.webp',
+    commercial: true,
   },
   {
     imageName: 'img2.webp', //diamondCollection
@@ -30,6 +32,8 @@ export const imagesCarousel: Carousel3d[] = [
     openProject: true,
     openGit: true,
     openVideo: false,
+    imageNameList: 'img2l.webp',
+    commercial: false,
   },
   {
     imageName: 'img3.webp', //portfolio
@@ -45,6 +49,8 @@ export const imagesCarousel: Carousel3d[] = [
     openProject: true,
     openGit: false,
     openVideo: false,
+    imageNameList: 'img3l.webp',
+    commercial: true,
   },
   {
     imageName: 'img4.webp', //ekea
@@ -60,6 +66,8 @@ export const imagesCarousel: Carousel3d[] = [
     openProject: true,
     openGit: true,
     openVideo: false,
+    imageNameList: 'img4l.webp',
+    commercial: false,
   },
   {
     imageName: 'img5.webp', //casinoGame
@@ -75,6 +83,8 @@ export const imagesCarousel: Carousel3d[] = [
     openProject: true,
     openGit: true,
     openVideo: false,
+    imageNameList: 'img5l.webp',
+    commercial: false,
   },
   {
     imageName: 'img6.webp', //garage
@@ -90,6 +100,8 @@ export const imagesCarousel: Carousel3d[] = [
     openProject: false,
     openGit: true,
     openVideo: false,
+    imageNameList: 'img6l.webp',
+    commercial: false,
   },
 
   {
@@ -106,6 +118,8 @@ export const imagesCarousel: Carousel3d[] = [
     openProject: true,
     openGit: true,
     openVideo: false,
+    imageNameList: 'img8l.webp',
+    commercial: false,
   },
 
   {
@@ -122,6 +136,8 @@ export const imagesCarousel: Carousel3d[] = [
     openProject: false,
     openGit: true,
     openVideo: false,
+    imageNameList: 'img10l.webp',
+    commercial: false,
   },
   {
     imageName: 'img11.webp', //assoFacTory
@@ -137,6 +153,8 @@ export const imagesCarousel: Carousel3d[] = [
     openProject: false,
     openGit: true,
     openVideo: true,
+    imageNameList: 'img11l.webp',
+    commercial: false,
   },
   {
     imageName: 'img9.webp', //Nastya
@@ -152,6 +170,8 @@ export const imagesCarousel: Carousel3d[] = [
     openProject: true,
     openGit: false,
     openVideo: false,
+    imageNameList: 'img9l.webp',
+    commercial: true,
   },
   {
     imageName: 'img7.webp', //Karamon video
@@ -167,6 +187,8 @@ export const imagesCarousel: Carousel3d[] = [
     openProject: true,
     openGit: false,
     openVideo: false,
+    imageNameList: 'img7l.webp',
+    commercial: true,
   },
   {
     imageName: 'img12.webp', //ABS
@@ -182,5 +204,7 @@ export const imagesCarousel: Carousel3d[] = [
     openProject: true,
     openGit: false,
     openVideo: true,
+    imageNameList: 'img12l.webp',
+    commercial: true,
   },
 ];

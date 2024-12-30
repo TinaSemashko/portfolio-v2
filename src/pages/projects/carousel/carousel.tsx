@@ -33,7 +33,6 @@ type Props = {
 
 const Carousel: React.FC<Props> = ({ projectName, back }) => {
   const mediumScreen = useMediaQuery(theme.breakpoints.down('md'));
-
   const SampleNextArrow = (props: ArrowProps) => {
     const { className, style, onClick } = props;
 

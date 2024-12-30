@@ -12,14 +12,6 @@ export const MainContainer = styled('div')<{ isParallax: boolean }>`
   display: grid;
   grid-template-columns: 15% 70% 15%;
   grid-template-rows: 80% 20%;
-
-  /* @media (max-width: 1200px) {
-    min-height: 20vh;
-  }
-
-  @media (max-width: 960px) {
-    min-height: 20vh;
-  } */
 `;
 
 export const SocialLinks = styled('div')`

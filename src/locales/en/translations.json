@@ -50,7 +50,7 @@
     "description": "Go to the project description",
     "return": "Back to my projects",
     "carousel": "Show as a carousel",
-    "list": "Show as table",
+    "list": "Show as a table",
     "teamChallenge": "Web platform for juniors that assembles a cross-functional team for the first pet project",
     "karamonVideo": "Business card website for a video engineer",
     "ABS": "E-commerce website for a construction company with a database, admin page and storage of photos on a third-party service",
@@ -61,7 +61,8 @@
     "nastyaPhoto": "Business card website for a photographer",
     "diamondCollection": "Website of an online store for a jewelry company (training project)",
     "portfolio": "Portfolio for the clients",
-    "myGIT": "Open my GitHUB"
+    "myGIT": "Open my GitHUB",
+    "realProjects": "The blue frame means that these are real projects, the orange one means that these are educational projects."
   },
   "resume": {
     "name": "Tina Semashko",

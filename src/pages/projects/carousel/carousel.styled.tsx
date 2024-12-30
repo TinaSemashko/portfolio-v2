@@ -34,7 +34,7 @@ export const FlexBox = styled('div')`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 55vw;
+  width: 90vw;
   z-index: 9;
   overflow: hidden;
 
