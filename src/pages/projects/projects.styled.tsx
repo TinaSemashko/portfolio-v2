@@ -14,6 +14,13 @@ export const MainContainer = styled('div')`
   background-color: ${({ theme }) => theme.palette.secondary.main};
 `;
 
+export const Title = styled('div')`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3vh;
+`;
+
 export const StyledListItem = styled(ImageListItem)`
   display: grid;
   grid-template-columns: 100%;
@@ -35,10 +42,15 @@ export const ThreeDotsBox = styled('div')`
   grid-column: 1;
   grid-row: 1;
   color: ${({ theme }) => theme.palette.colorOrange.main};
+
   cursor: pointer;
 
   & .MuiSvgIcon-root {
-    height: 3rem;
+    height: 2rem;
+    width: 3rem;
+    background-color: ${({ theme }) => theme.palette.secondary.main};
+    margin-top: 1vh;
+    border-radius: 50%;
   }
 
   @media (max-width: 750px) {

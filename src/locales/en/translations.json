@@ -62,7 +62,9 @@
     "diamondCollection": "Website of an online store for a jewelry company (training project)",
     "portfolio": "Portfolio for the clients",
     "myGIT": "Open my GitHUB",
-    "realProjects": "The blue frame means that these are real projects, the orange one means that these are educational projects."
+    "realProjects": "The blue frame means that these are real projects, the orange one means that these are educational projects.",
+    "coleur1": "blue",
+    "coleur2": "orange"
   },
   "resume": {
     "name": "Tina Semashko",

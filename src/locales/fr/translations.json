@@ -62,7 +62,9 @@
     "diamondCollection": "Site e-commerce pour la société de bijoux (projet de formation)",
     "portfolio": "Portfolio pour des clients",
     "myGIT": "Ouvrir mon GitHUB ",
-    "realProjects": "Le cadre bleu signifie qu'il s'agit de projets réels, le cadre orange signifie qu'il s'agit de projets éducatifs."
+    "realProjects": "Le cadre bleu signifie qu'il s'agit de projets réels, le cadre orange signifie qu'il s'agit de projets éducatifs.",
+    "coleur1": "bleu",
+    "coleur2": "orange"
   },
   "resume": {
     "name": "Tina Semashko",
