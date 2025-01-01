@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
-import { CircularProgress, Typography, useMediaQuery } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+import { CircularProgress, useMediaQuery } from '@mui/material';
 import { Carousel3d } from '../../types/projects';
 import { imagesCarousel } from './dataCarousel';
-import { useNavigate } from 'react-router';
-import { Routes } from '../../app/routes';
 import { theme } from '../../app/app';
 
 import * as S from './carousel3d.styled';
@@ -16,19 +13,7 @@ interface CarouselParams {
   cellsize: number;
 }
 
-const fontSizeBody1 = {
-  xxs: '0.5rem',
-  xs: '0.5rem',
-  sm: '0.5rem',
-  md: '0.6rem',
-  lg: '0.7rem',
-  xl: '1rem',
-  xxl: '1.2rem',
-};
-
 const Carousel: React.FC = () => {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
   const [animationPause, setAnimationPause] = useState(false);
   const [indexState, setIndexState] = useState('');
   const [carouselParams, setCarouselParams] = useState<CarouselParams>();
@@ -91,11 +76,11 @@ const Carousel: React.FC = () => {
     }
   };
 
-  const openDescription = (project: Carousel3d): void => {
-    navigate(Routes.cartproject, {
-      state: { cartproject: { project } },
-    });
-  };
+  // const openDescription = (project: Carousel3d): void => {
+  //   navigate(Routes.cartproject, {
+  //     state: { cartproject: { project } },
+  //   });
+  // };
 
   return (
     <S.MainContainer carouselWith={carouselParams?.cellsize ?? 0}>
@@ -110,22 +95,14 @@ const Carousel: React.FC = () => {
               radius={carouselParams?.radius ?? 0}
               carouselWith={carouselParams?.cellsize ?? 0}>
               <S.Picture
+                commercial={item.commercial}
                 carouselWith={carouselParams?.cellsize ?? 0}
                 src={item.src}
                 alt={item.alt}
                 id={index.toString()}
                 onClick={handleClick}
               />
-              <S.ButtonMore>
-                <Typography
-                  component="div"
-                  variant="body1"
-                  textAlign="left"
-                  sx={{ fontSize: fontSizeBody1 }}
-                  onClick={() => openDescription(item)}>
-                  {t('carousel3d.button_project')}
-                </Typography>
-              </S.ButtonMore>
+              {/* <S.StyledButtonCarousel label={t('carousel3d.button_project')} onClick={() => openDescription(item)} /> */}
             </S.Slide>
           ))
         )}

@@ -14,9 +14,19 @@ import ContextMenuButton from '../../shared/contextMenuButton';
 import { openLink } from '../../shared/utils';
 import DialogCarousel from '../../shared/dialog';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import HighlightedText from '../../shared/highlightedText';
 
 import * as S from './projects.styled';
-import HighlightedText from '../../shared/highlightedText';
+
+const fontSizeDescription = {
+  xxs: '0.5rem',
+  xs: '0.5rem',
+  sm: '0.6rem',
+  md: '0.7rem',
+  lg: '0.7rem',
+  xl: '0.9rem',
+  xxl: '1.1rem',
+};
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();
@@ -26,7 +36,7 @@ const Projects: React.FC = () => {
   const [imageMapList, setImageMapList] = useState<Carousel3d[]>([]);
   const [showCarousel, setshowCarousel] = useState<boolean>(false);
   const smScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  const mdScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const lgScreen = useMediaQuery(theme.breakpoints.down('lg'));
 
   useEffect(() => {
     const tempCar = imagesCarousel.map((el: Carousel3d, index: number) => {
@@ -128,10 +138,10 @@ const Projects: React.FC = () => {
           ) : (
             <ImageList
               variant="masonry"
-              cols={mdScreen ? 2 : 3}
-              gap={mdScreen ? 20 : 10}
+              cols={lgScreen ? 2 : 3}
+              gap={lgScreen ? 5 : 10}
               sx={{
-                width: '80%',
+                width: '90%',
                 height: '100%',
                 border: 'solid',
                 borderColor: 'beige.main',
@@ -151,13 +161,27 @@ const Projects: React.FC = () => {
                     loading="lazy"
                   />
                   <S.Description className="description">
-                    {item.projectTitre}
-                    <br />
-                    <br />
-                    {item.alt}
-                    <br />
-                    <br />
-                    {item.descriptions}
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        fontSize: fontSizeDescription,
+                      }}>
+                      {item.projectTitre}
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        fontSize: fontSizeDescription,
+                      }}>
+                      {t(`projects.${item.projectName}`)}
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        fontSize: fontSizeDescription,
+                      }}>
+                      {item.descriptions}
+                    </Typography>
                   </S.Description>
                 </S.StyledListItem>
               ))}

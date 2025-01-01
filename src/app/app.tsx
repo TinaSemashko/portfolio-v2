@@ -82,7 +82,7 @@ export let theme = createTheme({
       fontDisplay: 'optional',
     },
     body1: {
-      fontFamily: 'Kurale , sans-serif, Helvetica',
+      fontFamily: 'Roboto, sans-serif, Helvetica',
       fontDisplay: 'optional',
     },
     body2: {

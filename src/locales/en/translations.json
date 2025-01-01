@@ -44,7 +44,7 @@
     "beauty": "I embody beauty"
   },
   "projects": {
-    "title": "Take a look at what I've been working on!",
+    "title": "My projects",
     "message_private": "I'm sorry, but this repository is private",
     "repeat": "Repeat the video",
     "description": "Go to the project description",
@@ -61,6 +61,9 @@
     "nastyaPhoto": "Business card website for a photographer",
     "diamondCollection": "Website of an online store for a jewelry company (training project)",
     "portfolio": "Portfolio for the clients",
+    "connectify": "Social network (educational project)",
+    "assoFacTory": "A blog (educational project)",
+    "garage": "E-commerce (educational project)",
     "myGIT": "Open my GitHUB",
     "realProjects": "The blue frame means that these are real projects, the orange one means that these are educational projects.",
     "coleur1": "blue",

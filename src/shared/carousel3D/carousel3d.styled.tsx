@@ -1,4 +1,5 @@
 import { styled } from '@mui/material/styles';
+import PrimaryButton from '../primaryButton';
 
 export const MainContainer = styled('div')<{ carouselWith: number }>`
   position: relative;
@@ -13,6 +14,22 @@ export const MainContainer = styled('div')<{ carouselWith: number }>`
   @media (max-width: 568px) {
     width: ${props => (props.carouselWith + 2) * 1.4}vw;
   }
+`;
+
+export const StyledButtonCarousel = styled(PrimaryButton)`
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  width: 8vw;
+  height: 3vh;
+  grid-column: 2 / span 4;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${({ theme }) => theme.palette.secondary.main};
+  background-color: ${({ theme }) => theme.palette.colorBlue.main};
+  text-transform: uppercase;
 `;
 
 export const CarouselContainer = styled('div')<{ isAnimationPaused: boolean }>`
@@ -70,13 +87,15 @@ export const Slide = styled('div')<{
   }
 `;
 
-export const Picture = styled('img')<{ carouselWith: number }>`
+export const Picture = styled('img')<{ carouselWith: number; commercial: boolean }>`
   width: ${props => props.carouselWith}vw;
   height: ${props => props.carouselWith * 1.4}vh;
-  border: 3px inset red;
+  border: solid 4px;
+  border-color: ${({ theme, commercial }) =>
+    commercial ? theme.palette.primary.main : theme.palette.colorOrange.main};
   border-style: ridge;
 
-  box-shadow: 0 0 15px 3px rgba(86, 6, 6, 0.9);
+  box-shadow: 0 0 15px 3px ${({ theme }) => theme.palette.colorBlue.main};
 
   grid-column: 1 / span 4;
   grid-row: 1 / span 4;
@@ -94,71 +113,6 @@ export const Picture = styled('img')<{ carouselWith: number }>`
 
   @media (max-width: 300px) {
     height: ${props => props.carouselWith * 1.4 * 0.5}vh;
-  }
-`;
-
-export const ButtonMore = styled('button')`
-  letter-spacing: 0.06em;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s;
-  background: linear-gradient(
-    to right,
-    rgba(250, 2, 2, 0.7) 1%,
-    transparent 40%,
-    transparent 60%,
-    rgba(97, 6, 6, 0.7) 100%
-  );
-  color: #950101;
-  box-shadow: inset 0 0 10px rgba(253, 27, 27, 0.4), 0 0 9px 3px rgba(253, 27, 27, 0.1);
-  border: 3px inset red;
-  border-style: ridge;
-  width: 8vw;
-  height: 3vh;
-  grid-column: 2 / span 4;
-  z-index: 15;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &:before {
-    content: '';
-    position: absolute;
-    left: -4em;
-    width: 4em;
-    height: 100%;
-    top: 0;
-    transition: transform 0.4s ease-in-out;
-    background: linear-gradient(
-      to right,
-      transparent 1%,
-      rgba(163, 17, 17, 0.1) 40%,
-      rgba(85, 6, 6, 0.1) 60%,
-      transparent 100%
-    );
-  }
-
-  &:hover {
-    color: ${({ theme }) => theme.palette.colorBrightBlue.main};
-    box-shadow: inset 0 0 10px rgba(245, 41, 41), 0 0 9px 3px rgba(126, 21, 21);
-  }
-  &:hover:before {
-    transform: translateX(15em);
-  }
-
-  @media (max-width: 900px) {
-    width: 10vw;
-    top: -1vh;
-  }
-
-  @media (max-width: 568px) {
-    width: 18vw;
-    left: -3vw;
-  }
-
-  @media (max-width: 300px) {
-    top: -1.5vh;
-    left: -4.5vw;
   }
 `;
 

@@ -52,12 +52,6 @@ export const ThreeDotsBox = styled('div')`
     margin-top: 1vh;
     border-radius: 50%;
   }
-
-  @media (max-width: 750px) {
-    width: 20%;
-    justify-self: end;
-    align-self: center;
-  }
 `;
 
 export const StyledImage = styled('img')<{ commercial: boolean }>`
@@ -81,6 +75,7 @@ export const Description = styled('div')`
   color: ${({ theme }) => theme.palette.colorBlue.main};
   opacity: 0;
   transition: opacity 0.3s ease;
+  padding-top: 2vh;
 `;
 
 export const StyledButtonCarousel = styled(PrimaryButton)`
