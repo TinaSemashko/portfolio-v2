@@ -4,8 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useMediaQuery } from '@mui/material';
 import { theme } from '../../../app/app';
-import { DataCarousel2D } from '../../descriptionProjects/dataCarousel2D';
-import { DataCarousel2DBack } from '../../descriptionProjects/dataCarousel2Dback';
+import { CarouselProjectImg } from '../../../types/projects';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
@@ -27,11 +26,10 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 type Props = {
-  projectName?: string;
-  back?: boolean;
+  dataCarousel2D: CarouselProjectImg[];
 };
 
-const Carousel: React.FC<Props> = ({ projectName, back }) => {
+const Carousel: React.FC<Props> = ({ dataCarousel2D }) => {
   const mediumScreen = useMediaQuery(theme.breakpoints.down('md'));
   const SampleNextArrow = (props: ArrowProps) => {
     const { className, style, onClick } = props;
@@ -83,17 +81,11 @@ const Carousel: React.FC<Props> = ({ projectName, back }) => {
       <S.FlexBox>
         <S.SliderBox>
           <Slider {...settings} className="Slider">
-            {back
-              ? DataCarousel2DBack?.filter(el => el.projectName === projectName).map((item, index) => (
-                  <S.ImgCarouselContainer className="ImgCarouselContainer" key={index}>
-                    <img src={require(`../../../images/MyProjects/Back/${item.src}`)} alt={item.alt} width="100%" />
-                  </S.ImgCarouselContainer>
-                ))
-              : DataCarousel2D?.filter(el => el.projectName === projectName).map((item, index) => (
-                  <S.ImgCarouselContainer className="ImgCarouselContainer" key={index}>
-                    <img src={require(`../../../images/MyProjects/Front/${item.src}`)} alt={item.alt} width="100%" />
-                  </S.ImgCarouselContainer>
-                ))}
+            {dataCarousel2D?.map((item, index) => (
+              <S.ImgCarouselContainer className="ImgCarouselContainer" key={index}>
+                <img src={item.src} alt={item.alt} width="100%" />
+              </S.ImgCarouselContainer>
+            ))}
           </Slider>
         </S.SliderBox>
       </S.FlexBox>

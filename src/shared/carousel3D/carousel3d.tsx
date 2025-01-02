@@ -91,11 +91,11 @@ const Carousel: React.FC = () => {
           imageMap.map((item, index) => (
             <S.Slide
               key={index}
-              degY={item.degY}
+              degY={item.degY ?? 0}
               radius={carouselParams?.radius ?? 0}
               carouselWith={carouselParams?.cellsize ?? 0}>
               <S.Picture
-                commercial={item.commercial}
+                commercial={item.commercial ?? false}
                 carouselWith={carouselParams?.cellsize ?? 0}
                 src={item.src}
                 alt={item.alt}

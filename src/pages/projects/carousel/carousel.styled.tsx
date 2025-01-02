@@ -1,6 +1,4 @@
-import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import fon2 from '../../../images/fon_projects.webp';
 
 export const CarouselContainer = styled('div')`
   margin: 0;
@@ -11,22 +9,7 @@ export const CarouselContainer = styled('div')`
   align-items: center;
   justify-content: center;
   position: relative;
-  background-image: url(${fon2});
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
-
-export const CloseIconStyle = styled(Box)`
-  position: absolute;
-  top: 1%;
-  left: 80%;
-  z-index: 20;
-  border-radius: 50%;
-  padding-top: 0.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  padding-bottom: 0.3rem;
-  background-color: #f9f9f988;
+  background-color: ${({ theme }) => theme.palette.primary.main};
 `;
 
 export const FlexBox = styled('div')`

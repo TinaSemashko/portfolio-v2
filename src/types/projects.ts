@@ -4,19 +4,19 @@ import { OverridableComponent } from '@mui/material/OverridableComponent';
 export type Carousel3d = {
   imageName: string;
   src: string;
-  descriptions: string;
-  linkGit: string;
-  linkProject: string;
-  linkVideo: string;
-  degY: number;
-  alt: string;
-  projectName: string;
-  projectTitre: string;
-  openProject: boolean;
-  openGit: boolean;
-  openVideo: boolean;
-  imageNameList: string;
-  commercial: boolean;
+  descriptions?: string;
+  linkGit?: string;
+  linkProject?: string;
+  linkVideo?: string;
+  degY?: number;
+  alt?: string;
+  projectName?: string;
+  projectTitre?: string;
+  openProject?: boolean;
+  openGit?: boolean;
+  openVideo?: boolean;
+  imageNameList?: string;
+  commercial?: boolean;
 };
 
 export type CarouselImg = {
@@ -32,7 +32,7 @@ export type CarouselProjectImg = {
   general: boolean;
   src: string;
   alt: string;
-  projectName: string;
+  projectName?: string;
 };
 
 export interface DataListMenu {

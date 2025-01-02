@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Typography } from '@mui/material';
-import { Carousel3d } from '../../types/projects';
+import { Carousel3d, CarouselProjectImg } from '../../types/projects';
 import CloseIcon from '@mui/icons-material/Close';
 import { openLink } from '../utils';
 import DialogCarousel from '../dialog';
+import { DataCarousel2D } from '../../pages/dataCarousel2D/dataCarousel2D';
+import { DataCarousel2DBack } from '../../pages/dataCarousel2D/dataCarousel2Dback';
 
 import * as S from './descriptionCarouselContainer.styled';
 
@@ -38,10 +40,11 @@ const DescriptionCarouselContainer: React.FC<Props> = ({ project, onCloseDescrip
   const [linkProject, setlinkProject] = useState<string | null>('');
   const [openCarousel, setOpenCarousel] = useState(false);
   const [carouselBack, setCarouselBack] = useState(false);
+  const [dataCarousel2D, setDataCarousel2D] = useState<CarouselProjectImg[]>([]);
 
   useEffect(() => {
     if (project) {
-      setlinkProject(project && project.linkProject);
+      setlinkProject((project && project.linkProject) ?? '');
     }
   }, [project]);
 
@@ -53,6 +56,20 @@ const DescriptionCarouselContainer: React.FC<Props> = ({ project, onCloseDescrip
   const handleCloseFlip = (): void => {
     onCloseDescription?.();
   };
+
+  useEffect(() => {
+    const tempCar2D = carouselBack
+      ? DataCarousel2DBack?.filter(el => el.projectName === project?.projectName).map(item => ({
+          ...item,
+          src: require(`../../images/MyProjects/Back/${item.src}`),
+        }))
+      : DataCarousel2D?.filter(el => el.projectName === project?.projectName).map(item => ({
+          ...item,
+          src: require(`../../images/MyProjects/Front/${item.src}`),
+        }));
+
+    setDataCarousel2D(tempCar2D);
+  }, [carouselBack, project]);
 
   return (
     <S.Description>
@@ -135,12 +152,7 @@ const DescriptionCarouselContainer: React.FC<Props> = ({ project, onCloseDescrip
           {project?.descriptions}
         </Typography>
       </S.DiscriptionCarouselCont>
-      <DialogCarousel
-        open={openCarousel}
-        handleClose={handleClose}
-        carouselBack={carouselBack}
-        projectName={project?.projectName ?? ''}
-      />
+      <DialogCarousel open={openCarousel} handleClose={handleClose} dataCarousel2D={dataCarousel2D} />
     </S.Description>
   );
 };

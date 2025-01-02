@@ -1,0 +1,59 @@
+import { ImageListItem } from '@mui/material';
+import { styled } from '@mui/material/styles';
+
+export const StyledListItem = styled(ImageListItem)`
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  position: relative;
+
+  &:hover .styled-image {
+    opacity: 0.1;
+  }
+
+  &:hover .description {
+    opacity: 1;
+  }
+`;
+
+export const ThreeDotsBox = styled('div')`
+  justify-self: center;
+  z-index: 20;
+  grid-column: 1;
+  grid-row: 1;
+  color: ${({ theme }) => theme.palette.colorOrange.main};
+
+  cursor: pointer;
+
+  & .MuiSvgIcon-root {
+    height: 2rem;
+    width: 3rem;
+    background-color: ${({ theme }) => theme.palette.secondary.main};
+    margin-top: 1vh;
+    border-radius: 50%;
+  }
+`;
+
+export const StyledImage = styled('img')<{ commercial: boolean }>`
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  border: solid 4px;
+  border-color: ${({ theme, commercial }) =>
+    commercial ? theme.palette.primary.main : theme.palette.colorOrange.main};
+  transition: opacity 0.3s ease;
+  opacity: 1;
+`;
+
+export const Description = styled('div')`
+  width: 95%;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+  z-index: 10;
+  color: ${({ theme }) => theme.palette.colorBlue.main};
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding-top: 2vh;
+`;

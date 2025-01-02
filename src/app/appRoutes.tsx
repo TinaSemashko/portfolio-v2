@@ -12,7 +12,6 @@ const Hobby = lazy(() => import('../pages/hobby'));
 const Contact = lazy(() => import('../pages/contact'));
 const Galery = lazy(() => import('../pages/hobby/galery'));
 const Videopage = lazy(() => import('../pages/projects/pageVideo'));
-const CartProject = lazy(() => import('../pages/descriptionProjects'));
 const Conditions = lazy(() => import('../pages/conditions'));
 const Sertificats = lazy(() => import('../pages/sertificats'));
 
@@ -26,7 +25,6 @@ export const AppRoutes: React.FunctionComponent = () => (
     <Route path={Routes.contact} element={withSuspense(Contact)} />
     <Route path={Routes.galery} element={withSuspense(Galery)} />
     <Route path={Routes.videopage} element={withSuspense(Videopage)} />
-    <Route path={Routes.cartproject} element={withSuspense(CartProject)} />
     <Route path={Routes.conditions} element={withSuspense(Conditions)} />
     <Route path={Routes.sertificats} element={withSuspense(Sertificats)} />
 

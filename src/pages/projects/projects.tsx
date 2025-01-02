@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { ImageList, Link, Typography, useMediaQuery } from '@mui/material';
+import { Link, Typography, useMediaQuery } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
-import { Carousel3d, DataListMenu } from '../../types/projects';
+import { Carousel3d, CarouselProjectImg, DataListMenu } from '../../types/projects';
 import { imagesCarousel } from '../../shared/carousel3D/dataCarousel';
 import Carousel from '../../shared/carousel3D/carousel3d';
 import { theme } from '../../app/app';
@@ -10,11 +10,12 @@ import ProjectsMobile from './projectsMobile';
 import LaunchIcon from '@mui/icons-material/Launch';
 import CastIcon from '@mui/icons-material/Cast';
 import CastConnectedIcon from '@mui/icons-material/CastConnected';
-import ContextMenuButton from '../../shared/contextMenuButton';
 import { openLink } from '../../shared/utils';
-import DialogCarousel from '../../shared/dialog';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import HighlightedText from '../../shared/highlightedText';
+import { DataCarousel2D } from '../dataCarousel2D/dataCarousel2D';
+import { DataCarousel2DBack } from '../dataCarousel2D/dataCarousel2Dback';
+import ListImages from '../../shared/listImages';
 
 import * as S from './projects.styled';
 
@@ -34,6 +35,7 @@ const Projects: React.FC = () => {
   const [carouselBack, setCarouselBack] = useState(false);
   const [selectedProjectName, setSelectedProjectName] = useState<string | null>(null);
   const [imageMapList, setImageMapList] = useState<Carousel3d[]>([]);
+  const [dataCarousel2D, setDataCarousel2D] = useState<CarouselProjectImg[]>([]);
   const [showCarousel, setshowCarousel] = useState<boolean>(false);
   const smScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const lgScreen = useMediaQuery(theme.breakpoints.down('lg'));
@@ -49,6 +51,20 @@ const Projects: React.FC = () => {
     setImageMapList(tempCar);
   }, []);
 
+  useEffect(() => {
+    const tempCar2D = carouselBack
+      ? DataCarousel2DBack?.filter(el => el.projectName === selectedProjectName).map(item => ({
+          ...item,
+          src: require(`../../images/MyProjects/Back/${item.src}`),
+        }))
+      : DataCarousel2D?.filter(el => el.projectName === selectedProjectName).map(item => ({
+          ...item,
+          src: require(`../../images/MyProjects/Front/${item.src}`),
+        }));
+
+    setDataCarousel2D(tempCar2D);
+  }, [carouselBack, selectedProjectName]);
+
   const handleClose = (): void => {
     setOpenCarousel(false);
     setCarouselBack(false);
@@ -56,6 +72,7 @@ const Projects: React.FC = () => {
   };
 
   const openCarouselDialog = (projectName: string): void => {
+    console.log(projectName);
     setSelectedProjectName(projectName);
     setOpenCarousel(true);
   };
@@ -66,14 +83,14 @@ const Projects: React.FC = () => {
       title: t('carousel2d.button_project'),
       variantTypography: 'body1',
       disabled: !item.openProject,
-      clickHandler: () => openLink(item.linkProject),
+      clickHandler: () => openLink(item.linkProject ?? ''),
     },
     {
       MenuIcon: CastIcon,
       title: t('carousel2d.button_screenshots'),
       variantTypography: 'body1',
       disabled: false,
-      clickHandler: () => openCarouselDialog(item.projectName),
+      clickHandler: () => openCarouselDialog(item.projectName ?? ''),
     },
     {
       MenuIcon: CastConnectedIcon,
@@ -81,7 +98,7 @@ const Projects: React.FC = () => {
       variantTypography: 'body1',
       disabled: false,
       clickHandler: () => {
-        openCarouselDialog(item.projectName);
+        openCarouselDialog(item.projectName ?? '');
         setCarouselBack(true);
       },
     },
@@ -95,7 +112,7 @@ const Projects: React.FC = () => {
     { word: t('projects.coleur1'), color: `${theme.palette.primary.main}` },
     { word: t('projects.coleur2'), color: `${theme.palette.colorOrange.main}` },
   ];
-
+  console.log(dataCarousel2D);
   return (
     <S.MainContainer>
       <Helmet>
@@ -136,62 +153,69 @@ const Projects: React.FC = () => {
               <Carousel />
             </S.CarouselContainer>
           ) : (
-            <ImageList
-              variant="masonry"
+            <ListImages
+              data={imageMapList}
               cols={lgScreen ? 2 : 3}
               gap={lgScreen ? 5 : 10}
-              sx={{
-                width: '90%',
-                height: '100%',
-                border: 'solid',
-                borderColor: 'beige.main',
-                p: 1.5,
-              }}>
-              {imageMapList.map(item => (
-                <S.StyledListItem key={item.src}>
-                  <S.ThreeDotsBox>
-                    <ContextMenuButton dataListMenu={dataListMenu(item)} orientation="horizontal" />
-                  </S.ThreeDotsBox>
-                  <S.StyledImage
-                    className="styled-image"
-                    commercial={item.commercial}
-                    srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                    src={`${item.src}?w=248&fit=crop&auto=format`}
-                    alt={item.alt}
-                    loading="lazy"
-                  />
-                  <S.Description className="description">
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        fontSize: fontSizeDescription,
-                      }}>
-                      {item.projectTitre}
-                    </Typography>
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        fontSize: fontSizeDescription,
-                      }}>
-                      {t(`projects.${item.projectName}`)}
-                    </Typography>
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        fontSize: fontSizeDescription,
-                      }}>
-                      {item.descriptions}
-                    </Typography>
-                  </S.Description>
-                </S.StyledListItem>
-              ))}
-              <DialogCarousel
-                open={openCarousel}
-                handleClose={handleClose}
-                carouselBack={carouselBack}
-                projectName={selectedProjectName || ''}
-              />
-            </ImageList>
+              fontSizeDescription={fontSizeDescription}
+              dataListMenu={dataListMenu}
+              dialogData={{
+                open: openCarousel,
+                handleClose,
+                dataCarousel2D,
+              }}
+            />
+            // <ImageList
+            //   variant="masonry"
+            //   cols={lgScreen ? 2 : 3}
+            //   gap={lgScreen ? 5 : 10}
+            //   sx={{
+            //     width: '90%',
+            //     height: '100%',
+            //     border: 'solid',
+            //     borderColor: 'beige.main',
+            //     p: 1.5,
+            //   }}>
+            //   {imageMapList.map(item => (
+            //     <S.StyledListItem key={item.src}>
+            //       <S.ThreeDotsBox>
+            //         <ContextMenuButton dataListMenu={dataListMenu(item)} orientation="horizontal" />
+            //       </S.ThreeDotsBox>
+            //       <S.StyledImage
+            //         className="styled-image"
+            //         commercial={item.commercial}
+            //         srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
+            //         src={`${item.src}?w=248&fit=crop&auto=format`}
+            //         alt={item.alt}
+            //         loading="lazy"
+            //       />
+            //       <S.Description className="description">
+            //         <Typography
+            //           variant="body1"
+            //           sx={{
+            //             fontSize: fontSizeDescription,
+            //           }}>
+            //           {item.projectTitre}
+            //         </Typography>
+            //         <Typography
+            //           variant="body1"
+            //           sx={{
+            //             fontSize: fontSizeDescription,
+            //           }}>
+            //           {t(`projects.${item.projectName}`)}
+            //         </Typography>
+            //         <Typography
+            //           variant="body1"
+            //           sx={{
+            //             fontSize: fontSizeDescription,
+            //           }}>
+            //           {item.descriptions}
+            //         </Typography>
+            //       </S.Description>
+            //     </S.StyledListItem>
+            //   ))}
+            //   <DialogCarousel open={openCarousel} handleClose={handleClose} dataCarousel2D={dataCarousel2D} />
+            // </ImageList>
           )}
         </>
       )}

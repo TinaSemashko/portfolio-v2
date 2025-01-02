@@ -8,8 +8,7 @@ interface HighlightProps {
 
 const HighlightedText: React.FC<HighlightProps> = ({ phrase, wordsWithColors }) => {
   const parts = phrase.split(new RegExp(`(${wordsWithColors.map(w => w.word).join('|')})`, 'g'));
-  console.log(phrase);
-  console.log(parts);
+
   return (
     <Typography variant="h6" sx={{ pt: 4 }}>
       {parts.map((part, index) => {

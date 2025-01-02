@@ -1,24 +1,24 @@
 import { Dialog } from '@mui/material';
 import Carousel from '../../pages/projects/carousel';
 import CloseIcon from '@mui/icons-material/Close';
+import { CarouselProjectImg } from '../../types/projects';
 
 import * as S from './dialog.styled';
 
 type ModalProps = {
   open: boolean;
   handleClose: () => void;
-  projectName: string;
-  carouselBack: boolean;
+  dataCarousel2D: CarouselProjectImg[];
 };
 
-const DialogCarousel: React.FC<ModalProps> = ({ open, handleClose, projectName, carouselBack }) => {
+const DialogCarousel: React.FC<ModalProps> = ({ open, handleClose, dataCarousel2D }) => {
   return (
     <Dialog open={open} onClose={handleClose} fullScreen>
       <S.ColorContainer>
         <CloseIcon color="primary" sx={{ fontSize: '2rem' }} onClick={handleClose} />
       </S.ColorContainer>
 
-      <Carousel projectName={projectName} back={carouselBack} />
+      <Carousel dataCarousel2D={dataCarousel2D} />
     </Dialog>
   );
 };
