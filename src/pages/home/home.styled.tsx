@@ -5,7 +5,7 @@ import PrimaryButton from '../../shared/primaryButton';
 export const MainContainer = styled('div')`
   width: 100%;
   overflow-x: hidden;
-  background-color: ${({ theme }) => theme.palette.secondary.main};
+  background-color: ${({ theme }) => theme.palette.beige.main};
 `;
 
 export const GridContainer = styled('div')`

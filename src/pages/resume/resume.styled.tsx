@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import img from '../../images/fonCV.webp';
+import { alpha, styled } from '@mui/material/styles';
+import img from '../../images/fon-cv.webp';
 
 export const MainContainer = styled('div')`
   padding-top: 10vh;
@@ -9,15 +9,16 @@ export const MainContainer = styled('div')`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: ${({ theme }) => theme.palette.primary.main};
+  position: relative;
+
   background-image: url(${img});
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  position: relative;
 `;
 
 export const BackgroundMain = styled('div')`
-  background-color: ${({ theme }) => theme.palette.secondary.main};
+  background-color: ${({ theme }) => theme.palette.beige.main};
   border: solid;
   box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b, inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
 `;
@@ -91,25 +92,29 @@ export const ButtonCV = styled(Button)`
     width: 100%;
     height: inherit;
     border-radius: inherit;
-    background: linear-gradient(82.3deg, #7c3b30 10.8%, #e5dee5 94.3%);
+    background: linear-gradient(
+      82.3deg,
+      ${({ theme }) => theme.palette.colorBlue.main} 10.8%,
+      ${({ theme }) => theme.palette.secondary.main} 94.3%
+    );
     transition: all 0.475s;
   }
 
   outline: none;
-  color: ${({ theme }) => theme.palette.chocolate.main};
+  color: ${({ theme }) => theme.palette.primary.main};
   padding: 1em;
   padding-left: 3em;
   padding-right: 3em;
   border: 2px dashed;
-  border-color: ${({ theme }) => theme.palette.chocolate.main};
+  border-color: ${({ theme }) => theme.palette.primary.main};
   border-radius: 15px;
-  background-color: ${({ theme }) => theme.palette.beige.main};
-  box-shadow: 0 0 0 4px #7c3b30, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+  background-color: ${({ theme }) => theme.palette.secondary.main};
+  box-shadow: 0 0 0 4px ${({ theme }) => theme.palette.colorBlue.main}, 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
   transition: 0.1s ease-in-out, 0.4s color;
 
   &:active {
     transform: translateX(0.1em) translateY(0.1em);
-    box-shadow: 0 0 0 4px #7c3b30, 1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 4px ${({ theme }) => theme.palette.colorBlue.main}, 1.5px 1.5px 2.5px 1.5px rgba(0, 0, 0, 0.5);
   }
 
   &.MuiButton-root {
@@ -298,7 +303,7 @@ export const ExpTitle = styled('div')`
   justify-content: center;
   align-items: center;
   width: 100%;
-  color: ${({ theme }) => theme.palette.colorBrightBlue.main};
+  color: ${({ theme }) => theme.palette.primary.main};
   text-shadow: 1px 1px 0 #05174b, 1px -1px 0 #05174b, -1px 1px 0 #05174b, -1px -1px 0 #05174b;
 
   grid-column: 1 / span 3;
@@ -374,12 +379,45 @@ export const Hobby = styled('div')`
   padding-right: 8vw;
 `;
 
-export const SectionHobby = styled('div')`
-  background-color: #98716a89;
+export const SectionHobby = styled('div')(({ theme }) => ({
+  backgroundColor: alpha(theme.palette.colorBlue.main, 0.3),
+  width: '20vw',
+  paddingTop: '1vh',
+  paddingBottom: '1vh',
+  color: theme.palette.secondary.main,
+
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+
+  boxShadow: '-1px -5px 15px #41465b, 5px 5px 15px #41465b, inset 5px 5px 10px #212121, inset -5px -5px 10px #212121',
+
+  animation: 'floatAnimation 3s ease-in-out infinite',
+
+  '@keyframes floatAnimation': {
+    '0%, 100%': {
+      transform: 'translateY(0)',
+    },
+    '50%': {
+      transform: 'translateY(-10px)',
+    },
+  },
+
+  [theme.breakpoints.down('xl')]: {
+    width: '30vw',
+  },
+
+  [theme.breakpoints.down('lg')]: {
+    width: '50vw',
+  },
+}));
+
+export const SectionHobby11 = styled('div')`
+  background-color: ${({ theme }) => theme.palette.colorBlue.main};
   width: 20vw;
   padding-top: 1vh;
   padding-bottom: 1vh;
-  color: ${({ theme }) => theme.palette.colorGrey.main};
+  color: ${({ theme }) => theme.palette.secondary.main};
 
   display: flex;
   justify-content: center;

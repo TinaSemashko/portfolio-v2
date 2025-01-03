@@ -1,5 +1,4 @@
 import Typography from '@mui/material/Typography';
-import { ImageList } from '@mui/material';
 import ContextMenuButton from '../contextMenuButton';
 import DialogCarousel from '../dialog';
 import { Carousel3d, CarouselProjectImg, DataListMenu } from '../../types/projects';
@@ -12,7 +11,7 @@ type ModalProps = {
   cols?: number;
   gap?: number;
   styles?: React.CSSProperties;
-  fontSizeDescription: Record<string, string>;
+  fontSizeDescription?: Record<string, string>;
   dataListMenu?: (item: Carousel3d) => DataListMenu[];
   dialogData?: {
     open: boolean;
@@ -32,7 +31,7 @@ const ListImages: React.FC<ModalProps> = ({
 }) => {
   const { t } = useTranslation();
   return (
-    <ImageList
+    <S.StyledImageList
       variant="masonry"
       cols={cols}
       gap={gap}
@@ -79,7 +78,7 @@ const ListImages: React.FC<ModalProps> = ({
           dataCarousel2D={dialogData.dataCarousel2D}
         />
       )}
-    </ImageList>
+    </S.StyledImageList>
   );
 };
 

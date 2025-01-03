@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles';
 import PrimaryButton from '../../shared/primaryButton';
 import { ImageListItem } from '@mui/material';
+import img from '../../images/fon-it1.webp';
 
 export const MainContainer = styled('div')`
   text-align: center;
@@ -10,8 +11,10 @@ export const MainContainer = styled('div')`
   flex-direction: column;
   align-items: center;
   margin-bottom: 15vh;
-
   background-color: ${({ theme }) => theme.palette.secondary.main};
+  background-image: url(${img});
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 export const Title = styled('div')`
@@ -26,6 +29,10 @@ export const StyledListItem = styled(ImageListItem)`
   grid-template-columns: 100%;
   grid-template-rows: 100%;
   position: relative;
+  background-color: ${({ theme }) => theme.palette.beige.main};
+  background-image: url(${img});
+  background-repeat: no-repeat;
+  background-size: cover;
 
   &:hover .styled-image {
     opacity: 0.1;

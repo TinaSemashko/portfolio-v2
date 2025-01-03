@@ -11,8 +11,6 @@ const Resume = lazy(() => import('../pages/resume'));
 const Hobby = lazy(() => import('../pages/hobby'));
 const Contact = lazy(() => import('../pages/contact'));
 const Galery = lazy(() => import('../pages/hobby/galery'));
-const Videopage = lazy(() => import('../pages/projects/pageVideo'));
-const Conditions = lazy(() => import('../pages/conditions'));
 const Sertificats = lazy(() => import('../pages/sertificats'));
 
 export const AppRoutes: React.FunctionComponent = () => (
@@ -24,8 +22,6 @@ export const AppRoutes: React.FunctionComponent = () => (
     <Route path={Routes.hobby} element={withSuspense(Hobby)} />
     <Route path={Routes.contact} element={withSuspense(Contact)} />
     <Route path={Routes.galery} element={withSuspense(Galery)} />
-    <Route path={Routes.videopage} element={withSuspense(Videopage)} />
-    <Route path={Routes.conditions} element={withSuspense(Conditions)} />
     <Route path={Routes.sertificats} element={withSuspense(Sertificats)} />
 
     <Route path="*" element={<NotFound />} />

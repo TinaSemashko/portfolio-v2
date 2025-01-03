@@ -165,57 +165,6 @@ const Projects: React.FC = () => {
                 dataCarousel2D,
               }}
             />
-            // <ImageList
-            //   variant="masonry"
-            //   cols={lgScreen ? 2 : 3}
-            //   gap={lgScreen ? 5 : 10}
-            //   sx={{
-            //     width: '90%',
-            //     height: '100%',
-            //     border: 'solid',
-            //     borderColor: 'beige.main',
-            //     p: 1.5,
-            //   }}>
-            //   {imageMapList.map(item => (
-            //     <S.StyledListItem key={item.src}>
-            //       <S.ThreeDotsBox>
-            //         <ContextMenuButton dataListMenu={dataListMenu(item)} orientation="horizontal" />
-            //       </S.ThreeDotsBox>
-            //       <S.StyledImage
-            //         className="styled-image"
-            //         commercial={item.commercial}
-            //         srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            //         src={`${item.src}?w=248&fit=crop&auto=format`}
-            //         alt={item.alt}
-            //         loading="lazy"
-            //       />
-            //       <S.Description className="description">
-            //         <Typography
-            //           variant="body1"
-            //           sx={{
-            //             fontSize: fontSizeDescription,
-            //           }}>
-            //           {item.projectTitre}
-            //         </Typography>
-            //         <Typography
-            //           variant="body1"
-            //           sx={{
-            //             fontSize: fontSizeDescription,
-            //           }}>
-            //           {t(`projects.${item.projectName}`)}
-            //         </Typography>
-            //         <Typography
-            //           variant="body1"
-            //           sx={{
-            //             fontSize: fontSizeDescription,
-            //           }}>
-            //           {item.descriptions}
-            //         </Typography>
-            //       </S.Description>
-            //     </S.StyledListItem>
-            //   ))}
-            //   <DialogCarousel open={openCarousel} handleClose={handleClose} dataCarousel2D={dataCarousel2D} />
-            // </ImageList>
           )}
         </>
       )}

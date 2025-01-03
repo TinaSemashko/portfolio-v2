@@ -2,14 +2,14 @@ import { SvgIconTypeMap, TypographyVariant } from '@mui/material';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 
 export type Carousel3d = {
-  imageName: string;
+  imageName?: string;
   src: string;
   descriptions?: string;
   linkGit?: string;
   linkProject?: string;
   linkVideo?: string;
   degY?: number;
-  alt?: string;
+  alt: string;
   projectName?: string;
   projectTitre?: string;
   openProject?: boolean;
@@ -27,9 +27,9 @@ export type CarouselImg = {
 };
 
 export type CarouselProjectImg = {
-  imageName: string;
-  description: string;
-  general: boolean;
+  imageName?: string;
+  description?: string;
+  general?: boolean;
   src: string;
   alt: string;
   projectName?: string;

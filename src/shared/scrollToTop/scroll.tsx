@@ -54,15 +54,15 @@ const Scroll: React.FC<Props> = ({ showBelow }) => {
             },
 
             '&:hover *': {
-              color: 'chocolate.main',
+              color: 'colorBlue.main',
               backgroundColor: 'transparent',
               transition: '0.5s',
             },
           }}>
-          <NavigationIcon color={pathname === Routes.resume ? 'primary' : 'secondary'} />
+          <NavigationIcon color={pathname === Routes.resume ? 'primary' : 'primary'} />
           <Typography
             variant="body2"
-            color={pathname === Routes.resume ? 'primary' : 'secondary'}
+            color={pathname === Routes.resume ? 'primary' : 'primary'}
             sx={{ transform: 'rotate(90deg)', py: 4 }}>
             {t('main.backToTop')}
           </Typography>

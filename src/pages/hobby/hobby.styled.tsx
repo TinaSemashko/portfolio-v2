@@ -79,7 +79,7 @@ export const StyleText = styled('div')`
   text-align: center;
   grid-row: 1;
   grid-column: 1;
-  color: ${({ theme }) => theme.palette.colorBrightBlue.main};
+  color: ${({ theme }) => theme.palette.primary.main};
   cursor: pointer;
   z-index: 10;
   place-self: center;
