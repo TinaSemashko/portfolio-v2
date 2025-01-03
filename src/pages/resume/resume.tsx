@@ -3,13 +3,15 @@ import Avatar from '../../images/avatar.jpg';
 import { Helmet } from 'react-helmet';
 import Divider from '@mui/material/Divider';
 import { List, ListItem, Typography, useMediaQuery } from '@mui/material';
-import Social from '../../shared/socialLinks';
 import parse from 'html-react-parser';
 import { arrayExperiences, arrayEducations, arrayCompetences, arrayResume, arrayCourses } from './dataCV';
 import CV_PDF from '../../images/resume.pdf';
 import { theme } from '../../app/app';
 
 import * as S from './resume.styled';
+import { Routes } from '../../app/routes';
+import PrimaryButton from '../../shared/primaryButton';
+import { useNavigate } from 'react-router';
 
 const fontSizeH4 = {
   xxs: '0.7rem',
@@ -35,6 +37,7 @@ const Resume: React.FC = () => {
   const { t } = useTranslation();
   const mediumScreen = useMediaQuery(theme.breakpoints.down('xl'));
   const largeScreen = useMediaQuery(theme.breakpoints.up('xl'));
+  const navigate = useNavigate();
 
   return (
     <S.MainContainer>
@@ -94,7 +97,7 @@ const Resume: React.FC = () => {
       <Divider />
       <S.FlexInformationContainer>
         <S.Line>
-          <Social />
+          <PrimaryButton label={t('footer.contact')} onClick={() => navigate(Routes.contact)} />
         </S.Line>
         <S.GridExpCompetences>
           <S.Experience>
