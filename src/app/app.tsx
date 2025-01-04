@@ -64,15 +64,15 @@ export let theme = createTheme({
       fontDisplay: 'optional',
     },
     h4: {
-      fontFamily: 'Kurale , sans-serif, Arial',
+      fontFamily: 'Jura, serif, Arial',
       fontDisplay: 'optional',
     },
     h5: {
-      fontFamily: 'Kurale , sans-serif, Helvetica',
+      fontFamily: 'Jura, serif,  Helvetica',
       fontDisplay: 'optional',
     },
     h6: {
-      fontFamily: 'Kurale , sans-serif, Helvetica',
+      fontFamily: 'Jura, serif,  Helvetica',
       fontDisplay: 'optional',
     },
     body1: {

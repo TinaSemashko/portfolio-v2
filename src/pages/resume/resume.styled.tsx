@@ -1,6 +1,9 @@
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
 import img from '../../images/fon-cv.webp';
+import img1 from '../../images/papier.webp';
+import img2 from '../../images/papier1.webp';
+import PrimaryButton from '../../shared/primaryButton';
 
 export const MainContainer = styled('div')`
   padding-top: 10vh;
@@ -18,18 +21,24 @@ export const MainContainer = styled('div')`
 `;
 
 export const BackgroundMain = styled('div')`
-  background-color: ${({ theme }) => theme.palette.beige.main};
+  background-color: ${({ theme }) => theme.palette.secondary.main};
+  background-image: url(${img2});
+  background-repeat: no-repeat;
+  background-size: cover;
   border: solid;
   box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b, inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
 `;
 
 export const MainGridContainer = styled(BackgroundMain)`
-  width: 50%;
+  width: 60%;
   padding-top: 4vh;
   padding-bottom: 4vh;
   padding-left: 4vw;
   padding-right: 4vw;
 
+  background-image: url(${img2});
+  background-repeat: no-repeat;
+  background-size: cover;
   @media (max-width: 1200px) {
     width: 95%;
   }
@@ -156,6 +165,34 @@ export const TextBox = styled('div')`
   }
 `;
 
+export const StyledTypographyResume = styled(Typography)`
+  & .MuiTypography-root {
+    font-family: 'Helvetica , serif, Arial';
+    font-size: 1.2rem;
+    /* font-weight: 700; */
+    padding-top: 0;
+
+    ${({ theme }) => theme.breakpoints.down('lg')} {
+      font-size: 1rem;
+    }
+
+    ${({ theme }) => theme.breakpoints.down('md')} {
+      font-size: 0.8rem;
+    }
+
+    ${({ theme }) => theme.breakpoints.down('sm')} {
+      font-size: 0.6rem;
+    }
+
+    ${({ theme }) => theme.breakpoints.down('xs')} {
+      font-size: 0.5rem;
+    }
+    ${({ theme }) => theme.breakpoints.down('xxs')} {
+      font-size: 0.5rem;
+    }
+  }
+`;
+
 export const FlexInformationContainer = styled(BackgroundMain)`
   grid-column: 2 / span 2;
   grid-row: 3;
@@ -165,22 +202,38 @@ export const FlexInformationContainer = styled(BackgroundMain)`
   justify-content: space-between;
   align-items: center;
 
+  background-image: url(${img1});
+  background-repeat: no-repeat;
+  background-size: cover;
+
   @media (max-width: 1200px) {
     width: 95%;
   }
 `;
 
 export const Line = styled(BackgroundMain)`
-  width: 62.5%;
-  height: 10vh;
-  background-color: ${({ theme }) => theme.palette.beige.main};
+  width: 75%;
+  height: 11vh;
+  background-color: ${({ theme }) => theme.palette.primary.main};
   text-align: center;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 
   @media (max-width: 1200px) {
     display: none;
+  }
+`;
+
+export const StyledButton = styled(PrimaryButton)`
+  text-transform: uppercase;
+  position: relative;
+  align-self: center;
+  justify-self: center;
+  color: ${({ theme }) => theme.palette.secondary.main};
+
+  &.MuiButton-root {
+    margin-top: 0;
   }
 `;
 
@@ -347,6 +400,18 @@ export const SectionPoint = styled('div')`
   }
 `;
 
+export const Circle = styled('div')`
+  width: 20px; /* Диаметр круга */
+  height: 20px; /* Диаметр круга */
+  background-color: ${({ theme }) => theme.palette.primary.main};
+  border-radius: 50%; /* Делает элемент круглым */
+
+  @media (max-width: 1200px) {
+    width: 15px; /* Меньший круг для мобильных устройств */
+    height: 15px;
+  }
+`;
+
 export const SectionOrganisation = styled('div')`
   grid-column: 3;
   text-align: left;
@@ -357,7 +422,7 @@ export const CoursesTitle = styled('div')`
   margin-top: 8vh;
   grid-column: 1 / span 3;
   text-align: center;
-  color: ${({ theme }) => theme.palette.beige.main};
+  color: ${({ theme }) => theme.palette.colorBlue.main};
 `;
 
 export const Courses = styled('ul')`
@@ -382,8 +447,8 @@ export const Hobby = styled('div')`
 export const SectionHobby = styled('div')(({ theme }) => ({
   backgroundColor: alpha(theme.palette.colorBlue.main, 0.3),
   width: '20vw',
-  paddingTop: '1vh',
-  paddingBottom: '1vh',
+  height: '6vh',
+
   color: theme.palette.secondary.main,
 
   display: 'flex',
@@ -412,43 +477,23 @@ export const SectionHobby = styled('div')(({ theme }) => ({
   },
 }));
 
-export const SectionHobby11 = styled('div')`
-  background-color: ${({ theme }) => theme.palette.colorBlue.main};
-  width: 20vw;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  color: ${({ theme }) => theme.palette.secondary.main};
+export const SectionHobbyMain = styled(SectionHobby)`
+  grid-row: 1;
+  grid-column: 1 / span 4;
+  cursor: pointer;
+  animation: floatAnimation 5s infinite;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b, inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
-
-  @keyframes floatAnimation {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  @media (max-width: 1200px) {
-    width: 30vw;
-  }
-
-  @media (max-width: 960px) {
-    width: 50vw;
+  & :hover {
+    background-color: ${({ theme }) => theme.palette.colorBlue.main};
   }
 `;
 
-export const TitleHobby = styled(SectionHobby)`
-  grid-row: 1;
-  grid-column: 1 / span 4;
-
-  animation: floatAnimation 5s infinite;
+export const StyledTypography = styled(Typography)`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const SectionHobby1 = styled(SectionHobby)`
@@ -460,16 +505,19 @@ export const SectionHobby1 = styled(SectionHobby)`
     margin-left: 18vw;
   }
 `;
+
 export const SectionHobby2 = styled(SectionHobby)`
   grid-row: 3;
   grid-column: 2;
   animation: floatAnimation 4.2s infinite;
 `;
+
 export const SectionHobby3 = styled(SectionHobby)`
   grid-row: 4;
   grid-column: 3;
   animation: floatAnimation 4s infinite;
 `;
+
 export const SectionHobby4 = styled(SectionHobby)`
   grid-row: 5;
   grid-column: 4;

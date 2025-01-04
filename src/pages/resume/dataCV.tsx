@@ -36,6 +36,12 @@ export const arrayExperiences: Experience[] = [
     nameOrg: 'experience.nameOrg4',
     exp: 'experience.exp4',
   },
+  {
+    dateEx: 'experience.dataEx5',
+    post: 'experience.post5',
+    nameOrg: 'experience.nameOrg5',
+    exp: 'experience.exp5',
+  },
 ];
 
 export const arrayEducations: Education[] = [
@@ -74,4 +80,4 @@ export const arrayCompetences: string[] = [
 
 export const arrayResume: string[] = ['resume1', 'resume2', 'resume3', 'resume4', 'resume5', 'resume6'];
 
-export const arrayCourses: string[] = ['cours1', 'cours2', 'cours3', 'cours4', 'cours5', 'cours6'];
+export const arrayCourses: string[] = ['cours7', 'cours1', 'cours2', 'cours3', 'cours4', 'cours5', 'cours6'];

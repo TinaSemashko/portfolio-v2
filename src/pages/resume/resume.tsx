@@ -7,11 +7,11 @@ import parse from 'html-react-parser';
 import { arrayExperiences, arrayEducations, arrayCompetences, arrayResume, arrayCourses } from './dataCV';
 import CV_PDF from '../../images/resume.pdf';
 import { theme } from '../../app/app';
+import { Routes } from '../../app/routes';
+import { useNavigate } from 'react-router';
 
 import * as S from './resume.styled';
-import { Routes } from '../../app/routes';
-import PrimaryButton from '../../shared/primaryButton';
-import { useNavigate } from 'react-router';
+import HighlightedText from '../../shared/highlightedText';
 
 const fontSizeH4 = {
   xxs: '0.7rem',
@@ -87,9 +87,17 @@ const Resume: React.FC = () => {
           </S.ButtonCV>
           <S.TextBox>
             {arrayResume.map(item => (
-              <Typography sx={{ fontSize: fontSizeH6 }}>
-                <li>{t(`resume.${item}`)}</li>
-              </Typography>
+              <S.StyledTypographyResume variant="h3">
+                <li>
+                  <HighlightedText
+                    phrase={t(`resume.${item}`)}
+                    highlightWords={{
+                      words: t(`resume.highlitingWords`),
+                      color: 'crimson',
+                    }}
+                  />
+                </li>
+              </S.StyledTypographyResume>
             ))}
           </S.TextBox>
         </S.ResumeContainer>
@@ -97,7 +105,7 @@ const Resume: React.FC = () => {
       <Divider />
       <S.FlexInformationContainer>
         <S.Line>
-          <PrimaryButton label={t('footer.contact')} onClick={() => navigate(Routes.contact)} />
+          <S.StyledButton label={t('footer.contact')} onClick={() => navigate(Routes.contact)} />
         </S.Line>
         <S.GridExpCompetences>
           <S.Experience>
@@ -116,11 +124,11 @@ const Resume: React.FC = () => {
                   </Typography>
                 </S.SectionDates>
                 <S.SectionPoint>
-                  <Typography variant="h1">.</Typography>
+                  <S.Circle />
                   <Divider
                     orientation="vertical"
                     sx={{
-                      borderColor: 'black',
+                      borderColor: 'primary.main',
                       mt: -3,
                     }}
                   />
@@ -191,11 +199,11 @@ const Resume: React.FC = () => {
                   </Typography>
                 </S.SectionDates>
                 <S.SectionPoint>
-                  <Typography variant="h1">.</Typography>
+                  <S.Circle />
                   <Divider
                     orientation="vertical"
                     sx={{
-                      borderColor: 'black',
+                      borderColor: 'primary.main',
                       mt: -3,
                     }}
                   />
@@ -268,9 +276,13 @@ const Resume: React.FC = () => {
       )}
       <S.Empty />
       <S.Hobby>
-        <S.TitleHobby>
-          <Typography variant="h3">{t('resume.hobby')}</Typography>
-        </S.TitleHobby>
+        <S.SectionHobbyMain
+          onClick={() => {
+            navigate(Routes.hobby);
+            window.scrollTo(0, 0);
+          }}>
+          <S.StyledTypography variant="h3">{t('resume.hobby')}</S.StyledTypography>
+        </S.SectionHobbyMain>
         <S.SectionHobby1>
           <Typography variant="h4">{t('hobby.voyages')}</Typography>
         </S.SectionHobby1>

@@ -62,7 +62,7 @@ const ListImages: React.FC<ModalProps> = ({
             <Typography variant="body1" sx={{ fontSize: fontSizeDescription }}>
               {item.projectTitre}
             </Typography>
-            <Typography variant="body1" sx={{ fontSize: fontSizeDescription }}>
+            <Typography variant="body1" sx={{ fontSize: fontSizeDescription, color: 'colorOrange.main' }}>
               {t(`projects.${item.projectName}`)}
             </Typography>
             <Typography variant="body1" sx={{ fontSize: fontSizeDescription }}>

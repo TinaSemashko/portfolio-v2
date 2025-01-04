@@ -22,7 +22,7 @@ export const VideoAccueil = styled('video')`
   grid-row: 1;
 
   width: 100vw;
-  padding-top: 10vh;
+  padding-top: 8vh;
   text-align: center;
   background-attachment: fixed;
   background-position: center;
