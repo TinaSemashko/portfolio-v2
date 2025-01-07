@@ -49,6 +49,7 @@ const Sertificats: React.FC = () => {
   const matchDownSm = useMediaQuery(theme.breakpoints.down('sm'));
   const matchDownMd = useMediaQuery(theme.breakpoints.down('md'));
   const [openCarousel, setOpenCarousel] = useState(false);
+  const [initialSlide, setInitialSlide] = useState(0);
 
   const handleClose = (): void => {
     setOpenCarousel(false);
@@ -68,12 +69,20 @@ const Sertificats: React.FC = () => {
               src={`${item.src}?w=248&fit=crop&auto=format`}
               alt={item.alt}
               loading="lazy"
-              onClick={() => setOpenCarousel(true)}
+              onClick={() => {
+                setInitialSlide(index);
+                setOpenCarousel(true);
+              }}
             />
           </S.StyledImageListItem>
         ))}
       </S.StyledImageList>
-      <DialogCarousel open={openCarousel} handleClose={handleClose} dataCarousel2D={itemData} />
+      <DialogCarousel
+        open={openCarousel}
+        handleClose={handleClose}
+        dataCarousel2D={itemData}
+        initialSlide={initialSlide}
+      />
     </S.MainContainer>
   );
 };

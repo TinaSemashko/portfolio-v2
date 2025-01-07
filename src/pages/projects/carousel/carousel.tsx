@@ -20,16 +20,16 @@ const GlobalStyles = createGlobalStyle`
   .slick-arrow.slick-next:before,
   .slick-arrow.slick-prev:before {
     content: "";
-   
   }
  
 `;
 
 type Props = {
   dataCarousel2D: CarouselProjectImg[];
+  initialSlide?: number;
 };
 
-const Carousel: React.FC<Props> = ({ dataCarousel2D }) => {
+const Carousel: React.FC<Props> = ({ dataCarousel2D, initialSlide }) => {
   const mediumScreen = useMediaQuery(theme.breakpoints.down('md'));
   const SampleNextArrow = (props: ArrowProps) => {
     const { className, style, onClick } = props;
@@ -70,7 +70,7 @@ const Carousel: React.FC<Props> = ({ dataCarousel2D }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    initialSlide: 0,
+    initialSlide: initialSlide ?? 0,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePreviosArrow />,
   };
