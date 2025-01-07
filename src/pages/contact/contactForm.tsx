@@ -56,23 +56,17 @@ const ContactForm: React.FC = () => {
       onSubmit={handleSubmit}
       component="form"
       sx={{
-        paddingTop: { xs: '4rem', sm: '4rem', md: '2rem' },
-        width: { xs: '90%', sm: '80%' },
-        height: '100%',
+        width: { xs: '90%', sm: '80%', xxl: '100%' },
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center',
       }}>
-      <Typography variant="h4" sx={{ color: 'chocolate.main ', fontWeight: '700' }}>
-        {t('general.contact_us')}
-      </Typography>
-
       <TextField
         sx={{
           width: '100%',
           marginTop: '1.5rem',
           border: 'solid',
-          backgroundColor: 'primary.main',
+          backgroundColor: 'beige.main',
           '& .MuiInputBase-root.MuiOutlinedInput-root': {
             fontSize: '1rem',
             color: 'primary.main',
@@ -107,7 +101,7 @@ const ContactForm: React.FC = () => {
           width: '100%',
           marginTop: '1.5rem',
           border: 'solid ',
-          backgroundColor: 'primary.main',
+          backgroundColor: 'beige.main',
           '& .MuiInputBase-root.MuiOutlinedInput-root': {
             fontSize: '1rem',
             color: 'primary.main',
@@ -142,7 +136,7 @@ const ContactForm: React.FC = () => {
           width: '100%',
           marginTop: '1.2rem',
           border: 'solid ',
-          backgroundColor: 'primary.main',
+          backgroundColor: 'beige.main',
           '& .MuiInputBase-root.MuiOutlinedInput-root': {
             fontSize: '1rem',
             color: 'primary.main',
@@ -155,7 +149,7 @@ const ContactForm: React.FC = () => {
         label={t('contact.message')}
         name="message"
         multiline
-        rows={8}
+        rows={4}
         variant="outlined"
         value={formData.message}
         onChange={handleInputChange}

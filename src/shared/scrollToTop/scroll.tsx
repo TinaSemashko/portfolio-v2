@@ -48,6 +48,8 @@ const Scroll: React.FC<Props> = ({ showBelow }) => {
             flexDirection: 'column',
             position: 'fixed',
             bottom: '10vh',
+            color: 'secondary.main',
+            zIndex: '100',
 
             '&:hover': {
               backgroundColor: 'inherit',
@@ -59,10 +61,10 @@ const Scroll: React.FC<Props> = ({ showBelow }) => {
               transition: '0.5s',
             },
           }}>
-          <NavigationIcon color={pathname === Routes.resume ? 'primary' : 'primary'} />
+          <NavigationIcon color={pathname === Routes.projects ? 'primary' : 'secondary'} />
           <Typography
             variant="body2"
-            color={pathname === Routes.resume ? 'primary' : 'primary'}
+            color={pathname === Routes.projects ? 'primary' : 'secondary'}
             sx={{ transform: 'rotate(90deg)', py: 4 }}>
             {t('main.backToTop')}
           </Typography>
