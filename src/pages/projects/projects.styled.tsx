@@ -10,7 +10,7 @@ export const MainContainer = styled('div')`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 15vh;
+  margin-bottom: 17vh;
   background-color: ${({ theme }) => theme.palette.secondary.main};
   background-image: url(${img});
   background-repeat: no-repeat;
