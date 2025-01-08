@@ -31,6 +31,7 @@ export const GridContainer = styled('div')`
   ${({ theme }) => theme.breakpoints.down('md')} {
     justify-items: center;
     grid-template-columns: 100%;
+    grid-template-rows: 30% 40% 40%;
   }
 `;
 
@@ -62,7 +63,7 @@ export const ButtonContainer = styled('div')`
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-template-columns: 25% 25% 25% 25%;
-
+    /* grid-template-rows: 25% 10% 2% 2% 2% 2% 2% 2% 2% 10% 30%; */
     padding-top: 2vh;
   }
 `;
