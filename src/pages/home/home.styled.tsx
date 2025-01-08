@@ -22,7 +22,7 @@ export const GridContainer = styled('div')`
   ${({ theme }) => theme.breakpoints.down('md')} {
     justify-items: center;
     grid-template-columns: 100%;
-    grid-template-rows: 25% 10% 10% 10% 25% 20%;
+    grid-template-rows: 25% 10% 10% 10% 27% 18%;
   }
 `;
 
@@ -164,6 +164,11 @@ export const Citate = styled(Typography)`
   text-align: center;
   padding-left: 2vw;
   padding-right: 2vw;
+
+  ${({ theme }) => theme.breakpoints.down('md')} {
+    padding-bottom: 0;
+    align-self: start;
+  }
 `;
 
 export const ElAnimation = styled('div')`
