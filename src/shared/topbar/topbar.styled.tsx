@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 
 export const MainContainer = styled('div')`
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   background: linear-gradient(315deg, var(--primary-color-opacity), var(--secondary-color-opacity));
 `;
 

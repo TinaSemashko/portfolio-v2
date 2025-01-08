@@ -5,9 +5,13 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 
 import * as S from './social.styled';
 
-const Social: React.FC = () => {
+type Props = {
+  directionRow: boolean;
+};
+
+const Social: React.FC<Props> = ({ directionRow }) => {
   return (
-    <S.SocialLinks>
+    <S.SocialLinks directionRow={directionRow}>
       <IconButton
         href="https://github.com/TinaSemashko"
         title="github"

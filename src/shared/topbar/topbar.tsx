@@ -15,25 +15,23 @@ import CloseIcon from '@mui/icons-material/Close';
 import { MenuItems } from '../../constants/menuItems';
 import LangButton from '../langButton';
 import CottageIcon from '@mui/icons-material/Cottage';
-import LaptopChromebookIcon from '@mui/icons-material/LaptopChromebook';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import SailingIcon from '@mui/icons-material/Sailing';
-import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
-import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import SocialLinks from '../socialLinks';
-import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
+import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
+import CodeIcon from '@mui/icons-material/Code';
+import SchoolIcon from '@mui/icons-material/School';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 import * as S from './topbar.styled';
 
 const menuItemsArray = Object.values(MenuItems);
 const menuIconsArray = [
   <CottageIcon />,
-  <LaptopChromebookIcon />,
+  <CodeIcon />,
+  <WorkHistoryIcon />,
+  <SchoolIcon />,
   <AccountCircleIcon />,
-  <PictureAsPdfIcon />,
-  <SailingIcon />,
-  <HistoryEduIcon />,
-  <ConnectWithoutContactIcon />,
+  <WhatsAppIcon />,
 ];
 
 const fontSizeMenu = {
@@ -77,7 +75,6 @@ const TopBar: React.FC = () => {
         color: 'primary.main',
         height: '100%',
         border: 'solid 1.2rem',
-        borderColor: '#82828269',
       }}>
       <S.CloseIconStyle>
         <Typography variant="h5" className="close">
@@ -94,7 +91,7 @@ const TopBar: React.FC = () => {
         }}>
         {menuItemsArray.map((item, index) => (
           <ListItem key={item} disablePadding>
-            <S.StyledListItemButton selected={isSelected(item)} sx={{ textShadow: '0.1em 0.1em 0.2em white' }}>
+            <S.StyledListItemButton selected={isSelected(item)}>
               <S.Dot>{menuIconsArray[index]}</S.Dot>
               <ListItemText
                 primary={t(`menu.${item}`)}
@@ -111,7 +108,7 @@ const TopBar: React.FC = () => {
       </List>
       <Divider variant="middle" sx={{ backgroundColor: 'primary.main', marginTop: topMargin }} />
       <S.Social>
-        <SocialLinks />
+        <SocialLinks directionRow={true} />
       </S.Social>
     </Box>
   );
@@ -164,9 +161,7 @@ const TopBar: React.FC = () => {
                     <S.StyledListItemButton
                       selected={isSelected(item)}
                       onClick={() => navigate(Routes[item as keyof typeof Routes])}>
-                      <Typography variant="h6" fontWeight="900">
-                        {t(`menu.${item}`)}
-                      </Typography>
+                      <Typography variant="h6">{t(`menu.${item}`)}</Typography>
                     </S.StyledListItemButton>
                   </ListItem>
                 ))}

@@ -30,7 +30,7 @@ const Home: React.FC = () => {
     <S.MainContainer isParallax={isParallax}>
       <S.StyledButton label={t('footer.contact')} onClick={() => navigate(Routes.contact)} />
       <S.SocialLinks>
-        <Social />
+        <Social directionRow={false} />
       </S.SocialLinks>
       <S.Langs>
         <LangButton colorPrime={false} iconWithoutSlash={true} selectMode={false} />
