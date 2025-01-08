@@ -22,7 +22,7 @@ export const GridContainer = styled('div')`
   ${({ theme }) => theme.breakpoints.down('md')} {
     justify-items: center;
     grid-template-columns: 100%;
-    grid-template-rows: 25% 10% 10% 10% 27% 18%;
+    grid-template-rows: 25% 8% 8% 10% 30% 19%;
   }
 `;
 
