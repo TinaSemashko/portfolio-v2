@@ -2,17 +2,16 @@ import { styled } from '@mui/material/styles';
 
 export const MainContainer = styled('div')`
   position: relative;
-  height: 100vh;
-  background-color: black;
+  max-height: 100vh;
+  /* background-color: black; */
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 100%;
-  margin-bottom: 16vh;
 `;
 
 export const BackgroundContainer = styled('div')`
   z-index: -2;
-  background-color: ${({ theme }) => theme.palette.colorBlack.main};
+  background-color: black;
   grid-column: 1;
   grid-row: 1;
 `;

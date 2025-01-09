@@ -6,7 +6,6 @@ export const MainContainer = styled('div')`
   align-items: center;
   justify-content: center;
   background-color: ${({ theme }) => theme.palette.beige.main};
-  margin-bottom: 16vh;
 
   @media (max-width: 750px) {
     flex-direction: column;
@@ -119,7 +118,7 @@ export const ButtonContainer = styled('div')`
 
   display: grid;
   grid-template-columns: 20% 80%;
-  /* grid-template-rows: 20% 11% 11% 11% 11% 11% 11% 14%; */
+
   justify-items: start;
   align-items: center;
 
@@ -272,18 +271,6 @@ export const ButtonText3 = styled(ButtonText)`
   }
 `;
 
-// export const ButtonText4 = styled(ButtonText)`
-//   grid-row: 8 / span 2;
-
-//   ${({ theme }) => theme.breakpoints.down('md')} {
-//     grid-row: 9;
-
-//     &.MuiButton-root {
-//       padding-bottom: 4vh;
-//     }
-//   }
-// `;
-
 export const QrContainer = styled('div')`
   grid-column: 1;
   grid-row: 2;
@@ -294,7 +281,6 @@ export const QrContainer = styled('div')`
     grid-row: 3;
     width: 20vw;
     padding-top: 0;
-    /* padding-bottom: 1vh; */
   }
   ${({ theme }) => theme.breakpoints.down('sm')} {
     width: 30vw;
@@ -309,18 +295,6 @@ export const QrImg = styled('img')`
   width: 100%;
   justify-self: center;
   align-self: end;
-
-  /* ${({ theme }) => theme.breakpoints.down('md')} {
-    width: 20vw;
-  }
-
-  ${({ theme }) => theme.breakpoints.down('sm')} {
-    width: 30vw;
-  }
-
-  ${({ theme }) => theme.breakpoints.down('xs')} {
-    width: 40vw;
-  } */
 `;
 
 export const FormContainer = styled('div')`
@@ -335,7 +309,7 @@ export const FormContainer = styled('div')`
     grid-row: 4;
 
     margin-top: 10vh;
-    /* margin-bottom: 10vh; */
+    margin-bottom: 10vh;
   }
 `;
 
