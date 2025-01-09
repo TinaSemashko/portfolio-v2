@@ -66,7 +66,7 @@ const ContactForm: React.FC = () => {
       <TextField
         sx={{
           width: '100%',
-          marginTop: { xxs: '0.1rem', xs: '0.1rem', sm: '0.4rem', md: '1rem', lg: '1.2rem' },
+          marginTop: { xxs: '0.5rem', xs: '0.6rem', sm: '1rem', md: '1rem', lg: '1.2rem' },
           border: 'solid',
           backgroundColor: 'beige.main',
           '& .MuiInputBase-root.MuiOutlinedInput-root': {
