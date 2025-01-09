@@ -141,7 +141,7 @@ const TopBar: React.FC = () => {
               mr: 2,
               display: { lg: 'none' },
             }}>
-            <MenuIcon />
+            <MenuIcon color="primary" />
           </IconButton>
           <S.FlexBox>
             <img src={logo} alt="logo" width="40vw" onClick={() => navigate(Routes.home)} />

@@ -31,8 +31,7 @@ export const GridContainer = styled('div')`
   ${({ theme }) => theme.breakpoints.down('md')} {
     justify-items: center;
     grid-template-columns: 100%;
-    grid-template-rows: 25% 40% 35%;
-    height: 100vh;
+    grid-template-rows: 25% 50% 25%;
   }
 `;
 
