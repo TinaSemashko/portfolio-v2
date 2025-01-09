@@ -63,7 +63,6 @@ export const ButtonContainer = styled('div')`
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-template-columns: 25% 25% 25% 25%;
-
     padding-top: 2vh;
   }
 `;
@@ -314,6 +313,8 @@ export const FormContainer = styled('div')`
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-column: 1;
     grid-row: 3;
+    width: 50%;
+    height: 50%;
   }
 `;
 
