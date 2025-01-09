@@ -113,9 +113,9 @@ const Contact: React.FC = () => {
             <S.QrImg src={watsappQr} alt="whatsapp-qr" />
           </S.ButtonText4>
         </S.ButtonContainer>
-        <S.FormContainer>
+        {/* <S.FormContainer>
           <ContactForm />
-        </S.FormContainer>
+        </S.FormContainer> */}
       </S.GridContainer>
     </S.MainContainer>
   );

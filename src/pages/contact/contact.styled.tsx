@@ -232,8 +232,6 @@ export const QrImg = styled('img')`
   ${({ theme }) => theme.breakpoints.down('md')} {
     width: 20vw;
     /* padding-top: 0; */
-
-    grid-row: 9;
   }
 
   ${({ theme }) => theme.breakpoints.down('sm')} {
