@@ -19,7 +19,7 @@ export const GridContainer = styled('div')`
 
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 40% 60%;
+  grid-template-rows: 40% 40% 20%;
 
   position: relative;
   justify-items: center;
@@ -38,7 +38,7 @@ export const GridContainer = styled('div')`
 export const ColorContainer = styled('div')`
   background-color: ${({ theme }) => theme.palette.primary.main};
   grid-column: 1 / span 2;
-  grid-row: 2;
+  grid-row: 2 / span 2;
   width: 100%;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
@@ -285,14 +285,21 @@ export const ButtonText3 = styled(ButtonText)`
 
 export const QrContainer = styled('div')`
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 3;
   padding-top: 1vh;
+  margin-left: 10rem;
+  margin-top: -8rem;
+  width: 10vw;
+  justify-self: start;
+  align-self: center;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-column: 1 / span 4;
-    grid-row: 3;
     width: 20vw;
     padding-top: 0;
+    margin-left: 0;
+    margin-top: 0;
+    justify-self: center;
   }
   ${({ theme }) => theme.breakpoints.down('sm')} {
     width: 30vw;
@@ -305,13 +312,11 @@ export const QrContainer = styled('div')`
 
 export const QrImg = styled('img')`
   width: 100%;
-  justify-self: center;
-  align-self: end;
 `;
 
 export const FormContainer = styled('div')`
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 2 / span 2;
   display: flex;
   justify-content: center;
   align-items: center;
