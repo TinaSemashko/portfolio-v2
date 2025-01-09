@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
           {t('general.contact_us')}
         </S.Titre>
 
-        {/* <S.ColorContainer /> */}
+        <S.ColorContainer />
         <S.ButtonContainer>
           <S.ImgSocial1 src={email} alt="email" width="50rem" />
           <S.TextContainer1 variant="h5" color="secondary">
@@ -71,7 +71,7 @@ const Contact: React.FC = () => {
             </Typography>
           </S.ButtonText1>
 
-          <S.ImgSocial2 src={linkedin} alt="linkedin" width="50rem" />
+          {/* <S.ImgSocial2 src={linkedin} alt="linkedin" width="50rem" />
           <S.TextContainer2 variant="h5" color="secondary">
             LinkedIn
           </S.TextContainer2>
@@ -111,7 +111,7 @@ const Contact: React.FC = () => {
           </S.TextContainer4>
           <S.ButtonText4 href="https://wa.me/33651870542">
             <S.QrImg src={watsappQr} alt="whatsapp-qr" />
-          </S.ButtonText4>
+          </S.ButtonText4> */}
         </S.ButtonContainer>
         <S.FormContainer>
           <ContactForm />
