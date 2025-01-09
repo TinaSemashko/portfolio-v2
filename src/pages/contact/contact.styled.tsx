@@ -292,8 +292,8 @@ export const QrContainer = styled('div')`
     grid-column: 1 / span 4;
     grid-row: 3;
     width: 20vw;
-    /* padding-top: 0; */
-    padding-bottom: 1vh;
+    padding-top: 0;
+    /* padding-bottom: 1vh; */
   }
   ${({ theme }) => theme.breakpoints.down('sm')} {
     width: 30vw;
