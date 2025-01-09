@@ -7,7 +7,7 @@ export const MainContainer = styled('div')`
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 100%;
-  margin-bottom: 19vh;
+  margin-bottom: 16vh;
 `;
 
 export const BackgroundContainer = styled('div')`
