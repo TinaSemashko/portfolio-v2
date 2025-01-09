@@ -104,12 +104,14 @@ const Contact: React.FC = () => {
               https://t.me/SemashkoTina
             </Typography>
           </S.ButtonText3>
-
-          <S.ImgSocial4 src={whatsapp} alt="whatsapp" />
+          <S.QrContainer>
+            <S.ImgSocial4 src={whatsapp} alt="whatsapp" />
+          </S.QrContainer>
           <S.TextContainer4 variant="h5" color="secondary">
             WhatsApp
           </S.TextContainer4>
         </S.ButtonContainer>
+
         <S.QrImg src={watsappQr} alt="whatsapp-qr" />
         <S.FormContainer>
           <ContactForm />

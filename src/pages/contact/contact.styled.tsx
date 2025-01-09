@@ -31,7 +31,7 @@ export const GridContainer = styled('div')`
   ${({ theme }) => theme.breakpoints.down('md')} {
     justify-items: center;
     grid-template-columns: 100%;
-    /* grid-template-rows: 25% 30% 10% 35%; */
+    grid-template-rows: 25% 20% 15% 40%;
   }
 `;
 
@@ -221,12 +221,7 @@ export const ButtonText3 = styled(ButtonText)`
 //   }
 // `;
 
-export const QrImg = styled('img')`
-  width: 10vw;
-  justify-self: center;
-  align-self: end;
-  padding-top: 1vh;
-
+export const QrContainer = styled('div')`
   grid-column: 1;
   grid-row: 2;
 
@@ -234,9 +229,26 @@ export const QrImg = styled('img')`
     grid-column: 1 / span 4;
     grid-row: 3;
     width: 20vw;
-
     padding-top: 0;
     padding-bottom: 2vh;
+  }
+  ${({ theme }) => theme.breakpoints.down('sm')} {
+    width: 30vw;
+  }
+
+  ${({ theme }) => theme.breakpoints.down('xs')} {
+    width: 40vw;
+  }
+`;
+
+export const QrImg = styled('img')`
+  width: 100%;
+  justify-self: center;
+  align-self: end;
+  padding-top: 1vh;
+
+  /* ${({ theme }) => theme.breakpoints.down('md')} {
+    width: 20vw;
   }
 
   ${({ theme }) => theme.breakpoints.down('sm')} {
@@ -245,7 +257,7 @@ export const QrImg = styled('img')`
 
   ${({ theme }) => theme.breakpoints.down('xs')} {
     width: 40vw;
-  }
+  } */
 `;
 
 export const Titre = styled(Typography)`
