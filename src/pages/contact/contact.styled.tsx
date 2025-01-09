@@ -328,12 +328,13 @@ export const FormContainer = styled('div')`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 4vh;
-  padding-bottom: 4vh;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-column: 1 / span 3;
     grid-row: 4;
+
+    padding-top: 10vh;
+    padding-bottom: 10vh;
   }
 `;
 
