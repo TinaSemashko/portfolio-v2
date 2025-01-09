@@ -32,6 +32,7 @@ export const GridContainer = styled('div')`
     justify-items: center;
     grid-template-columns: 100%;
     grid-template-rows: 25% 40% 35%;
+    height: 100vh;
   }
 `;
 
