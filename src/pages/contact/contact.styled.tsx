@@ -9,7 +9,7 @@ export const MainContainer = styled('div')`
 
   @media (max-width: 750px) {
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 `;
 
