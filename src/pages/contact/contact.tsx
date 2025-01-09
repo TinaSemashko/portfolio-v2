@@ -54,7 +54,9 @@ const Contact: React.FC = () => {
 
         <S.ColorContainer />
         <S.ButtonContainer>
-          <S.ImgSocial1 src={email} alt="email" width="50rem" />
+          <S.LinkSocial1 href="mailto:tina.semashko@gmail.com" target="_blank" rel="noopener noreferrer">
+            <S.ImgSocial src={email} alt="email" width="50rem" />
+          </S.LinkSocial1>
           <S.TextContainer1 variant="h5" color="secondary">
             Email
           </S.TextContainer1>
@@ -71,7 +73,9 @@ const Contact: React.FC = () => {
             </Typography>
           </S.ButtonText1>
 
-          <S.ImgSocial2 src={linkedin} alt="linkedin" width="50rem" />
+          <S.LinkSocial2 href="https://www.linkedin.com/in/tina-semashko/" target="_blank" rel="noopener noreferrer">
+            <S.ImgSocial src={linkedin} alt="linkedin" width="50rem" />
+          </S.LinkSocial2>
           <S.TextContainer2 variant="h5" color="secondary">
             LinkedIn
           </S.TextContainer2>
@@ -88,7 +92,9 @@ const Contact: React.FC = () => {
             </Typography>
           </S.ButtonText2>
 
-          <S.ImgSocial3 src={telegram} alt="telegram" width="50rem" />
+          <S.LinkSocial3 href="https://t.me/SemashkoTina" target="_blank" rel="noopener noreferrer">
+            <S.ImgSocial src={telegram} alt="telegram" width="50rem" />
+          </S.LinkSocial3>
           <S.TextContainer3 variant="h5" color="secondary">
             Telegram
           </S.TextContainer3>
@@ -104,7 +110,10 @@ const Contact: React.FC = () => {
               https://t.me/SemashkoTina
             </Typography>
           </S.ButtonText3>
-          <S.ImgSocial4 src={whatsapp} alt="whatsapp" />
+
+          <S.LinkSocial4 href="https://wa.me/33651870542" target="_blank" rel="noopener noreferrer">
+            <S.ImgSocial src={whatsapp} alt="whatsapp" />
+          </S.LinkSocial4>
           <S.TextContainer4 variant="h5" color="secondary">
             WhatsApp
           </S.TextContainer4>

@@ -2,7 +2,7 @@ import { styled } from '@mui/material/styles';
 
 export const MainContainer = styled('div')`
   position: relative;
-  max-height: 100vh;
+  min-height: 100vh;
   /* background-color: black; */
   display: grid;
   grid-template-columns: 100%;

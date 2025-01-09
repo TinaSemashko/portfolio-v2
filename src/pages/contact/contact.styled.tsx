@@ -129,44 +129,56 @@ export const ButtonContainer = styled('div')`
   }
 `;
 
-export const ImgSocial = styled('img')`
-  width: 3rem;
-  height: 3rem;
+export const LinkSocial = styled('a')`
   grid-column: 1;
-
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
   justify-self: center;
+  &:hover {
+    opacity: 0.8;
+  }
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-row: 1;
   }
 `;
 
-export const ImgSocial1 = styled(ImgSocial)`
+export const LinkSocial1 = styled(LinkSocial)`
   grid-row: 1 / span 2;
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-column: 1;
   }
 `;
 
-export const ImgSocial2 = styled(ImgSocial)`
+export const LinkSocial2 = styled(LinkSocial)`
   grid-row: 3 / span 2;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-column: 2;
   }
 `;
-export const ImgSocial3 = styled(ImgSocial)`
+export const LinkSocial3 = styled(LinkSocial)`
   grid-row: 5 / span 2;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-column: 3;
   }
 `;
-export const ImgSocial4 = styled(ImgSocial)`
+export const LinkSocial4 = styled(LinkSocial)`
   grid-row: 7 / span 3;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-column: 4;
+  }
+`;
+
+export const ImgSocial = styled('img')`
+  width: 3rem;
+  height: 3rem;
+
+  ${({ theme }) => theme.breakpoints.down('md')} {
+    grid-row: 1;
   }
 `;
 
