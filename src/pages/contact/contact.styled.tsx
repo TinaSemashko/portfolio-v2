@@ -31,7 +31,7 @@ export const GridContainer = styled('div')`
   ${({ theme }) => theme.breakpoints.down('md')} {
     justify-items: center;
     grid-template-columns: 100%;
-    grid-template-rows: 25% 50% 25%;
+    /* grid-template-rows: 25% 30% 10% 35%; */
   }
 `;
 
@@ -43,7 +43,7 @@ export const ColorContainer = styled('div')`
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-column: 1;
-    grid-row: 2 / span 2;
+    grid-row: 2 / span 3;
   }
 `;
 
@@ -57,7 +57,7 @@ export const ButtonContainer = styled('div')`
 
   display: grid;
   grid-template-columns: 20% 80%;
-  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 20%;
+  grid-template-rows: 20% 11% 11% 11% 11% 11% 11% 14%;
   justify-items: start;
   align-items: center;
 
@@ -225,11 +225,17 @@ export const ButtonText4 = styled(ButtonText)`
 export const QrImg = styled('img')`
   width: 10vw;
   justify-self: center;
-  align-self: center;
+  align-self: end;
   padding-top: 1vh;
 
+  grid-column: 1;
+  grid-row: 2;
+
   ${({ theme }) => theme.breakpoints.down('md')} {
+    grid-column: 1 / span 4;
+    grid-row: 3;
     width: 20vw;
+
     /* padding-top: 0; */
   }
 
@@ -312,7 +318,7 @@ export const FormContainer = styled('div')`
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-column: 1;
-    grid-row: 3;
+    grid-row: 4;
 
     height: 50%;
   }
