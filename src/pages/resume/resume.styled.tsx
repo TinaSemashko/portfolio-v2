@@ -168,8 +168,6 @@ export const TextBox = styled('div')`
 export const StyledTypographyResume = styled(Typography)`
   & .MuiTypography-root {
     font-family: 'Helvetica , serif, Arial';
-    font-size: 1.2rem;
-    /* font-weight: 700; */
     padding-top: 0;
 
     ${({ theme }) => theme.breakpoints.down('lg')} {

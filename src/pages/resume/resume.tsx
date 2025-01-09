@@ -86,19 +86,21 @@ const Resume: React.FC = () => {
             </a>
           </S.ButtonCV>
           <S.TextBox>
-            {arrayResume.map(item => (
-              <S.StyledTypographyResume variant="h3">
-                <li>
-                  <HighlightedText
-                    phrase={t(`resume.${item}`)}
-                    highlightWords={{
-                      words: t(`resume.highlitingWords`),
-                      color: 'crimson',
-                    }}
-                  />
-                </li>
-              </S.StyledTypographyResume>
-            ))}
+            <List sx={{ listStyleType: 'disc' }}>
+              {arrayResume.map(item => (
+                <ListItem disablePadding sx={{ display: 'list-item' }}>
+                  <S.StyledTypographyResume variant="h6">
+                    <HighlightedText
+                      phrase={t(`resume.${item}`)}
+                      highlightWords={{
+                        words: t(`resume.highlitingWords`),
+                        color: 'crimson',
+                      }}
+                    />
+                  </S.StyledTypographyResume>
+                </ListItem>
+              ))}
+            </List>
           </S.TextBox>
         </S.ResumeContainer>
       </S.MainGridContainer>
