@@ -148,6 +148,7 @@ export const TextContainer4 = styled(TextContainer)`
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-row: 8;
+    padding-bottom: 2vh;
   }
 `;
 
@@ -170,7 +171,6 @@ export const ButtonText = styled(Button)`
 
     &.MuiButton-root {
       padding-top: 0;
-      padding-bottom: 0;
     }
   }
 `;
@@ -180,6 +180,10 @@ export const ButtonText1 = styled(ButtonText)`
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-row: 3;
+
+    &.MuiButton-root {
+      padding-bottom: 0;
+    }
   }
 `;
 
@@ -188,6 +192,10 @@ export const ButtonText2 = styled(ButtonText)`
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-row: 5;
+
+    &.MuiButton-root {
+      padding-bottom: 0;
+    }
   }
 `;
 
@@ -196,6 +204,10 @@ export const ButtonText3 = styled(ButtonText)`
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-row: 7;
+
+    &.MuiButton-root {
+      padding-bottom: 0;
+    }
   }
 `;
 
@@ -204,6 +216,10 @@ export const ButtonText4 = styled(ButtonText)`
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-row: 9;
+
+    &.MuiButton-root {
+      padding-bottom: 4vh;
+    }
   }
 `;
 
@@ -216,7 +232,7 @@ export const QrImg = styled('img')`
   ${({ theme }) => theme.breakpoints.down('md')} {
     width: 20vw;
     /* padding-top: 0; */
-    padding-bottom: 1vh;
+
     grid-row: 9;
   }
 
