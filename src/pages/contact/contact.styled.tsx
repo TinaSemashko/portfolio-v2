@@ -6,6 +6,7 @@ export const MainContainer = styled('div')`
   align-items: center;
   justify-content: center;
   background-color: ${({ theme }) => theme.palette.beige.main};
+  margin-bottom: 16vh;
 
   @media (max-width: 750px) {
     flex-direction: column;
@@ -334,7 +335,7 @@ export const FormContainer = styled('div')`
     grid-row: 4;
 
     margin-top: 10vh;
-    margin-bottom: 2vh;
+    /* margin-bottom: 10vh; */
   }
 `;
 
