@@ -63,7 +63,7 @@ export const ButtonContainer = styled('div')`
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-template-columns: 25% 25% 25% 25%;
-    /* grid-template-rows: 25% 10% 2% 2% 2% 2% 2% 2% 2% 10% 30%; */
+
     padding-top: 2vh;
   }
 `;
@@ -167,6 +167,11 @@ export const ButtonText = styled(Button)`
     align-self: center;
     align-items: center;
     grid-column: 1 / span 4;
+
+    &.MuiButton-root {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
 `;
 
@@ -210,7 +215,8 @@ export const QrImg = styled('img')`
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     width: 20vw;
-    padding-top: 0;
+    /* padding-top: 0; */
+    padding-bottom: 1vh;
     grid-row: 9;
   }
 
@@ -235,6 +241,50 @@ export const Titre = styled(Typography)`
   z-index: 10;
   padding-top: 10vh;
   font-size: 40rem;
+
+  -webkit-animation: focus-in-expand-fwd 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: focus-in-expand-fwd 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+  /**
+ * ----------------------------------------
+ * animation focus-in-expand-fwd
+ * ----------------------------------------
+ */
+  @-webkit-keyframes focus-in-expand-fwd {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-800px);
+      transform: translateZ(-800px);
+      -webkit-filter: blur(12px);
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-filter: blur(0);
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+  @keyframes focus-in-expand-fwd {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-transform: translateZ(-800px);
+      transform: translateZ(-800px);
+      -webkit-filter: blur(12px);
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-filter: blur(0);
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-column: 1;
   }
@@ -269,6 +319,6 @@ export const BtnSubmit = styled(Button)`
   }
 
   ${({ theme }) => theme.breakpoints.down('md')} {
-    margin-bottom: 3rem;
+    margin-bottom: 0.5rem;
   }
 `;

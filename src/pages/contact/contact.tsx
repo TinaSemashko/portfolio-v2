@@ -12,8 +12,8 @@ import * as S from './contact.styled';
 
 const fontSizeTitle = {
   xxs: '2rem',
-  xs: '4rem',
-  sm: '8rem',
+  xs: '3rem',
+  sm: '5rem',
   md: '10rem',
   lg: '12rem',
   xl: '14rem',

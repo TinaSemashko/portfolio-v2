@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
-import { Box, TextField, Typography } from '@mui/material';
+import { Box, TextField, Typography, useMediaQuery } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import AfterSubmit from './afterSubmit';
 import { useTranslation } from 'react-i18next';
+import { theme } from '../../app/app';
 
 import * as S from './contact.styled';
 
 const ContactForm: React.FC = () => {
   const { t } = useTranslation();
   const [state, handleSubmit] = useForm('mvoljqpq');
+  const mediumScreen = useMediaQuery(theme.breakpoints.down('md'));
   const [formData, setFormData] = useState({
     email: '',
     nom: '',
@@ -64,7 +66,7 @@ const ContactForm: React.FC = () => {
       <TextField
         sx={{
           width: '100%',
-          marginTop: '1.5rem',
+          marginTop: { xxs: '0.1rem', xs: '0.1rem', sm: '0.4rem', md: '1rem', lg: '1.2rem' },
           border: 'solid',
           backgroundColor: 'beige.main',
           '& .MuiInputBase-root.MuiOutlinedInput-root': {
@@ -99,7 +101,7 @@ const ContactForm: React.FC = () => {
       <TextField
         sx={{
           width: '100%',
-          marginTop: '1.5rem',
+          marginTop: { xxs: '0.1rem', xs: '0.1rem', sm: '0.4rem', md: '1rem', lg: '1rem' },
           border: 'solid ',
           backgroundColor: 'beige.main',
           '& .MuiInputBase-root.MuiOutlinedInput-root': {
@@ -134,7 +136,7 @@ const ContactForm: React.FC = () => {
       <TextField
         sx={{
           width: '100%',
-          marginTop: '1.2rem',
+          marginTop: { xxs: '0.1rem', xs: '0.1rem', sm: '0.4rem', md: '1rem', lg: '1rem' },
           border: 'solid ',
           backgroundColor: 'beige.main',
           '& .MuiInputBase-root.MuiOutlinedInput-root': {
@@ -149,7 +151,7 @@ const ContactForm: React.FC = () => {
         label={t('contact.message')}
         name="message"
         multiline
-        rows={4}
+        rows={mediumScreen ? 2 : 4}
         variant="outlined"
         value={formData.message}
         onChange={handleInputChange}
@@ -161,7 +163,7 @@ const ContactForm: React.FC = () => {
           justifyContent: 'center',
           textAlign: 'center',
           alignItems: 'center',
-          marginTop: '2rem',
+          marginTop: { xxs: '0.1rem', xs: '0.1rem', sm: '0.4rem', md: '1rem', lg: '2rem' },
         }}>
         <S.BtnSubmit type="submit" disabled={isButtonDisabled}>
           {t('contact.submit')}
