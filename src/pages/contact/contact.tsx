@@ -109,8 +109,8 @@ const Contact: React.FC = () => {
             WhatsApp
           </S.TextContainer4>
         </S.ButtonContainer>
+
         <S.QrContainer>
-          {' '}
           <S.QrImg src={watsappQr} alt="whatsapp-qr" />
         </S.QrContainer>
 
