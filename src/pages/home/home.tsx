@@ -20,8 +20,8 @@ const Home: React.FC = () => {
   };
 
   const fontSizeSubTitle = {
-    xxs: '1,4rem',
-    xs: '2rem',
+    xxs: '1.4rem',
+    xs: '1.8rem',
     sm: '2.2rem',
     md: '2.4rem',
     lg: '2.6rem',

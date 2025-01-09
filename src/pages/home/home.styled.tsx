@@ -14,7 +14,7 @@ export const GridContainer = styled('div')`
   height: 100vh;
   display: grid;
   grid-template-columns: 40% 60%;
-  grid-template-rows: 20% 20% 10% 10% 10% 30%;
+  grid-template-rows: 20% 20% 15% 10% 10% 25%;
 
   position: relative;
   justify-items: start;
