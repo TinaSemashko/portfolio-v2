@@ -333,8 +333,8 @@ export const FormContainer = styled('div')`
     grid-column: 1 / span 3;
     grid-row: 4;
 
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    margin-top: 10vh;
+    margin-bottom: 2vh;
   }
 `;
 
