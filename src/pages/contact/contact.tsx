@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
           {t('general.contact_us')}
         </S.Titre>
 
-        <S.ColorContainer />
+        {/* <S.ColorContainer /> */}
         <S.ButtonContainer>
           <S.ImgSocial1 src={email} alt="email" width="50rem" />
           <S.TextContainer1 variant="h5" color="secondary">
