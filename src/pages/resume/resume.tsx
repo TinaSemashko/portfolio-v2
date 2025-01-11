@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router';
 
 import * as S from './resume.styled';
 import HighlightedText from '../../shared/highlightedText';
+import SocialLinks from '../../shared/socialLinks';
 
 const fontSizeH4 = {
   xxs: '0.7rem',
@@ -107,7 +108,7 @@ const Resume: React.FC = () => {
       <Divider />
       <S.FlexInformationContainer>
         <S.Line>
-          <S.StyledButton label={t('footer.contact')} onClick={() => navigate(Routes.contact)} />
+          <SocialLinks directionRow={true} color="secondary.main" />
         </S.Line>
         <S.GridExpCompetences>
           <S.Experience>

@@ -7,9 +7,10 @@ import * as S from './social.styled';
 
 type Props = {
   directionRow: boolean;
+  color?: string;
 };
 
-const Social: React.FC<Props> = ({ directionRow }) => {
+const Social: React.FC<Props> = ({ directionRow, color }) => {
   return (
     <S.SocialLinks directionRow={directionRow}>
       <IconButton
@@ -18,7 +19,7 @@ const Social: React.FC<Props> = ({ directionRow }) => {
         aria-label="github"
         target="_blank"
         rel="noopener">
-        <GitHubIcon color="primary" />
+        <S.StyledIcon as={GitHubIcon} customcolor={color} />
       </IconButton>
       <IconButton
         href="https://www.linkedin.com/in/tina-semashko/"
@@ -26,7 +27,7 @@ const Social: React.FC<Props> = ({ directionRow }) => {
         aria-label="linkedin"
         target="_blank"
         rel="noopener">
-        <LinkedInIcon color="primary" />
+        <S.StyledIcon as={LinkedInIcon} customcolor={color} />
       </IconButton>
       <IconButton
         href="https://www.facebook.com/akateria/"
@@ -34,7 +35,7 @@ const Social: React.FC<Props> = ({ directionRow }) => {
         aria-label="facebook"
         target="_blank"
         rel="noopener">
-        <FacebookIcon color="primary" />
+        <S.StyledIcon as={FacebookIcon} customcolor={color} />
       </IconButton>
     </S.SocialLinks>
   );

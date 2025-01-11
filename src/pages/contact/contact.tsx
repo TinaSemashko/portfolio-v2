@@ -15,9 +15,9 @@ const fontSizeTitle = {
   xs: '3rem',
   sm: '5rem',
   md: '7rem',
-  lg: '10rem',
-  xl: '12rem',
-  xxl: '14rem',
+  lg: '9rem',
+  xl: '10rem',
+  xxl: '12rem',
 };
 
 const fontSizeContact = {

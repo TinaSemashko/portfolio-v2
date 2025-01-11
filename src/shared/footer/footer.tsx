@@ -22,9 +22,7 @@ const Home: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const currentPathArray = pathname.split('/');
-  const isParallax =
-    currentPathArray[currentPathArray.length - 1] === 'about' ||
-    currentPathArray[currentPathArray.length - 1] === 'projects';
+  const isParallax = currentPathArray[currentPathArray.length - 1] === 'about';
 
   return (
     <S.MainContainer isParallax={isParallax}>
@@ -37,9 +35,9 @@ const Home: React.FC = () => {
       </S.Langs>
       <S.TitreColor>
         <Typography
-          variant="h6"
+          variant="body1"
           textAlign="center"
-          sx={{ fontSize: fontSizeFooter, zIndex: '100', gridColumn: '2', alignSelf: 'end' }}>
+          sx={{ fontSize: fontSizeFooter, zIndex: '100', gridColumn: '2', alignSelf: 'center' }}>
           {t('footer.rights')}
         </Typography>
       </S.TitreColor>

@@ -8,10 +8,11 @@ export const MainContainer = styled('div')<{ isParallax: boolean }>`
   width: 100%;
   z-index: -1;
   background-color: ${({ theme }) => theme.palette.colorBlack.main};
-  min-height: 15vh;
+  height: 15vh;
   display: grid;
   grid-template-columns: 15% 70% 15%;
   grid-template-rows: 80% 20%;
+  padding-bottom: 0.5vh;
 `;
 
 export const SocialLinks = styled('div')`

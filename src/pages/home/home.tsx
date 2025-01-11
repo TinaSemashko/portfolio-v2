@@ -76,7 +76,7 @@ const Home: React.FC = () => {
         <S.CubImg src={img1} />
         <S.StyledButton label={t('main.buttonMore')} onClick={() => navigate(Routes.projects)} />
         <S.Citate
-          variant="h4"
+          variant="subtitle1"
           sx={{
             fontSize: fontSizeCitate,
           }}>

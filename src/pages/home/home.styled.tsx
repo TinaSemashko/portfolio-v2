@@ -56,7 +56,7 @@ export const CubImg = styled('img')`
   }
 
   ${({ theme }) => theme.breakpoints.down('sm')} {
-    width: 50vw;
+    width: 40vw;
   }
 
   ${({ theme }) => theme.breakpoints.down('xs')} {
@@ -159,15 +159,14 @@ export const Citate = styled(Typography)`
   letter-spacing: 0.2em;
   align-self: end;
   justify-self: center;
-  padding-bottom: 4vh;
-  font-family: 'Roboto Flex', serif;
+  padding-bottom: 2vh;
   text-align: center;
   padding-left: 2vw;
   padding-right: 2vw;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     padding-bottom: 0;
-    align-self: start;
+    align-self: center;
   }
 `;
 

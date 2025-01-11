@@ -84,15 +84,8 @@ export let theme = createTheme({
       fontDisplay: 'optional',
     },
     subtitle1: {
-      fontFamily: 'Roboto Flex, serif, Arial',
+      fontFamily: 'Great Vibes, serif;, Arial',
       fontDisplay: 'optional',
-      fontSize: '40rem',
-      '@media (max-width:1500px)': {
-        fontSize: '10rem',
-      },
-      '@media (max-width:1200px)': {
-        fontSize: '5rem',
-      },
     },
   },
   breakpoints: {
