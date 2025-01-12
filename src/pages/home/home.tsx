@@ -1,43 +1,57 @@
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
-import img1 from '../../images/cube_tech.webp';
+import img1 from '../../images/home.webp';
 import { useNavigate } from 'react-router';
 import { Routes } from '../../app/routes';
+import { Technologies } from '../../constants/technologies';
 
 import * as S from './home.styled';
+
+const TechnologiesArray = Object.values(Technologies);
+
+const fontSizeTitle = {
+  xxs: '10rem',
+  xs: '10rem',
+  sm: '12rem',
+  md: '18rem',
+  lg: '18rem',
+  xl: '18rem',
+  xxl: '22rem',
+};
+
+const fontSizeSubTitle = {
+  xxs: '1.4rem',
+  xs: '1.8rem',
+  sm: '2.2rem',
+  md: '2.4rem',
+  lg: '2.6rem',
+  xl: '2.8rem',
+  xxl: '3rem',
+};
+
+const fontSizeCitate = {
+  xxs: '0.8rem',
+  xs: '1.1rem',
+  sm: '1.3rem',
+  md: '1.1rem',
+  lg: '1.3rem',
+  xl: '1.5rem',
+  xxl: '1.7rem',
+};
+
+const fontSizeTech = {
+  xxs: '0.8rem',
+  xs: '0.9rem',
+  sm: '1rem',
+  md: '1rem',
+  lg: '1rem',
+  xl: '1.2rem',
+  xxl: '1.4rem',
+};
+
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-
-  const fontSizeTitle = {
-    xxs: '10rem',
-    xs: '10rem',
-    sm: '12rem',
-    md: '18rem',
-    lg: '18rem',
-    xl: '18rem',
-    xxl: '22rem',
-  };
-
-  const fontSizeSubTitle = {
-    xxs: '1.4rem',
-    xs: '1.8rem',
-    sm: '2.2rem',
-    md: '2.4rem',
-    lg: '2.6rem',
-    xl: '2.8rem',
-    xxl: '3rem',
-  };
-
-  const fontSizeCitate = {
-    xxs: '0.8rem',
-    xs: '1rem',
-    sm: '1.2rem',
-    md: '1.4rem',
-    lg: '1.6rem',
-    xl: '1.8rem',
-    xxl: '2rem',
-  };
 
   return (
     <S.MainContainer>
@@ -74,7 +88,22 @@ const Home: React.FC = () => {
           {t('main.subtitle1')}
         </S.SubTitre>
         <S.CubImg src={img1} />
+        <S.Technol>
+          {TechnologiesArray.map((item, index) => (
+            <>
+              <S.TechnolTypography
+                variant="h5"
+                sx={{
+                  fontSize: fontSizeTech,
+                }}>
+                {item}
+              </S.TechnolTypography>
+              {index < TechnologiesArray.length - 1 ? <S.Circle /> : ''}
+            </>
+          ))}
+        </S.Technol>
         <S.StyledButton label={t('main.buttonMore')} onClick={() => navigate(Routes.projects)} />
+
         <S.Citate
           variant="subtitle1"
           sx={{
