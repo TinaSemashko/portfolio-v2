@@ -112,7 +112,8 @@ const Projects: React.FC = () => {
     { word: t('projects.coleur1'), color: `${theme.palette.primary.main}` },
     { word: t('projects.coleur2'), color: `${theme.palette.colorOrange.main}` },
   ];
-  console.log(dataCarousel2D);
+  console.log(selectedProjectName);
+  console.log(DataCarousel2D);
   return (
     <S.MainContainer>
       <Helmet>

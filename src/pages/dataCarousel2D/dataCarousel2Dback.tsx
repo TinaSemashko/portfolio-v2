@@ -7,7 +7,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'assoFacTory/back1.webp',
     alt: 'AssoFacTory back',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'back2.webp',
@@ -15,7 +15,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'assoFacTory/back2.webp',
     alt: 'AssoFacTory back',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'back3.webp',
@@ -23,7 +23,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'assoFacTory/back3.webp',
     alt: 'AssoFacTory back',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'back4.webp',
@@ -31,7 +31,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'assoFacTory/back4.webp',
     alt: 'AssoFacTory back',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'back5.webp',
@@ -39,7 +39,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'assoFacTory/back5.webp',
     alt: 'AssoFacTory back',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'back6.webp',
@@ -47,7 +47,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'assoFacTory/back6.webp',
     alt: 'AssoFacTory back',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'back7.webp',
@@ -55,7 +55,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'assoFacTory/back7.webp',
     alt: 'AssoFacTory back',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'back8.webp',
@@ -63,7 +63,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'assoFacTory/back8.webp',
     alt: 'AssoFacTory back',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'back9.webp',
@@ -71,7 +71,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'assoFacTory/back9.webp',
     alt: 'AssoFacTory back',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'back10.webp',
@@ -79,7 +79,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'assoFacTory/back10.webp',
     alt: 'AssoFacTory back',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'back11.webp',
@@ -87,7 +87,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'assoFacTory/back11.webp',
     alt: 'AssoFacTory back',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
 
   {

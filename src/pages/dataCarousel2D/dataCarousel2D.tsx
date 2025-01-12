@@ -7,7 +7,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'assoFacTory/front1.webp',
     alt: 'AssoFacTory front',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'front2.webp',
@@ -15,7 +15,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'assoFacTory/front2.webp',
     alt: 'AssoFacTory front',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'front3.webp',
@@ -23,7 +23,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'assoFacTory/front3.webp',
     alt: 'AssoFacTory front',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'front4.webp',
@@ -31,7 +31,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'assoFacTory/front4.webp',
     alt: 'AssoFacTory front',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'front5.webp',
@@ -39,7 +39,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'assoFacTory/front5.webp',
     alt: 'AssoFacTory front',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'front6.webp',
@@ -47,7 +47,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'assoFacTory/front6.webp',
     alt: 'AssoFacTory front',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'front7.webp',
@@ -55,7 +55,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'assoFacTory/front7.webp',
     alt: 'AssoFacTory front',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
   {
     imageName: 'front8.webp',
@@ -63,7 +63,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'assoFacTory/front8.webp',
     alt: 'AssoFacTory front',
-    projectName: 'AssoFacTory',
+    projectName: 'assoFacTory',
   },
 
   {
