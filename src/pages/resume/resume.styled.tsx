@@ -398,13 +398,13 @@ export const SectionPoint = styled('div')`
 `;
 
 export const Circle = styled('div')`
-  width: 20px; /* Диаметр круга */
-  height: 20px; /* Диаметр круга */
+  width: 20px;
+  height: 20px;
   background-color: ${({ theme }) => theme.palette.primary.main};
-  border-radius: 50%; /* Делает элемент круглым */
+  border-radius: 50%;
 
   @media (max-width: 1200px) {
-    width: 15px; /* Меньший круг для мобильных устройств */
+    width: 15px;
     height: 15px;
   }
 `;

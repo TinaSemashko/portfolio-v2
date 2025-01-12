@@ -14,7 +14,7 @@ export const GridContainer = styled('div')`
   height: 100vh;
   display: grid;
   grid-template-columns: 40% 60%;
-  grid-template-rows: 20% 20% 15% 10% 10% 25%;
+  grid-template-rows: 20% 20% 10% 10% 10% 15% 15%;
 
   position: relative;
   justify-items: start;
@@ -22,14 +22,14 @@ export const GridContainer = styled('div')`
   ${({ theme }) => theme.breakpoints.down('md')} {
     justify-items: center;
     grid-template-columns: 100%;
-    grid-template-rows: 25% 8% 8% 10% 30% 19%;
+    grid-template-rows: 25% 12% 12% 12% 12% 27%;
   }
 `;
 
 export const ColorContainer = styled('div')`
   background-color: ${({ theme }) => theme.palette.primary.main};
   grid-column: 1 / span 2;
-  grid-row: 3 / span 4;
+  grid-row: 3 / span 5;
   width: 100%;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
@@ -40,28 +40,26 @@ export const ColorContainer = styled('div')`
 
 export const CubImg = styled('img')`
   grid-column: 1;
-  grid-row: 2 / span 5;
-  width: 20vw;
-  justify-self: center;
+  grid-row: 1 / span 5;
+  height: 100vh;
+  justify-self: start;
   padding-top: 4vh;
 
   ${({ theme }) => theme.breakpoints.down('xl')} {
-    width: 30vw;
+    width: 95%;
   }
 
   ${({ theme }) => theme.breakpoints.down('md')} {
-    grid-row: 5;
-    width: 30vw;
-    padding-top: 0;
+    display: none;
   }
-
+  /*
   ${({ theme }) => theme.breakpoints.down('sm')} {
     width: 40vw;
   }
 
   ${({ theme }) => theme.breakpoints.down('xs')} {
     width: 60vw;
-  }
+  } */
 `;
 
 export const Titre = styled(Typography)`
@@ -135,16 +133,56 @@ export const SubTitre = styled(Typography)`
   }
 `;
 
-export const StyledButton = styled(PrimaryButton)`
+export const Technol = styled('div')`
   grid-column: 2;
   grid-row: 5;
+  width: 100%;
+  align-self: center;
+  justify-self: start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  padding-right: 2vw;
+
+  ${({ theme }) => theme.breakpoints.down('md')} {
+    padding-bottom: 0;
+
+    grid-column: 1;
+    grid-row: 4;
+    text-align: center;
+    justify-self: center;
+    justify-content: center;
+    padding-right: 0;
+  }
+`;
+
+export const TechnolTypography = styled(Typography)`
+  color: ${({ theme }) => theme.palette.beige.main};
+  padding-right: 0.5vw;
+  padding-left: 0.5vw;
+`;
+
+export const Circle = styled('div')`
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: ${({ theme }) => theme.palette.beige.main};
+  border-radius: 50%;
+`;
+
+export const StyledButton = styled(PrimaryButton)`
+  grid-column: 2;
+  grid-row: 6;
   color: ${({ theme }) => theme.palette.secondary.main};
   text-transform: uppercase;
   position: relative;
+  align-self: center;
+  justify-self: start;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-column: 1;
-    grid-row: 4;
+    grid-row: 5;
+    justify-self: center;
 
     &.MuiButton-root {
       margin-top: 1vh;
@@ -153,115 +191,21 @@ export const StyledButton = styled(PrimaryButton)`
 `;
 
 export const Citate = styled(Typography)`
-  grid-column: 1 / span 2;
-  grid-row: 6;
-  color: ${({ theme }) => theme.palette.secondary.main};
-  letter-spacing: 0.2em;
-  align-self: end;
-  justify-self: center;
-  padding-bottom: 2vh;
-  text-align: center;
-  padding-left: 2vw;
+  grid-column: 2;
+  grid-row: 7;
+  color: ${({ theme }) => theme.palette.colorLightBlue.main};
+  letter-spacing: 0.02em;
+  align-self: center;
+  justify-self: start;
+
   padding-right: 2vw;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     padding-bottom: 0;
     align-self: center;
+    text-align: center;
+    justify-self: center;
+    grid-column: 1;
+    grid-row: 6;
   }
-`;
-
-export const ElAnimation = styled('div')`
-  &:hover .hide {
-    animation: none;
-    -webkit-animation: flip-in-hor-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    animation: flip-in-hor-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  }
-
-  &:hover .card {
-    animation: none;
-    -webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    animation: flip-in-hor-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  }
-
-  /**
- * ----------------------------------------
- * animation flip-in-hor-bottom
- * ----------------------------------------
- */
-  @-webkit-keyframes flip-in-hor-bottom {
-    0% {
-      -webkit-transform: rotateX(80deg);
-      transform: rotateX(80deg);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: rotateX(0);
-      transform: rotateX(0);
-      opacity: 1;
-    }
-  }
-  @keyframes flip-in-hor-bottom {
-    0% {
-      -webkit-transform: rotateX(80deg);
-      transform: rotateX(80deg);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: rotateX(0);
-      transform: rotateX(0);
-      opacity: 1;
-    }
-  }
-
-  /**
- * ----------------------------------------
- * animation flip-in-hor-top
- * ----------------------------------------
- */
-  @-webkit-keyframes flip-in-hor-top {
-    0% {
-      -webkit-transform: rotateX(-80deg);
-      transform: rotateX(-80deg);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: rotateX(0);
-      transform: rotateX(0);
-      opacity: 1;
-    }
-  }
-  @keyframes flip-in-hor-top {
-    0% {
-      -webkit-transform: rotateX(-80deg);
-      transform: rotateX(-80deg);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: rotateX(0);
-      transform: rotateX(0);
-      opacity: 1;
-    }
-  }
-`;
-
-export const ElImgHide = styled('img')`
-  width: 12vw;
-  display: none;
-
-  @media (max-width: 960px) {
-    width: 14vw;
-  }
-
-  @media (max-width: 568px) {
-    width: 7rem;
-  }
-
-  @media (max-width: 400px) {
-    width: 5rem;
-  }
-`;
-
-export const LogoContainer = styled('div')`
-  text-align: center;
-  padding-top: 20vh;
 `;
