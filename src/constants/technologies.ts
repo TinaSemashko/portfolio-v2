@@ -6,7 +6,7 @@ export enum Technologies {
   POSTGRES = 'PostgreSQL',
   FIREBASE = 'Firebase',
   SEO = 'SEO',
-  JIRA = 'Jira',
-  FIGMA = 'Figma',
-  POSTMAN = 'Postman',
+  // JIRA = 'Jira',
+  // FIGMA = 'Figma',
+  // POSTMAN = 'Postman',
 }

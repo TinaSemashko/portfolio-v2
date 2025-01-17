@@ -52,14 +52,6 @@ export const CubImg = styled('img')`
   ${({ theme }) => theme.breakpoints.down('md')} {
     display: none;
   }
-  /*
-  ${({ theme }) => theme.breakpoints.down('sm')} {
-    width: 40vw;
-  }
-
-  ${({ theme }) => theme.breakpoints.down('xs')} {
-    width: 60vw;
-  } */
 `;
 
 export const Titre = styled(Typography)`
@@ -115,6 +107,14 @@ export const Titre = styled(Typography)`
     }
   }
 
+  @media (max-width: 1600px) {
+    padding-top: 4vh;
+  }
+
+  ${({ theme }) => theme.breakpoints.down('xxl')} {
+    padding-top: 10vh;
+  }
+
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-column: 1;
   }
@@ -125,6 +125,7 @@ export const SubTitre = styled(Typography)`
   grid-row: 4;
   color: ${({ theme }) => theme.palette.colorBlue.main};
   text-transform: lowercase;
+  padding-top: 2vh;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-column: 1;
@@ -159,8 +160,12 @@ export const Technol = styled('div')`
 
 export const TechnolTypography = styled(Typography)`
   color: ${({ theme }) => theme.palette.beige.main};
-  padding-right: 0.5vw;
-  padding-left: 0.5vw;
+  padding-right: 0.7vw;
+  padding-left: 0.7vw;
+
+  &:first-child {
+    padding-left: 0;
+  }
 `;
 
 export const Circle = styled('div')`
@@ -194,11 +199,8 @@ export const Citate = styled(Typography)`
   grid-column: 2;
   grid-row: 7;
   color: ${({ theme }) => theme.palette.colorLightBlue.main};
-  letter-spacing: 0.02em;
   align-self: center;
-  justify-self: start;
-
-  padding-right: 2vw;
+  justify-self: stretch;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     padding-bottom: 0;

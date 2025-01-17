@@ -3,6 +3,8 @@ import { styled } from '@mui/material/styles';
 
 export const StyledImageList = styled(ImageList)`
   width: 80%;
+  border: solid ${({ theme }) => theme.palette.beige.main};
+  padding: 1rem;
   background-color: ${({ theme }) => theme.palette.secondary.main};
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -30,14 +32,17 @@ export const ThreeDotsBox = styled('div')`
   grid-row: 1;
   color: ${({ theme }) => theme.palette.colorOrange.main};
 
-  cursor: pointer;
-
   & .MuiSvgIcon-root {
     height: 2rem;
     width: 3rem;
     background-color: ${({ theme }) => theme.palette.secondary.main};
     margin-top: 1vh;
     border-radius: 50%;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.palette.colorLightBlue.main};
+      cursor: pointer;
+    }
   }
 `;
 

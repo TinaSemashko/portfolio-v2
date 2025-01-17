@@ -31,18 +31,7 @@ const ListImages: React.FC<ModalProps> = ({
 }) => {
   const { t } = useTranslation();
   return (
-    <S.StyledImageList
-      variant="masonry"
-      cols={cols}
-      gap={gap}
-      sx={{
-        width: '90%',
-        height: '100%',
-        border: 'solid',
-        borderColor: 'beige.main',
-        p: 1.5,
-        ...styles,
-      }}>
+    <S.StyledImageList variant="masonry" cols={cols} gap={gap}>
       {data.map(item => (
         <S.StyledListItem key={item.src}>
           {dataListMenu && (
