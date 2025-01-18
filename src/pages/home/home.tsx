@@ -80,6 +80,7 @@ const Home: React.FC = () => {
           {t('main.title')}
         </S.Titre>
         <S.ColorContainer />
+        {/* <S.GradientAnime> */}
         <S.SubTitre
           variant="h2"
           sx={{
@@ -87,6 +88,7 @@ const Home: React.FC = () => {
           }}>
           {t('main.subtitle1')}
         </S.SubTitre>
+        {/* </S.GradientAnime> */}
         <S.CubImg src={img1} />
         <S.Technol>
           {TechnologiesArray.map((item, index) => (

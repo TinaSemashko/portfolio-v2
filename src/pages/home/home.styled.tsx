@@ -123,9 +123,30 @@ export const Titre = styled(Typography)`
 export const SubTitre = styled(Typography)`
   grid-column: 2;
   grid-row: 4;
-  color: ${({ theme }) => theme.palette.colorBlue.main};
   text-transform: lowercase;
   padding-top: 2vh;
+
+  background: ${({ theme }) =>
+    `-webkit-linear-gradient(left, ${theme.palette.secondary.main}, ${theme.palette.colorLightBlue.main}, ${theme.palette.colorBlack.main}, ${theme.palette.colorLightBlue.main}, ${theme.palette.secondary.main})`};
+  background-size: 3200px 200px;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  animation: gradient 40s linear infinite;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 0%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     grid-column: 1;
