@@ -60,7 +60,7 @@ export let theme = createTheme({
       fontDisplay: 'optional',
     },
     h3: {
-      fontFamily: 'Kurale , sans-serif, Arial',
+      fontFamily: 'Jura, serif, Arial',
       fontDisplay: 'optional',
     },
     h4: {
@@ -81,10 +81,6 @@ export let theme = createTheme({
     },
     body2: {
       fontFamily: 'Roboto, sans-serif, Arial',
-      fontDisplay: 'optional',
-    },
-    subtitle1: {
-      fontFamily: 'Great Vibes, serif;, Arial',
       fontDisplay: 'optional',
     },
   },

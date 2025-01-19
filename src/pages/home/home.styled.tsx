@@ -180,7 +180,7 @@ export const Technol = styled('div')`
 `;
 
 export const TechnolTypography = styled(Typography)`
-  color: ${({ theme }) => theme.palette.beige.main};
+  color: ${({ theme }) => theme.palette.secondary.main};
   padding-right: 0.7vw;
   padding-left: 0.7vw;
 
@@ -219,9 +219,10 @@ export const StyledButton = styled(PrimaryButton)`
 export const Citate = styled(Typography)`
   grid-column: 2;
   grid-row: 7;
-  color: ${({ theme }) => theme.palette.colorLightBlue.main};
+  color: ${({ theme }) => theme.palette.secondary.main};
   align-self: center;
   justify-self: stretch;
+  letter-spacing: 0.15rem;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     padding-bottom: 0;

@@ -30,13 +30,13 @@ const fontSizeSubTitle = {
 };
 
 const fontSizeCitate = {
-  xxs: '0.8rem',
-  xs: '1.1rem',
-  sm: '1.3rem',
-  md: '1.1rem',
-  lg: '1.3rem',
-  xl: '1.5rem',
-  xxl: '1.7rem',
+  xxs: '0.6rem',
+  xs: '0.6rem',
+  sm: '0.6rem',
+  md: '0.7rem',
+  lg: '0.8rem',
+  xl: '0.9rem',
+  xxl: '1.1rem',
 };
 
 const fontSizeTech = {
@@ -80,7 +80,7 @@ const Home: React.FC = () => {
           {t('main.title')}
         </S.Titre>
         <S.ColorContainer />
-        {/* <S.GradientAnime> */}
+
         <S.SubTitre
           variant="h2"
           sx={{
@@ -88,13 +88,13 @@ const Home: React.FC = () => {
           }}>
           {t('main.subtitle1')}
         </S.SubTitre>
-        {/* </S.GradientAnime> */}
-        <S.CubImg src={img1} />
+
+        <S.CubImg src={img1} alt="digital city" />
         <S.Technol>
           {TechnologiesArray.map((item, index) => (
             <>
               <S.TechnolTypography
-                variant="h5"
+                variant="h3"
                 sx={{
                   fontSize: fontSizeTech,
                 }}>
@@ -107,7 +107,7 @@ const Home: React.FC = () => {
         <S.StyledButton label={t('main.buttonMore')} onClick={() => navigate(Routes.projects)} />
 
         <S.Citate
-          variant="subtitle1"
+          variant="body2"
           sx={{
             fontSize: fontSizeCitate,
           }}>
