@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles';
 export const MainContainer = styled('div')`
   width: 100%;
   /* height: 100vh; */
-  background: linear-gradient(315deg, var(--primary-color-opacity), var(--secondary-color-opacity));
+  background: ${({ theme }) => theme.palette.primary.main};
 `;
 
 export const CloseIconStyle = styled('div')`
@@ -72,7 +72,7 @@ export const StyledListItemButton = styled(ListItemButton)`
   text-transform: uppercase;
 
   --b: 0.1em; /* the thickness of the line */
-  --c: ${({ theme }) => theme.palette.colorOrange.main};
+  --c: ${({ theme }) => theme.palette.primary.main};
   --c1: ${({ theme }) => theme.palette.colorBlack.main};
 
   color: #0000;
@@ -97,7 +97,7 @@ export const StyledListItemButton = styled(ListItemButton)`
 
 export const Dot = styled(ListBox)`
   font-size: 3rem;
-  color: ${({ theme }) => theme.palette.primary.main};
+  color: ${({ theme }) => theme.palette.beige.main};
 `;
 
 export const Social = styled(ListBox)`

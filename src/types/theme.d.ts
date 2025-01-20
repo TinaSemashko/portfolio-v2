@@ -5,7 +5,7 @@ declare module '@mui/material/styles' {
     colorBlack: Palette['primary'];
     colorRed: Palette['primary'];
     colorOrange: Palette['primary'];
-    colorGrey: Palette['primary'];
+    colorWhite: Palette['primary'];
     colorLightBlue: Palette['primary'];
     colorBlue: Palette['primary'];
     beige: Palette['primary'];
@@ -15,7 +15,7 @@ declare module '@mui/material/styles' {
     colorBlack?: PaletteOptions['primary'];
     colorRed?: PaletteOptions['primary'];
     colorOrange?: PaletteOptions['primary'];
-    colorGrey?: PaletteOptions['primary'];
+    colorWhite?: PaletteOptions['primary'];
     colorLightBlue?: PaletteOptions['primary'];
     colorBlue?: PaletteOptions['primary'];
     beige?: PaletteOptions['primary'];

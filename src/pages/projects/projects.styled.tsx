@@ -11,10 +11,10 @@ export const MainContainer = styled('div')`
   flex-direction: column;
   align-items: center;
 
-  background-color: ${({ theme }) => theme.palette.secondary.main};
-  background-image: url(${img});
+  background-color: ${({ theme }) => theme.palette.primary.main};
+  /* background-image: url(${img});
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 `;
 
 export const Title = styled('div')`

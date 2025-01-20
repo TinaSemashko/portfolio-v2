@@ -45,7 +45,11 @@ export const CubImg = styled('img')`
   justify-self: start;
   padding-top: 4vh;
 
-  ${({ theme }) => theme.breakpoints.down('xl')} {
+  @media (max-width: 2000px) {
+    width: 95%;
+  }
+
+  ${({ theme }) => theme.breakpoints.down('xxl')} {
     width: 95%;
   }
 
@@ -127,7 +131,7 @@ export const SubTitre = styled(Typography)`
   padding-top: 2vh;
 
   background: ${({ theme }) =>
-    `-webkit-linear-gradient(left, ${theme.palette.secondary.main}, ${theme.palette.colorLightBlue.main}, ${theme.palette.colorBlack.main}, ${theme.palette.colorLightBlue.main}, ${theme.palette.secondary.main})`};
+    `-webkit-linear-gradient(left, ${theme.palette.colorWhite.main}, ${theme.palette.colorLightBlue.main}, ${theme.palette.colorBlack.main}, ${theme.palette.colorLightBlue.main}, ${theme.palette.colorWhite.main})`};
   background-size: 3200px 200px;
   color: transparent;
   -webkit-text-fill-color: transparent;
@@ -180,7 +184,7 @@ export const Technol = styled('div')`
 `;
 
 export const TechnolTypography = styled(Typography)`
-  color: ${({ theme }) => theme.palette.secondary.main};
+  color: ${({ theme }) => theme.palette.colorWhite.main};
   padding-right: 0.7vw;
   padding-left: 0.7vw;
 
@@ -216,13 +220,12 @@ export const StyledButton = styled(PrimaryButton)`
   }
 `;
 
-export const Citate = styled(Typography)`
+export const CitateBox = styled('div')`
+  width: 98%;
   grid-column: 2;
   grid-row: 7;
-  color: ${({ theme }) => theme.palette.secondary.main};
   align-self: center;
   justify-self: stretch;
-  letter-spacing: 0.15rem;
 
   ${({ theme }) => theme.breakpoints.down('md')} {
     padding-bottom: 0;
@@ -231,5 +234,17 @@ export const Citate = styled(Typography)`
     justify-self: center;
     grid-column: 1;
     grid-row: 6;
+    letter-spacing: 0;
+    padding-top: 20%;
+  }
+`;
+
+export const Citate = styled(Typography)`
+  color: ${({ theme }) => theme.palette.colorWhite.main};
+
+  letter-spacing: 0.15rem;
+
+  ${({ theme }) => theme.breakpoints.down('md')} {
+    letter-spacing: 0;
   }
 `;

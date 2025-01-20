@@ -30,10 +30,10 @@ const fontSizeSubTitle = {
 };
 
 const fontSizeCitate = {
-  xxs: '0.6rem',
-  xs: '0.6rem',
-  sm: '0.6rem',
-  md: '0.7rem',
+  xxs: '0.7rem',
+  xs: '0.8rem',
+  sm: '0.9rem',
+  md: '0.8rem',
   lg: '0.8rem',
   xl: '0.9rem',
   xxl: '1.1rem',
@@ -42,11 +42,11 @@ const fontSizeCitate = {
 const fontSizeTech = {
   xxs: '0.8rem',
   xs: '0.9rem',
-  sm: '1rem',
-  md: '1rem',
-  lg: '1rem',
-  xl: '1.2rem',
-  xxl: '1.4rem',
+  sm: '1.1rem',
+  md: '1.1rem',
+  lg: '1.1rem',
+  xl: '1.3rem',
+  xxl: '1.6rem',
 };
 
 const Home: React.FC = () => {
@@ -105,14 +105,15 @@ const Home: React.FC = () => {
           ))}
         </S.Technol>
         <S.StyledButton label={t('main.buttonMore')} onClick={() => navigate(Routes.projects)} />
-
-        <S.Citate
-          variant="body2"
-          sx={{
-            fontSize: fontSizeCitate,
-          }}>
-          {t('main.title2ecran')}
-        </S.Citate>
+        <S.CitateBox>
+          <S.Citate
+            variant="body2"
+            sx={{
+              fontSize: fontSizeCitate,
+            }}>
+            {t('main.title2ecran')}
+          </S.Citate>
+        </S.CitateBox>
       </S.GridContainer>
     </S.MainContainer>
   );

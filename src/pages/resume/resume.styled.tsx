@@ -15,9 +15,9 @@ export const MainContainer = styled('div')`
   background-color: ${({ theme }) => theme.palette.primary.main};
   position: relative;
 
-  background-image: url(${img});
+  /* background-image: url(${img});
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 `;
 
 export const BackgroundMain = styled('div')`
