@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
           <S.LinkSocial1 href="mailto:tina.semashko@gmail.com" target="_blank" rel="noopener noreferrer">
             <S.ImgSocial src={email} alt="email" width="50rem" />
           </S.LinkSocial1>
-          <S.TextContainer1 variant="h5" color="beige.main">
+          <S.TextContainer1 variant="h5" color="colorGray.main">
             --Email--
           </S.TextContainer1>
           <S.ButtonText1 href="mailto:tina.semashko@gmail.com">
@@ -76,7 +76,7 @@ const Contact: React.FC = () => {
           <S.LinkSocial2 href="https://www.linkedin.com/in/tina-semashko/" target="_blank" rel="noopener noreferrer">
             <S.ImgSocial src={linkedin} alt="linkedin" width="50rem" />
           </S.LinkSocial2>
-          <S.TextContainer2 variant="h5" color="beige.main">
+          <S.TextContainer2 variant="h5" color="colorGray.main">
             --LinkedIn--
           </S.TextContainer2>
           <S.ButtonText2 href="https://www.linkedin.com/in/tina-semashko/" sx={{ gridColumn: '2', gridRow: '4' }}>
@@ -95,7 +95,7 @@ const Contact: React.FC = () => {
           <S.LinkSocial3 href="https://t.me/SemashkoTina" target="_blank" rel="noopener noreferrer">
             <S.ImgSocial src={telegram} alt="telegram" width="50rem" />
           </S.LinkSocial3>
-          <S.TextContainer3 variant="h5" color="beige.main">
+          <S.TextContainer3 variant="h5" color="colorGray.main">
             --Telegram--
           </S.TextContainer3>
           <S.ButtonText3 href="https://t.me/SemashkoTina" sx={{ gridColumn: '2', gridRow: '6' }}>
@@ -114,7 +114,7 @@ const Contact: React.FC = () => {
           <S.LinkSocial4 href="https://wa.me/33651870542" target="_blank" rel="noopener noreferrer">
             <S.ImgSocial src={whatsapp} alt="whatsapp" />
           </S.LinkSocial4>
-          <S.TextContainer4 variant="h5" color="beige.main">
+          <S.TextContainer4 variant="h5" color="colorGray.main">
             --WhatsApp--
           </S.TextContainer4>
         </S.ButtonContainer>

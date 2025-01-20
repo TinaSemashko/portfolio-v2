@@ -1,5 +1,5 @@
 import Fireplace from '../components/fireplace';
-import * as S from '../home/home.styled';
+import * as S from './notFound.styled';
 
 const NotFound: React.FC = () => {
   return (

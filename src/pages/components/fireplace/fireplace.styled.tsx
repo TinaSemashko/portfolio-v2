@@ -4,11 +4,15 @@ export const MainContainer = styled('div')`
   width: 100vw;
   height: 100vh;
   max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
 `;
 
 export const VideoAccueil = styled('video')`
   width: 100%;
+  height: 100vh;
   object-fit: cover;
   text-align: center;
   position: fixed;

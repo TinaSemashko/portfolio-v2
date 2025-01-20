@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 import img1 from '../../images/home.webp';
+import node from '../../images/node-js.webp';
 import { useNavigate } from 'react-router';
 import { Routes } from '../../app/routes';
 import { Technologies } from '../../constants/technologies';
@@ -80,7 +81,9 @@ const Home: React.FC = () => {
           {t('main.title')}
         </S.Titre>
         <S.ColorContainer />
-
+        <S.ImgBox>
+          <S.ImgNode src={node} alt="Node.js" />
+        </S.ImgBox>
         <S.SubTitre
           variant="h2"
           sx={{

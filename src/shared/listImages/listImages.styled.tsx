@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 
 export const StyledImageList = styled(ImageList)`
   width: 80%;
-  border: solid ${({ theme }) => theme.palette.beige.main};
+  border: solid ${({ theme }) => theme.palette.colorGray.main};
   padding: 1rem;
   background-color: ${({ theme }) => theme.palette.secondary.main};
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,

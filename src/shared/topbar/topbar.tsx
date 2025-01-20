@@ -77,10 +77,10 @@ const TopBar: React.FC = () => {
         border: 'solid 1.2rem',
       }}>
       <S.CloseIconStyle>
-        <Typography variant="h5" className="close" sx={{ fontSize: '2rem', color: 'beige.main' }}>
+        <Typography variant="h5" className="close" sx={{ fontSize: '2rem', color: 'colorGray.main' }}>
           {t('menu.close')}
         </Typography>
-        <CloseIcon sx={{ fontSize: '2rem', color: 'beige.main' }} />
+        <CloseIcon sx={{ fontSize: '2rem', color: 'colorGray.main' }} />
       </S.CloseIconStyle>
 
       <List
@@ -99,7 +99,7 @@ const TopBar: React.FC = () => {
                 primaryTypographyProps={{
                   fontSize: fontSizeMenu,
                   pl: 4,
-                  color: 'beige.main',
+                  color: 'colorGray.main',
                 }}
               />
             </S.StyledListItemButton>

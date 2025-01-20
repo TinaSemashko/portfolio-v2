@@ -128,13 +128,19 @@ const Projects: React.FC = () => {
         variant="h1"
         sx={{
           pb: 4,
-          color: smScreen ? 'primary.main' : 'colorBlack.main',
+          color: 'colorBlack.main',
         }}>
         {t('projects.title')}
       </Typography>
       <S.Title>
-        <GitHubIcon color="primary" sx={{ mr: 1 }} />
-        <Link underline="hover" variant="h4" target="_blank" rel="noreferrer" href="https://github.com/TinaSemashko">
+        <GitHubIcon sx={{ mr: 1, color: 'colorBlack.main' }} />
+        <Link
+          underline="hover"
+          variant="h4"
+          target="_blank"
+          rel="noreferrer"
+          href="https://github.com/TinaSemashko"
+          sx={{ color: 'colorBlack.main' }}>
           {t('projects.myGIT')}
         </Link>
       </S.Title>

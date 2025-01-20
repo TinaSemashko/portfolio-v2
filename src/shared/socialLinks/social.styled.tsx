@@ -7,6 +7,6 @@ export const SocialLinks = styled('div')<{ directionRow: boolean }>(({ direction
 }));
 
 export const StyledIcon = styled(SvgIcon)<{ customcolor?: string }>`
-  color: ${({ customcolor, theme }) => customcolor || theme.palette.beige.main};
+  color: ${({ customcolor, theme }) => customcolor || theme.palette.colorGray.main};
   font-size: 1.5rem;
 `;

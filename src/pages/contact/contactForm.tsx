@@ -68,7 +68,7 @@ const ContactForm: React.FC = () => {
           width: '100%',
           marginTop: { xxs: '0.5rem', xs: '0.6rem', sm: '1rem', md: '1rem', lg: '1.2rem' },
           border: 'solid',
-          backgroundColor: 'beige.main',
+          backgroundColor: 'colorGray.main',
           '& .MuiInputBase-root.MuiOutlinedInput-root': {
             fontSize: '1rem',
             color: 'primary.main',
@@ -103,7 +103,7 @@ const ContactForm: React.FC = () => {
           width: '100%',
           marginTop: { xxs: '0.1rem', xs: '0.1rem', sm: '0.4rem', md: '1rem', lg: '1rem' },
           border: 'solid ',
-          backgroundColor: 'beige.main',
+          backgroundColor: 'colorGray.main',
           '& .MuiInputBase-root.MuiOutlinedInput-root': {
             fontSize: '1rem',
             color: 'primary.main',
@@ -138,7 +138,7 @@ const ContactForm: React.FC = () => {
           width: '100%',
           marginTop: { xxs: '0.1rem', xs: '0.1rem', sm: '0.4rem', md: '1rem', lg: '1rem' },
           border: 'solid ',
-          backgroundColor: 'beige.main',
+          backgroundColor: 'colorGray.main',
           '& .MuiInputBase-root.MuiOutlinedInput-root': {
             fontSize: '1rem',
             color: 'primary.main',

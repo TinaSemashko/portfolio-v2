@@ -1,6 +1,6 @@
 import { Button, Typography } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
-import img from '../../images/fon-cv.webp';
+import img from '../../images/code.webp';
 import img1 from '../../images/papier.webp';
 import img2 from '../../images/papier1.webp';
 import PrimaryButton from '../../shared/primaryButton';
@@ -15,16 +15,13 @@ export const MainContainer = styled('div')`
   background-color: ${({ theme }) => theme.palette.primary.main};
   position: relative;
 
-  /* background-image: url(${img});
+  background-image: url(${img});
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: cover;
 `;
 
 export const BackgroundMain = styled('div')`
   background-color: ${({ theme }) => theme.palette.secondary.main};
-  background-image: url(${img2});
-  background-repeat: no-repeat;
-  background-size: cover;
   border: solid;
   box-shadow: -1px -5px 15px #41465b, 5px 5px 15px #41465b, inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
 `;
@@ -216,6 +213,7 @@ export const Line = styled(BackgroundMain)`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 
   @media (max-width: 1200px) {
     display: none;
@@ -309,6 +307,10 @@ export const SectionCompetances = styled(SectionAdditional)`
   grid-column: 1;
   grid-row: 1;
 
+  background-image: url(${img2});
+  background-repeat: no-repeat;
+  background-size: cover;
+
   @media (max-width: 1200px) {
     width: 95%;
     margin-left: 0;
@@ -330,6 +332,10 @@ export const SectionLangueges = styled(SectionAdditional)`
   padding-bottom: 2vh;
   padding-top: 2vh;
   margin-top: 40vh;
+
+  background-image: url(${img2});
+  background-repeat: no-repeat;
+  background-size: cover;
 
   grid-column: 2;
   grid-row: 1;

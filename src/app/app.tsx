@@ -30,7 +30,7 @@ export let theme = createTheme({
     colorBlack: {
       main: '#0C151C',
     },
-    beige: {
+    colorGray: {
       main: '#dbe4ed',
     },
     colorRed: {
@@ -39,9 +39,7 @@ export let theme = createTheme({
     colorOrange: {
       main: '#ff9d00',
     },
-    colorWhite: {
-      main: '#ffffff',
-    },
+
     colorLightBlue: {
       main: '#acbdd3',
     },

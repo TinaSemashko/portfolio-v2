@@ -5,7 +5,7 @@ export const MainContainer = styled('div')`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${({ theme }) => theme.palette.beige.main};
+  background-color: ${({ theme }) => theme.palette.colorGray.main};
 
   @media (max-width: 750px) {
     flex-direction: column;
@@ -335,7 +335,7 @@ export const BtnSubmit = styled(Button)`
   padding: 1rem 2rem;
   margin-bottom: 1.5rem;
   text-decoration: none;
-  background-color: ${({ theme }) => theme.palette.beige.main};
+  background-color: ${({ theme }) => theme.palette.colorGray.main};
   border: 4px solid;
   border-radius: 4px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);

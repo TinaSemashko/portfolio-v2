@@ -97,7 +97,7 @@ export const StyledListItemButton = styled(ListItemButton)`
 
 export const Dot = styled(ListBox)`
   font-size: 3rem;
-  color: ${({ theme }) => theme.palette.beige.main};
+  color: ${({ theme }) => theme.palette.colorGray.main};
 `;
 
 export const Social = styled(ListBox)`

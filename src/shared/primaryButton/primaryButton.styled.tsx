@@ -26,7 +26,7 @@ export const StyledButton = styled(Button)`
   }
 
   border-image: ${({ theme }) =>
-    `linear-gradient(55deg, ${theme.palette.colorBlue.main}, ${theme.palette.beige.main}, ${theme.palette.colorLightBlue.main}, ${theme.palette.colorBlue.main} )1`};
+    `linear-gradient(55deg, ${theme.palette.colorBlue.main}, ${theme.palette.colorGray.main}, ${theme.palette.colorLightBlue.main}, ${theme.palette.colorBlue.main} )1`};
   ${({ disabled }) =>
     !disabled &&
     `

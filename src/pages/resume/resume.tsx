@@ -9,10 +9,10 @@ import CV_PDF from '../../images/resume.pdf';
 import { theme } from '../../app/app';
 import { Routes } from '../../app/routes';
 import { useNavigate } from 'react-router';
-
-import * as S from './resume.styled';
 import HighlightedText from '../../shared/highlightedText';
 import SocialLinks from '../../shared/socialLinks';
+
+import * as S from './resume.styled';
 
 const fontSizeH4 = {
   xxs: '0.7rem',
