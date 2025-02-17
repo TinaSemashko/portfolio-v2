@@ -8,7 +8,7 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useTranslation } from 'react-i18next';
 import { AppBar, Toolbar, Drawer, IconButton, Typography } from '@mui/material';
-import logo from '../../images/Nuvola_France_Ukraine_flags.svg.png';
+import logo from '../../images/logo.png';
 import { useLocation, useNavigate } from 'react-router';
 import { Routes } from '../../app/routes';
 import CloseIcon from '@mui/icons-material/Close';
