@@ -72,7 +72,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'connectify/front1.webp',
     alt: 'Connectify front',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
   {
     imageName: 'front2.webp',
@@ -80,7 +80,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'connectify/front2.webp',
     alt: 'Connectify front',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
   {
     imageName: 'front3.webp',
@@ -88,7 +88,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'connectify/front3.webp',
     alt: 'Connectify front',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
   {
     imageName: 'front4.webp',
@@ -96,7 +96,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'connectify/front4.webp',
     alt: 'Connectify front',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
   {
     imageName: 'front5.webp',
@@ -104,7 +104,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'connectify/front5.webp',
     alt: 'Connectify front',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
   {
     imageName: 'front6.webp',
@@ -112,7 +112,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'connectify/front6.webp',
     alt: 'Connectify front',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
   {
     imageName: 'front7.webp',
@@ -120,7 +120,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'connectify/front7.webp',
     alt: 'Connectify front',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
 
   {
@@ -129,7 +129,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'garage/front1.webp',
     alt: 'Garage front',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
   {
     imageName: 'front2.webp',
@@ -137,7 +137,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'garage/front2.webp',
     alt: 'Garage front',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
   {
     imageName: 'front3.webp',
@@ -145,7 +145,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'garage/front3.webp',
     alt: 'Garage front',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
   {
     imageName: 'front4.webp',
@@ -153,7 +153,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'garage/front4.webp',
     alt: 'Garage front',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
   {
     imageName: 'front5.webp',
@@ -161,7 +161,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'garage/front5.webp',
     alt: 'Garage front',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
   {
     imageName: 'front6.webp',
@@ -169,7 +169,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'garage/front6.webp',
     alt: 'Garage front',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
   {
     imageName: 'front7.webp',
@@ -177,7 +177,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'garage/front7.webp',
     alt: 'Garage front',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
   {
     imageName: 'front8.webp',
@@ -185,7 +185,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'garage/front8.webp',
     alt: 'Garage front',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
   {
     imageName: 'front9.webp',
@@ -193,7 +193,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'garage/front9.webp',
     alt: 'Garage front',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
   {
     imageName: 'front10.webp',
@@ -201,7 +201,7 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     general: true,
     src: 'garage/front10.webp',
     alt: 'Garage front',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
 
   {

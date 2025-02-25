@@ -96,7 +96,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'connectify/back1.webp',
     alt: 'Connectify back',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
   {
     imageName: 'back2.webp',
@@ -104,7 +104,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'connectify/back2.webp',
     alt: 'Connectify back',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
   {
     imageName: 'back3.webp',
@@ -112,7 +112,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'connectify/back3.webp',
     alt: 'Connectify back',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
   {
     imageName: 'back4.webp',
@@ -120,7 +120,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'connectify/back4.webp',
     alt: 'Connectify back',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
   {
     imageName: 'back5.webp',
@@ -128,7 +128,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'connectify/back5.webp',
     alt: 'Connectify back',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
   {
     imageName: 'back6.webp',
@@ -136,7 +136,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'connectify/back6.webp',
     alt: 'Connectify back',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
   {
     imageName: 'back7.webp',
@@ -144,7 +144,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'connectify/back7.webp',
     alt: 'Connectify back',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
   {
     imageName: 'back8.webp',
@@ -152,7 +152,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'connectify/back8.webp',
     alt: 'Connectify back',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
   {
     imageName: 'back9.webp',
@@ -160,7 +160,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'connectify/back9.webp',
     alt: 'Connectify back',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
   {
     imageName: 'back10.webp',
@@ -168,7 +168,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'connectify/back10.webp',
     alt: 'Connectify back',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
   {
     imageName: 'back11.webp',
@@ -176,7 +176,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'connectify/back11.webp',
     alt: 'Connectify back',
-    projectName: 'Connectify',
+    projectName: 'connectify',
   },
 
   {
@@ -185,7 +185,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'garage/back1.webp',
     alt: 'Garage back',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
   {
     imageName: 'back2.webp',
@@ -193,7 +193,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'garage/back2.webp',
     alt: 'Garage back',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
   {
     imageName: 'back3.webp',
@@ -201,7 +201,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'garage/back3.webp',
     alt: 'Garage back',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
   {
     imageName: 'back4.webp',
@@ -209,7 +209,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'garage/back4.webp',
     alt: 'Garage back',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
   {
     imageName: 'back5.webp',
@@ -217,7 +217,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'garage/back5.webp',
     alt: 'Garage back',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
   {
     imageName: 'back6.webp',
@@ -225,7 +225,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'garage/back6.webp',
     alt: 'Garage back',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
   {
     imageName: 'back7.webp',
@@ -233,7 +233,7 @@ export const DataCarousel2DBack: CarouselProjectImg[] = [
     general: false,
     src: 'garage/back7.webp',
     alt: 'Garage back',
-    projectName: 'Garage',
+    projectName: 'garage',
   },
 
   {
