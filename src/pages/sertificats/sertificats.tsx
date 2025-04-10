@@ -9,39 +9,43 @@ import * as S from './sertificats.styled';
 const itemData: Carousel3d[] | CarouselProjectImg[] = [
   {
     src: require(`../../images/Sertificats/cert0.webp`),
-    alt: 'diplom',
+    alt: 'diplôme vlidée',
   },
   {
     src: require(`../../images/Sertificats/cert1.webp`),
-    alt: 'diplom uk',
+    alt: 'diplôme uk',
   },
   {
     src: require(`../../images/Sertificats/cert2.webp`),
-    alt: 'diplom uk',
+    alt: 'diplôme fr',
   },
   {
     src: require(`../../images/Sertificats/cert3.webp`),
-    alt: 'diplom uk',
+    alt: 'diplôme she codes plus',
   },
   {
     src: require(`../../images/Sertificats/cert4.webp`),
-    alt: 'diplom uk',
+    alt: 'diplôme she codes react',
   },
   {
     src: require(`../../images/Sertificats/cert5.webp`),
-    alt: 'diplom uk',
+    alt: 'diplôme she codes advanced',
   },
   {
     src: require(`../../images/Sertificats/cert6.webp`),
-    alt: 'diplom uk',
+    alt: 'diplôme she codes responcive',
   },
   {
     src: require(`../../images/Sertificats/cert7.webp`),
-    alt: 'diplom uk',
+    alt: 'diplôme SEO',
   },
   {
     src: require(`../../images/Sertificats/cert8.webp`),
-    alt: 'diplom uk',
+    alt: 'diplôme bdd1',
+  },
+  {
+    src: require(`../../images/Sertificats/cert10.webp`),
+    alt: 'diplôme html',
   },
 ];
 
