@@ -207,4 +207,21 @@ export const imagesCarousel: Carousel3d[] = [
     imageNameList: 'img12l.webp',
     commercial: true,
   },
+  {
+    imageName: 'img13.webp', //Kaya-yoga
+    descriptions: 'React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub|Turborepo',
+    linkGit: 'private',
+    linkProject: 'https://kaya-yoga.netlify.app/',
+    linkVideo: '',
+    src: '',
+    degY: 0,
+    alt: 'Template of site',
+    projectName: 'kayayoga',
+    projectTitre: 'Kaya-yoga',
+    openProject: true,
+    openGit: false,
+    openVideo: false,
+    imageNameList: 'img13l.webp',
+    commercial: true,
+  },
 ];
