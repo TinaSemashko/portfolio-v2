@@ -5,17 +5,11 @@ import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router';
 import Social from '../socialLinks';
 
+import { fontSizes } from '../../constants/responsiveFontSizes';
+
 import * as S from './footer.styled';
 
-const fontSizeFooter = {
-  xxs: '0.5rem',
-  xs: '0.5rem',
-  sm: '0.8rem',
-  md: '0.9rem',
-  lg: '1rem',
-  xl: '1.2rem',
-  xxl: '1.2rem',
-};
+const fontSizeFooter = fontSizes.footer;
 
 const Home: React.FC = () => {
   const { pathname } = useLocation();

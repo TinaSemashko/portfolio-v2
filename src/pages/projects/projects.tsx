@@ -17,17 +17,11 @@ import { DataCarousel2D } from '../dataCarousel2D/dataCarousel2D';
 import { DataCarousel2DBack } from '../dataCarousel2D/dataCarousel2Dback';
 import ListImages from '../../shared/listImages';
 
+import { fontSizes } from '../../constants/responsiveFontSizes';
+
 import * as S from './projects.styled';
 
-const fontSizeDescription = {
-  xxs: '0.5rem',
-  xs: '0.5rem',
-  sm: '0.6rem',
-  md: '0.7rem',
-  lg: '0.7rem',
-  xl: '0.9rem',
-  xxl: '1.1rem',
-};
+const fontSizeDescription = fontSizes.projectDescription;
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();

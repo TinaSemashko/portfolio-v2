@@ -22,6 +22,8 @@ import CodeIcon from '@mui/icons-material/Code';
 import SchoolIcon from '@mui/icons-material/School';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
+import { fontSizes } from '../../constants/responsiveFontSizes';
+
 import * as S from './topbar.styled';
 
 const menuItemsArray = Object.values(MenuItems);
@@ -34,15 +36,7 @@ const menuIconsArray = [
   <WhatsAppIcon />,
 ];
 
-const fontSizeMenu = {
-  xxs: '1.2rem',
-  xs: '1.6rem',
-  sm: '2rem',
-  md: '2.3rem',
-  lg: '2.4rem',
-  xl: '2.7rem',
-  xxl: '3rem',
-};
+const fontSizeMenu = fontSizes.menu;
 
 const topMargin = {
   xxs: '30vh',

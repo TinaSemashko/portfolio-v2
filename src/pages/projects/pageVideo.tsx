@@ -11,6 +11,8 @@ import VideoConnectify from "../../images/connevtify.mp4";
 import VideoABS from "../../images/abs.mp4";
 import VideoSeaLife from "../../images/SEALIFE api.mp4";
 
+import { fontSizes } from "../../constants/responsiveFontSizes";
+
 import * as S from "./pageVideo.styled";
 
 type VideoLinks = {
@@ -24,13 +26,7 @@ const videoLinks: VideoLinks = {
   VideoABS: VideoABS,
 };
 
-const fontSizeBody2 = {
-  xs: "0.5rem",
-  sm: "0.8rem",
-  md: "0.7rem",
-  lg: "0.9rem",
-  xl: "1rem",
-};
+const fontSizeBody2 = fontSizes.videoBody2;
 
 const VideoProjects: React.FC = () => {
   const { state } = useLocation();

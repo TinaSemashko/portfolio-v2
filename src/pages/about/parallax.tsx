@@ -3,27 +3,12 @@ import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import flag from "../../images/Nuvola_France_Ukraine_flags.svg.png";
 
+import { fontSizes } from "../../constants/responsiveFontSizes";
+
 import * as S from "./parallax.styled";
 
-const fontSizeBetween = {
-  xxs: "0.8rem",
-  xs: "0.9rem",
-  sm: "1.2rem",
-  md: "1.4rem",
-  lg: "1.5rem",
-  xl: "1.6rem",
-  xxl: "1.8rem",
-};
-
-const fontSizeShort = {
-  xxs: "1.2rem",
-  xs: "1.6rem",
-  sm: "2rem",
-  md: "2.3rem",
-  lg: "2.4rem",
-  xl: "2.7rem",
-  xxl: "3rem",
-};
+const fontSizeBetween = fontSizes.parallaxBetween;
+const fontSizeShort = fontSizes.parallaxShort;
 
 const Parallax: React.FC = () => {
   const { t } = useTranslation();

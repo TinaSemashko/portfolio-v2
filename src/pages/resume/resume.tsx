@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import Avatar from '../../images/avatar.jpg';
 import { Helmet } from 'react-helmet';
+import { fontSizes } from '../../constants/responsiveFontSizes';
 import Divider from '@mui/material/Divider';
 import { List, ListItem, Typography, useMediaQuery } from '@mui/material';
 import parse from 'html-react-parser';
@@ -14,25 +15,8 @@ import SocialLinks from '../../shared/socialLinks';
 
 import * as S from './resume.styled';
 
-const fontSizeH4 = {
-  xxs: '0.7rem',
-  xs: '0.8rem',
-  sm: '1.0rem',
-  md: '1.2rem',
-  lg: '1.4rem',
-  xl: '1.6rem',
-  xxl: '1.6rem',
-};
-
-const fontSizeH6 = {
-  xxs: '0.5rem',
-  xs: '0.5rem',
-  sm: '0.8rem',
-  md: '0.9rem',
-  lg: '0.95rem',
-  xl: '1rem',
-  xxl: '1rem',
-};
+const fontSizeH4 = fontSizes.resumeH4;
+const fontSizeH6 = fontSizes.resumeH6;
 
 const Resume: React.FC = () => {
   const { t } = useTranslation();

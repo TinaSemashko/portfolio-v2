@@ -53,6 +53,8 @@ const ContactForm: React.FC = () => {
     return <AfterSubmit />;
   }
 
+  const hasSubmissionError = state.errors && state.errors.length > 0;
+
   return (
     <Box
       onSubmit={handleSubmit}
@@ -156,6 +158,12 @@ const ContactForm: React.FC = () => {
         value={formData.message}
         onChange={handleInputChange}
       />
+
+      {hasSubmissionError && (
+        <Typography variant="body2" sx={{ color: 'red', textAlign: 'center', mt: 1 }}>
+          {t('contact.error_submission', 'An error occurred. Please try again.')}
+        </Typography>
+      )}
 
       <Stack
         direction="row"

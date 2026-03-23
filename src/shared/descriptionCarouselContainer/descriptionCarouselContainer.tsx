@@ -8,6 +8,8 @@ import DialogCarousel from '../dialog';
 import { DataCarousel2D } from '../../pages/dataCarousel2D/dataCarousel2D';
 import { DataCarousel2DBack } from '../../pages/dataCarousel2D/dataCarousel2Dback';
 
+import { fontSizes } from '../../constants/responsiveFontSizes';
+
 import * as S from './descriptionCarouselContainer.styled';
 
 type Props = {
@@ -15,25 +17,8 @@ type Props = {
   onCloseDescription?: () => void;
 };
 
-const fontSizeH6 = {
-  xxs: '0.5rem',
-  xs: '0.7rem',
-  sm: '0.8rem',
-  md: '0.9rem',
-  lg: '0.95rem',
-  xl: '1rem',
-  xxl: '1rem',
-};
-
-const fontSizeH4 = {
-  xxs: '0.6rem',
-  xs: '0.7rem',
-  sm: '1rem',
-  md: '1.2rem',
-  lg: '1.4rem',
-  xl: '1.8rem',
-  xxl: '2rem',
-};
+const fontSizeH6 = fontSizes.carouselH6;
+const fontSizeH4 = fontSizes.carouselH4;
 
 const DescriptionCarouselContainer: React.FC<Props> = ({ project, onCloseDescription }) => {
   const { t } = useTranslation();

@@ -8,27 +8,12 @@ import telegram from '../../images/telegram.webp';
 import whatsapp from '../../images/whatsapp.webp';
 import { useTranslation } from 'react-i18next';
 
+import { fontSizes } from '../../constants/responsiveFontSizes';
+
 import * as S from './contact.styled';
 
-const fontSizeTitle = {
-  xxs: '2rem',
-  xs: '3rem',
-  sm: '5rem',
-  md: '7rem',
-  lg: '9rem',
-  xl: '10rem',
-  xxl: '12rem',
-};
-
-const fontSizeContact = {
-  xxs: '0.9rem',
-  xs: '1rem',
-  sm: '1rem',
-  md: '0.9rem',
-  lg: '1rem',
-  xl: '1.2rem',
-  xxl: '1.2rem',
-};
+const fontSizeTitle = fontSizes.contactTitle;
+const fontSizeContact = fontSizes.contactInfo;
 
 const CONTACT_EMAIL = process.env.REACT_APP_EMAIL || '';
 const LINKEDIN_URL = process.env.REACT_APP_LINKEDIN_URL || '';
