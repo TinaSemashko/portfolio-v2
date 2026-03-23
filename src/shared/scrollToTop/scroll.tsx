@@ -39,6 +39,7 @@ const Scroll: React.FC<Props> = ({ showBelow }) => {
     <S.MainContainer>
       {show && (
         <IconButton
+          aria-label="Scroll to top"
           onClick={handleClick}
           sx={{
             height: '18vh',

@@ -97,9 +97,13 @@ const Carousel: React.FC = () => {
                 commercial={item.commercial ?? false}
                 carouselWith={carouselParams?.cellsize ?? 0}
                 src={item.src}
-                alt={item.alt}
+                alt={item.alt || `Project ${item.projectTitre || index + 1}`}
                 id={index.toString()}
                 onClick={handleClick}
+                tabIndex={0}
+                onKeyDown={e => e.key === 'Enter' && handleClick(e as unknown as React.MouseEvent<HTMLImageElement>)}
+                role="button"
+                aria-label={`View project: ${item.projectTitre || ''}`}
               />
               {/* <S.StyledButtonCarousel label={t('carousel3d.button_project')} onClick={() => openDescription(item)} /> */}
             </S.Slide>

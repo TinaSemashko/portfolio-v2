@@ -59,6 +59,7 @@ const ContactForm: React.FC = () => {
     <Box
       onSubmit={handleSubmit}
       component="form"
+      aria-label="Contact form"
       sx={{
         width: { xs: '90%', sm: '80%', xxl: '100%' },
         justifyContent: 'center',

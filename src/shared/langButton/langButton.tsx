@@ -45,6 +45,7 @@ export const LangButton: React.FC<Props> = ({ colorPrime, iconWithoutSlash = fal
               value={selectedLang}
               label="Lang"
               onChange={handleLanguageChange}
+              aria-label="Select language"
               sx={{
                 '&.MuiOutlinedInput-root': { fontSize: '1rem' },
               }}>
@@ -76,7 +77,11 @@ export const LangButton: React.FC<Props> = ({ colorPrime, iconWithoutSlash = fal
                 <li key={index}>
                   <S.LangGridContainer key={index}>
                     <S.Lamp colorPrime={colorPrime} src={lamp1} alt="Language indicator" />
-                    <S.LanguageButton selected={i18n.language === item} onClick={() => changeCurrentLanguage(item)}>
+                    <S.LanguageButton
+                      selected={i18n.language === item}
+                      onClick={() => changeCurrentLanguage(item)}
+                      aria-label={`Switch to ${item}`}
+                      aria-current={i18n.language === item ? 'true' : undefined}>
                       {item}
                     </S.LanguageButton>
                   </S.LangGridContainer>

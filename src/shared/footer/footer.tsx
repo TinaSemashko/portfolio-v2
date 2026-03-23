@@ -19,9 +19,9 @@ const Home: React.FC = () => {
   const isParallax = currentPathArray[currentPathArray.length - 1] === 'about';
 
   return (
-    <S.MainContainer isParallax={isParallax}>
+    <S.MainContainer isParallax={isParallax} role="contentinfo" aria-label="Footer">
       <S.StyledButton label={t('footer.contact')} onClick={() => navigate(Routes.contact)} />
-      <S.SocialLinks>
+      <S.SocialLinks aria-label="Social media links">
         <Social directionRow={false} />
       </S.SocialLinks>
       <S.Langs>
