@@ -20,9 +20,7 @@ export const LangButton: React.FC<Props> = ({ colorPrime, iconWithoutSlash = fal
   const changeCurrentLanguage = (language: string): void => {
     i18n.changeLanguage(language).catch(error => {
       if (error instanceof Error) {
-        /* eslint-disable no-console */
-        console.log(error.message);
-        /* eslint-enable no-console */
+        // silently handle language change errors
       }
     });
   };

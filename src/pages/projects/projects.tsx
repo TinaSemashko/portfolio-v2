@@ -72,7 +72,6 @@ const Projects: React.FC = () => {
   };
 
   const openCarouselDialog = (projectName: string): void => {
-    console.log(projectName);
     setSelectedProjectName(projectName);
     setOpenCarousel(true);
   };
@@ -112,8 +111,6 @@ const Projects: React.FC = () => {
     { word: t('projects.coleur1'), color: `${theme.palette.primary.main}` },
     { word: t('projects.coleur2'), color: `${theme.palette.colorOrange.main}` },
   ];
-  console.log(selectedProjectName);
-  console.log(DataCarousel2D);
   return (
     <S.MainContainer>
       <Helmet>

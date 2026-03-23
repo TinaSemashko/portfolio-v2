@@ -5,6 +5,10 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 
 import * as S from './social.styled';
 
+const GITHUB_URL = process.env.REACT_APP_GITHUB_URL || '';
+const LINKEDIN_URL = process.env.REACT_APP_LINKEDIN_URL || '';
+const FACEBOOK_URL = process.env.REACT_APP_FACEBOOK_URL || '';
+
 type Props = {
   directionRow: boolean;
   color?: string;
@@ -14,7 +18,7 @@ const Social: React.FC<Props> = ({ directionRow, color }) => {
   return (
     <S.SocialLinks directionRow={directionRow}>
       <IconButton
-        href="https://github.com/TinaSemashko"
+        href={GITHUB_URL}
         title="github"
         aria-label="github"
         target="_blank"
@@ -22,7 +26,7 @@ const Social: React.FC<Props> = ({ directionRow, color }) => {
         <S.StyledIcon as={GitHubIcon} customcolor={color} />
       </IconButton>
       <IconButton
-        href="https://www.linkedin.com/in/tina-semashko/"
+        href={LINKEDIN_URL}
         title="linkedin"
         aria-label="linkedin"
         target="_blank"
@@ -30,7 +34,7 @@ const Social: React.FC<Props> = ({ directionRow, color }) => {
         <S.StyledIcon as={LinkedInIcon} customcolor={color} />
       </IconButton>
       <IconButton
-        href="https://www.facebook.com/akateria/"
+        href={FACEBOOK_URL}
         title="facebook"
         aria-label="facebook"
         target="_blank"

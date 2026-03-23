@@ -67,7 +67,7 @@ const Home: React.FC = () => {
         <meta name="twitter:description" content="Full-stack développeur web portfolio Il-de-France" />
         <meta property="og:title" content="Portfolio full stack développeu" />
         <meta property="og:description" content="Full-stack développeur web portfolio Il-de-France" />
-        <meta property="og:url" content="https://tina-dev-portfolio.netlify.app/" />
+        <meta property="og:url" content={process.env.REACT_APP_SITE_URL || ''} />
         <meta property="og:site_name" content="tina-dev-portfolio" />
         <meta property="og:locale" content="fr_FR" />
         <meta property="og:type" content="article" />

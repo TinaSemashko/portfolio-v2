@@ -54,7 +54,6 @@ const VideoProjects: React.FC = () => {
   };
 
   const openCard = () => {
-    console.log(state.projectcard.project);
     navigate(Routes.cartproject, {
       state: { cartproject: state.projectcard },
     });
