@@ -20,7 +20,7 @@ const Hobby: React.FC = () => {
       <S.BackgroundContainer />
       <S.GridContainer>
         <S.ImgContainer1>
-          <S.StyledImg src={img} alt="" />
+          <S.StyledImg src={img} alt="Hobby category decoration" />
           <S.StyleText>
             <Typography
               variant={SMScreen ? 'body2' : 'h4'}
@@ -35,7 +35,7 @@ const Hobby: React.FC = () => {
           </S.StyleText>
         </S.ImgContainer1>
         <S.ImgContainer2>
-          <S.StyledImg src={img} alt="" />
+          <S.StyledImg src={img} alt="Hobby category decoration" />
           <S.StyleText>
             <Typography
               variant={SMScreen ? 'body2' : 'h4'}
@@ -50,7 +50,7 @@ const Hobby: React.FC = () => {
           </S.StyleText>
         </S.ImgContainer2>
         <S.ImgContainer3>
-          <S.StyledImg src={img} alt="" />
+          <S.StyledImg src={img} alt="Hobby category decoration" />
           <S.StyleText>
             <Typography
               variant={SMScreen ? 'body2' : 'h4'}
@@ -65,7 +65,7 @@ const Hobby: React.FC = () => {
           </S.StyleText>
         </S.ImgContainer3>
         <S.ImgContainer4>
-          <S.StyledImg src={img} alt="" />
+          <S.StyledImg src={img} alt="Hobby category decoration" />
           <S.StyleText>
             <Typography
               variant={SMScreen ? 'body2' : 'h4'}
@@ -80,7 +80,7 @@ const Hobby: React.FC = () => {
           </S.StyleText>
         </S.ImgContainer4>
         <S.ImgContainer5>
-          <S.StyledImg src={img} alt="" />
+          <S.StyledImg src={img} alt="Hobby category decoration" />
           <S.StyleText>
             <Typography
               variant={SMScreen ? 'body2' : 'h4'}

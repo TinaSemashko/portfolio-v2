@@ -75,7 +75,7 @@ export const LangButton: React.FC<Props> = ({ colorPrime, iconWithoutSlash = fal
               {languages.map((item, index) => (
                 <li key={index}>
                   <S.LangGridContainer key={index}>
-                    <S.Lamp colorPrime={colorPrime} src={lamp1} alt="" />
+                    <S.Lamp colorPrime={colorPrime} src={lamp1} alt="Language indicator" />
                     <S.LanguageButton selected={i18n.language === item} onClick={() => changeCurrentLanguage(item)}>
                       {item}
                     </S.LanguageButton>

@@ -83,7 +83,7 @@ const Book: React.FC = () => {
     <S.MainContainer>
       <S.CardContainer id="card" className="card" onClick={handleClick} windowWidth={width} windowHeight={height}>
         <S.ImgContainer className="imgBox">
-          <S.ImgVert src={img} alt="" />
+          <S.ImgVert src={img} alt="Bible book cover" />
         </S.ImgContainer>
         <S.TextContainer windowWidth={width} windowHeight={height}>
           <Typography variant="body2" lineHeight="1">
