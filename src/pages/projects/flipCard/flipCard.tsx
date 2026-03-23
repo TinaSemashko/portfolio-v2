@@ -31,7 +31,7 @@ const FlipCard: React.FC<CardProps> = ({ project }) => {
       onTouchEnd={flipClose}
       flipped={flipped}>
       <S.Front>
-        <S.Picture src={project?.src} alt={project?.alt} />
+        <S.Picture src={project?.src} alt={project?.alt} loading="lazy" />
       </S.Front>
       <S.Back>
         <DescriptionCarouselContainer project={project ?? null} onCloseDescription={handleClose} />

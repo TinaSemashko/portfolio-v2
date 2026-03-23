@@ -9,5 +9,5 @@ export enum Routes {
   videopage = '/videopage',
   cartproject = '/cartproject',
   conditions = '/conditions',
-  sertificats = '/sertificats',
+  certificates = '/certificates',
 }

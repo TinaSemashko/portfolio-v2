@@ -2,7 +2,7 @@ export enum MenuItems {
   HOME = 'home',
   PROJECTS = 'projects',
   RESUME = 'resume',
-  SERTIFICATS = 'sertificats',
+  CERTIFICATES = 'certificates',
   ABOUT = 'about',
   // HOBBY = 'hobby',
   CONTACT = 'contact',

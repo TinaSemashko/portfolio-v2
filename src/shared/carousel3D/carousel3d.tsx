@@ -99,6 +99,7 @@ const Carousel: React.FC = () => {
                 src={item.src}
                 alt={item.alt || `Project ${item.projectTitre || index + 1}`}
                 id={index.toString()}
+                loading="lazy"
                 onClick={handleClick}
                 tabIndex={0}
                 onKeyDown={e => e.key === 'Enter' && handleClick(e as unknown as React.MouseEvent<HTMLImageElement>)}

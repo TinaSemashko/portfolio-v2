@@ -40,7 +40,7 @@ const Resume: React.FC = () => {
       <S.MainGridContainer>
         <S.ResumeContainer>
           <S.PhotoBox>
-            <S.Photo src={Avatar} alt="Portrait photo" />
+            <S.Photo src={Avatar} alt="Portrait photo" loading="lazy" />
           </S.PhotoBox>
           <S.Title>
             <Typography variant="h3" textAlign="center" sx={{ color: 'colorBlack.main' }}>

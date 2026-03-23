@@ -12,7 +12,7 @@ const Resume = lazy(() => import('../pages/resume'));
 const Hobby = lazy(() => import('../pages/hobby'));
 const Contact = lazy(() => import('../pages/contact'));
 const Galery = lazy(() => import('../pages/hobby/galery'));
-const Sertificats = lazy(() => import('../pages/sertificats'));
+const Certificates = lazy(() => import('../pages/certificates'));
 
 export const AppRoutes: React.FunctionComponent = () => (
   <ErrorBoundary>
@@ -24,7 +24,7 @@ export const AppRoutes: React.FunctionComponent = () => (
       <Route path={Routes.hobby} element={withSuspense(Hobby)} />
       <Route path={Routes.contact} element={withSuspense(Contact)} />
       <Route path={Routes.galery} element={withSuspense(Galery)} />
-      <Route path={Routes.sertificats} element={withSuspense(Sertificats)} />
+      <Route path={Routes.certificates} element={withSuspense(Certificates)} />
 
       <Route path="*" element={<NotFound />} />
     </Router>

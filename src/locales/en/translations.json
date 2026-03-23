@@ -98,7 +98,7 @@
     "close": "close",
     "menu": "menu",
     "conditions": "GTC",
-    "sertificats": "my certificates"
+    "certificates": "my certificates"
   },
   "footer": {
     "work": "Work inquiry",

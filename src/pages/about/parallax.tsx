@@ -25,7 +25,7 @@ const Parallax: React.FC = () => {
       <S.ImgMainContainer>
         <S.TextContainerShort0>
           <S.TextRainbow>
-            <img src={flag} alt="France-Ukraine flag" width="3%" />
+            <img src={flag} alt="France-Ukraine flag" width="3%" loading="lazy" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <Typography
               variant="h1"

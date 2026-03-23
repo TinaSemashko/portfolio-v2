@@ -5,18 +5,18 @@ import { useState } from 'react';
 import { Carousel3d, CarouselProjectImg } from '../../types/projects';
 import DialogCarousel from '../../shared/dialog';
 
-import cert0 from '../../images/Sertificats/cert0.webp';
-import cert1 from '../../images/Sertificats/cert1.webp';
-import cert2 from '../../images/Sertificats/cert2.webp';
-import cert3 from '../../images/Sertificats/cert3.webp';
-import cert4 from '../../images/Sertificats/cert4.webp';
-import cert5 from '../../images/Sertificats/cert5.webp';
-import cert6 from '../../images/Sertificats/cert6.webp';
-import cert7 from '../../images/Sertificats/cert7.webp';
-import cert8 from '../../images/Sertificats/cert8.webp';
-import cert10 from '../../images/Sertificats/cert10.webp';
+import cert0 from '../../images/Certificates/cert0.webp';
+import cert1 from '../../images/Certificates/cert1.webp';
+import cert2 from '../../images/Certificates/cert2.webp';
+import cert3 from '../../images/Certificates/cert3.webp';
+import cert4 from '../../images/Certificates/cert4.webp';
+import cert5 from '../../images/Certificates/cert5.webp';
+import cert6 from '../../images/Certificates/cert6.webp';
+import cert7 from '../../images/Certificates/cert7.webp';
+import cert8 from '../../images/Certificates/cert8.webp';
+import cert10 from '../../images/Certificates/cert10.webp';
 
-import * as S from './sertificats.styled';
+import * as S from './certificates.styled';
 
 const itemData: Carousel3d[] | CarouselProjectImg[] = [
   { src: cert0, alt: 'diplôme vlidée' },
@@ -31,7 +31,7 @@ const itemData: Carousel3d[] | CarouselProjectImg[] = [
   { src: cert10, alt: 'diplôme html' },
 ];
 
-const Sertificats: React.FC = () => {
+const Certificates: React.FC = () => {
   const matchDownSm = useMediaQuery(theme.breakpoints.down('sm'));
   const matchDownMd = useMediaQuery(theme.breakpoints.down('md'));
   const [openCarousel, setOpenCarousel] = useState(false);
@@ -80,4 +80,4 @@ const Sertificats: React.FC = () => {
   );
 };
 
-export default Sertificats;
+export default Certificates;

@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
         <S.ColorContainer />
         <S.ButtonContainer>
           <S.LinkSocial1 href={`mailto:${CONTACT_EMAIL}`} target="_blank" rel="noopener noreferrer">
-            <S.ImgSocial src={email} alt="email" width="50rem" />
+            <S.ImgSocial src={email} alt="email" width="50rem" loading="lazy" />
           </S.LinkSocial1>
           <S.TextContainer1 variant="h5" color="colorGray.main">
             --Email--
@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
           </S.ButtonText1>
 
           <S.LinkSocial2 href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
-            <S.ImgSocial src={linkedin} alt="linkedin" width="50rem" />
+            <S.ImgSocial src={linkedin} alt="linkedin" width="50rem" loading="lazy" />
           </S.LinkSocial2>
           <S.TextContainer2 variant="h5" color="colorGray.main">
             --LinkedIn--
@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
           </S.ButtonText2>
 
           <S.LinkSocial3 href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
-            <S.ImgSocial src={telegram} alt="telegram" width="50rem" />
+            <S.ImgSocial src={telegram} alt="telegram" width="50rem" loading="lazy" />
           </S.LinkSocial3>
           <S.TextContainer3 variant="h5" color="colorGray.main">
             --Telegram--
@@ -105,7 +105,7 @@ const Contact: React.FC = () => {
           </S.ButtonText3>
 
           <S.LinkSocial4 href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">
-            <S.ImgSocial src={whatsapp} alt="whatsapp" />
+            <S.ImgSocial src={whatsapp} alt="whatsapp" loading="lazy" />
           </S.LinkSocial4>
           <S.TextContainer4 variant="h5" color="colorGray.main">
             --WhatsApp--
@@ -113,7 +113,7 @@ const Contact: React.FC = () => {
         </S.ButtonContainer>
 
         <S.QrContainer>
-          <S.QrImg src={watsappQr} alt="whatsapp-qr" />
+          <S.QrImg src={watsappQr} alt="whatsapp-qr" loading="lazy" />
         </S.QrContainer>
 
         <S.FormContainer>
