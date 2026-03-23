@@ -29,8 +29,6 @@ const CanvasSpriteAnimator: React.FC<CanvasSpriteAnimatorProps> = ({
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { width } = useWindowSize(false);
-  let xPos = width - frameWidth; // Начальная позиция по X
-  let movingRight = false; // Начальное направление движения
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -43,9 +41,15 @@ const CanvasSpriteAnimator: React.FC<CanvasSpriteAnimatorProps> = ({
     spriteImage.src = spriteSheet;
     let currentFrame = 0;
     let lastUpdateTime = 0;
+    let animationFrameId = 0;
+    let cancelled = false;
     const updateInterval = 1000 / fps;
+    let xPos = width - frameWidth;
+    let movingRight = false;
 
     const animate = (time: number) => {
+      if (cancelled) return;
+
       if (!lastUpdateTime) {
         lastUpdateTime = time;
       }
@@ -54,12 +58,9 @@ const CanvasSpriteAnimator: React.FC<CanvasSpriteAnimatorProps> = ({
       if (deltaTime > updateInterval) {
         context.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Обновляем позицию кота и проверяем, не достиг ли он края канваса
         if (movingRight) {
-          // eslint-disable-next-line react-hooks/exhaustive-deps
           xPos += speed;
           if (xPos + frameWidth >= width) {
-            // eslint-disable-next-line react-hooks/exhaustive-deps
             movingRight = false;
           }
         } else {
@@ -69,7 +70,6 @@ const CanvasSpriteAnimator: React.FC<CanvasSpriteAnimatorProps> = ({
           }
         }
 
-        // Если кот идет влево, отражаем кадр спрайта по горизонтали
         if (movingRight) {
           context.save();
           context.scale(-1, 1);
@@ -103,17 +103,18 @@ const CanvasSpriteAnimator: React.FC<CanvasSpriteAnimatorProps> = ({
         lastUpdateTime = time;
       }
 
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     };
 
     spriteImage.onload = () => {
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     };
 
     return () => {
-      lastUpdateTime = 0; // Сброс времени при размонтировании компонента
+      cancelled = true;
+      cancelAnimationFrame(animationFrameId);
     };
-  }, [spriteSheet, frameCount, frameWidth, frameHeight, fps, speed]);
+  }, [spriteSheet, frameCount, frameWidth, frameHeight, fps, speed, width]);
 
   return <ResponsiveCanvas ref={canvasRef} width={width} height={frameHeight} widthPercentage={widthPercentage} />;
 };

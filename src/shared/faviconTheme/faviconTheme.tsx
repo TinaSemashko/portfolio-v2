@@ -9,8 +9,10 @@ const FaviconTheme: React.FC = () => {
   useEffect(() => {
     const matcher = window.matchMedia('(prefers-color-scheme: dark)');
     setFaviconHref(getFaviconPath(matcher.matches));
-    matcher.addEventListener('change', () => setFaviconHref(getFaviconPath(matcher.matches)));
-  }, [faviconHref]);
+    const handleChange = (e: MediaQueryListEvent) => setFaviconHref(getFaviconPath(e.matches));
+    matcher.addEventListener('change', handleChange);
+    return () => matcher.removeEventListener('change', handleChange);
+  }, []);
   return (
     <Helmet>
       <link rel="icon" href={faviconHref} />

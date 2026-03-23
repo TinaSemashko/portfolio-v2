@@ -11,7 +11,11 @@
       "Bash(cd:*)",
       "Bash(mv src/pages/sertificats/sertificats.tsx src/pages/sertificats/certificates.tsx)",
       "Bash(mv src/pages/sertificats/sertificats.styled.tsx src/pages/sertificats/certificates.styled.tsx)",
-      "Bash(mv src/pages/sertificats src/pages/certificates)"
+      "Bash(mv src/pages/sertificats src/pages/certificates)",
+      "Bash(yarn add:*)",
+      "Bash(xargs grep:*)",
+      "Bash(npm run:*)",
+      "Bash(grep -r \"prop mutation\\\\|state mutation\" /c/Akateria/Projects/portfolio-v2/src --include=*.tsx)"
     ]
   }
 }

@@ -49,19 +49,25 @@ const Carousel: React.FC = () => {
   }, [radius]);
 
   const sortCarousel = (numberFirstEl: string) => {
-    if (numberFirstEl !== '0') {
+    if (numberFirstEl !== '0' && carouselParams) {
       let indexEOnChange =
-        Number(numberFirstEl) >= (carouselParams?.sidesQuantity ?? 0)
-          ? Number(numberFirstEl) - (carouselParams?.sidesQuantity ?? 0)
+        Number(numberFirstEl) >= (carouselParams.sidesQuantity ?? 0)
+          ? Number(numberFirstEl) - (carouselParams.sidesQuantity ?? 0)
           : Number(numberFirstEl);
 
-      const tempStart = imagesCarousel.slice(0, indexEOnChange);
-      const tempEnd = imagesCarousel.slice(indexEOnChange);
-      tempEnd.push(...tempStart);
-      imagesCarousel.splice(0, imagesCarousel.length, ...tempEnd);
+      const reordered = [
+        ...imagesCarousel.slice(indexEOnChange),
+        ...imagesCarousel.slice(0, indexEOnChange),
+      ];
+
+      const tempCar = reordered.map((el, index) => ({
+        ...el,
+        alt: `Image ${index + 1}`,
+        degY: index * carouselParams.degKey,
+      }));
+
+      setImageMap(tempCar);
     }
-    setImageMap(imagesCarousel);
-    if (carouselParams) makeCarousel(carouselParams);
   };
 
   const handleClick = (event: React.MouseEvent<HTMLImageElement>) => {
@@ -74,12 +80,6 @@ const Carousel: React.FC = () => {
       if (carouselParams) sortCarousel(indexElForChange);
     }
   };
-
-  // const openDescription = (project: Carousel3d): void => {
-  //   navigate(Routes.cartproject, {
-  //     state: { cartproject: { project } },
-  //   });
-  // };
 
   return (
     <S.MainContainer carouselWith={carouselParams?.cellsize ?? 0}>

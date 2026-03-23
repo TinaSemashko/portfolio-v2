@@ -1,3 +1,4 @@
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
 import img1 from '../../images/home.webp';
@@ -65,7 +66,7 @@ const Home: React.FC = () => {
         <S.CubImg src={img1} alt="digital city" />
         <S.Technol>
           {TechnologiesArray.map((item, index) => (
-            <>
+            <React.Fragment key={item}>
               <S.TechnolTypography
                 variant="h3"
                 sx={{
@@ -74,7 +75,7 @@ const Home: React.FC = () => {
                 {item}
               </S.TechnolTypography>
               {index < TechnologiesArray.length - 1 ? <S.Circle /> : ''}
-            </>
+            </React.Fragment>
           ))}
         </S.Technol>
         <S.StyledButton label={t('main.buttonMore')} onClick={() => navigate(Routes.projects)} />
