@@ -49,6 +49,9 @@ const Resume: React.FC = () => {
           name="keywords"
           content="Mon CV, Resume , Full-stack, développeur web, portfolio, développeur react, développeur node.js"
         />
+        <meta property="og:title" content="CV full stack développeur" />
+        <meta property="og:description" content="Mon CV Resume Full-stack développeur web portfolio Il-de-France" />
+        <meta property="og:type" content="website" />
       </Helmet>
       <S.MainGridContainer>
         <S.ResumeContainer>

@@ -63,14 +63,17 @@ const Home: React.FC = () => {
           name="keywords"
           content="Full-stack, développeur web, portfolio, développeur react, développeur node.js"
         />
+        <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Portfolio full stack développeur" />
         <meta name="twitter:description" content="Full-stack développeur web portfolio Il-de-France" />
-        <meta property="og:title" content="Portfolio full stack développeu" />
+        <meta name="twitter:image" content={`${process.env.REACT_APP_SITE_URL || ''}logo512.png`} />
+        <meta property="og:title" content="Portfolio full stack développeur" />
         <meta property="og:description" content="Full-stack développeur web portfolio Il-de-France" />
+        <meta property="og:image" content={`${process.env.REACT_APP_SITE_URL || ''}logo512.png`} />
         <meta property="og:url" content={process.env.REACT_APP_SITE_URL || ''} />
         <meta property="og:site_name" content="tina-dev-portfolio" />
         <meta property="og:locale" content="fr_FR" />
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
       </Helmet>
       <S.GridContainer>
         <S.Titre

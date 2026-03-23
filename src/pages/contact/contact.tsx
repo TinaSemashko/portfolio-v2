@@ -47,6 +47,9 @@ const Contact: React.FC = () => {
           name="keywords"
           content="Contacts, Full-stack, développeur web, portfolio, développeur react, développeur node.js"
         />
+        <meta property="og:title" content="Contacts full stack développeur" />
+        <meta property="og:description" content="Contacts Full-stack développeur web portfolio Il-de-France" />
+        <meta property="og:type" content="website" />
       </Helmet>
       <S.GridContainer>
         <S.Titre

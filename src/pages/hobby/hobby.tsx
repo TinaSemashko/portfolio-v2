@@ -1,4 +1,5 @@
 import { Typography, useMediaQuery } from '@mui/material';
+import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import { Routes } from '../../app/routes';
@@ -16,6 +17,13 @@ const Hobby: React.FC = () => {
 
   return (
     <S.MainContainer>
+      <Helmet>
+        <title>Hobbies et loisirs créatifs</title>
+        <meta name="description" content="Hobbies et loisirs créatifs - cuir, perles, peinture, broderie, pâte à modeler" />
+        <meta property="og:title" content="Hobbies et loisirs créatifs" />
+        <meta property="og:description" content="Hobbies et loisirs créatifs - cuir, perles, peinture, broderie, pâte à modeler" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <S.VideoAccueil src={Video} autoPlay loop muted />
       <S.BackgroundContainer />
       <S.GridContainer>

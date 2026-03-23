@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material";
+import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import flag from "../../images/Nuvola_France_Ukraine_flags.svg.png";
 
@@ -29,6 +30,13 @@ const Parallax: React.FC = () => {
 
   return (
     <S.MainContainer>
+      <Helmet>
+        <title>À propos - full stack développeur</title>
+        <meta name="description" content="À propos de moi - Full-stack développeur web Il-de-France" />
+        <meta property="og:title" content="À propos - full stack développeur" />
+        <meta property="og:description" content="À propos de moi - Full-stack développeur web Il-de-France" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <S.ImgMainContainer>
         <S.TextContainerShort0>
           <S.TextRainbow>

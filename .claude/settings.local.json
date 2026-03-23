@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(npm list:*)",
-      "Bash(npx react-scripts:*)"
+      "Bash(npx react-scripts:*)",
+      "Bash(npm install:*)",
+      "Bash(yarn install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(node -e \"const p=require\\(''./node_modules/@types/jest/package.json''\\); console.log\\(''@types/jest:'', p.version\\)\")",
+      "Bash(node -e \"const p=require\\(''./node_modules/@types/node/package.json''\\); console.log\\(''@types/node:'', p.version\\)\")"
     ]
   }
 }

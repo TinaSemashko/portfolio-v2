@@ -114,6 +114,9 @@ const Projects: React.FC = () => {
           name="keywords"
           content="Mes projects, Full-stack, développeur web, portfolio, développeur react, développeur node.js"
         />
+        <meta property="og:title" content="Projets full stack développeur" />
+        <meta property="og:description" content="Mes projects Full-stack développeur web portfolio Il-de-France" />
+        <meta property="og:type" content="website" />
       </Helmet>
       <Typography
         variant="h1"
