@@ -16,6 +16,7 @@ export type Carousel3d = {
   openGit?: boolean;
   openVideo?: boolean;
   imageNameList?: string;
+  srcList?: string;
   commercial?: boolean;
 };
 

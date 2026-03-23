@@ -27,7 +27,6 @@ const Carousel: React.FC = () => {
     const tempCar = imagesCarousel.map((el, index) => {
       return {
         ...el,
-        src: require(`../../images/${el.imageName}`),
         alt: `Image ${index + 1}`,
         degY: index * carouselParams.degKey,
       };

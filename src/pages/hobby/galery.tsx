@@ -27,8 +27,8 @@ const Galery: React.FC = () => {
         {dataGalery.map((item, index) => (
           <S.StyleImageListItem key={index}>
             <img
-              srcSet={`${require(`../../images/Hobby/${item}`)}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-              src={`${require(`../../images/Hobby/${item}`)}?w=164&h=164&fit=crop&auto=format`}
+              srcSet={`${item}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+              src={`${item}?w=164&h=164&fit=crop&auto=format`}
               loading="lazy"
               alt=""
             />

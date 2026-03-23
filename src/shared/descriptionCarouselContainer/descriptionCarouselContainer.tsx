@@ -59,14 +59,8 @@ const DescriptionCarouselContainer: React.FC<Props> = ({ project, onCloseDescrip
 
   useEffect(() => {
     const tempCar2D = carouselBack
-      ? DataCarousel2DBack?.filter(el => el.projectName === project?.projectName).map(item => ({
-          ...item,
-          src: require(`../../images/MyProjects/Back/${item.src}`),
-        }))
-      : DataCarousel2D?.filter(el => el.projectName === project?.projectName).map(item => ({
-          ...item,
-          src: require(`../../images/MyProjects/Front/${item.src}`),
-        }));
+      ? DataCarousel2DBack?.filter(el => el.projectName === project?.projectName)
+      : DataCarousel2D?.filter(el => el.projectName === project?.projectName);
 
     setDataCarousel2D(tempCar2D);
   }, [carouselBack, project]);

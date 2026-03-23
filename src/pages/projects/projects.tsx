@@ -41,10 +41,10 @@ const Projects: React.FC = () => {
   const lgScreen = useMediaQuery(theme.breakpoints.down('lg'));
 
   useEffect(() => {
-    const tempCar = imagesCarousel.map((el: Carousel3d, index: number) => {
+    const tempCar = imagesCarousel.map((el: Carousel3d) => {
       return {
         ...el,
-        src: require(`../../images/${el.imageNameList}`),
+        src: el.srcList || el.src,
       };
     });
 
@@ -53,14 +53,8 @@ const Projects: React.FC = () => {
 
   useEffect(() => {
     const tempCar2D = carouselBack
-      ? DataCarousel2DBack?.filter(el => el.projectName === selectedProjectName).map(item => ({
-          ...item,
-          src: require(`../../images/MyProjects/Back/${item.src}`),
-        }))
-      : DataCarousel2D?.filter(el => el.projectName === selectedProjectName).map(item => ({
-          ...item,
-          src: require(`../../images/MyProjects/Front/${item.src}`),
-        }));
+      ? DataCarousel2DBack?.filter(el => el.projectName === selectedProjectName)
+      : DataCarousel2D?.filter(el => el.projectName === selectedProjectName);
 
     setDataCarousel2D(tempCar2D);
   }, [carouselBack, selectedProjectName]);

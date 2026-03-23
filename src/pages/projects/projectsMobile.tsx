@@ -7,8 +7,7 @@ import * as S from './projects.styled';
 const ProjectsMobile: React.FC = () => {
   const { t } = useTranslation();
 
-  imagesCarousel.map((el, index) => {
-    el.src = require(`../../images/${el.imageName}`);
+  imagesCarousel.map(el => {
     el.alt = t(`projects.${el.projectName}`);
     return el;
   });
