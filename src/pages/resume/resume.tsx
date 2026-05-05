@@ -18,11 +18,50 @@ import * as S from './resume.styled';
 const fontSizeH4 = fontSizes.resumeH4;
 const fontSizeH6 = fontSizes.resumeH6;
 
+const languageKeys = ['fr', 'en', 'ukr', 'ru'] as const;
+
 const Resume: React.FC = () => {
   const { t } = useTranslation();
   const mediumScreen = useMediaQuery(theme.breakpoints.down('xl'));
   const largeScreen = useMediaQuery(theme.breakpoints.up('xl'));
   const navigate = useNavigate();
+
+  const competencesFontSx = mediumScreen ? { fontSize: fontSizeH4 } : undefined;
+  const languagesFontSx = mediumScreen ? { fontSize: fontSizeH4 } : undefined;
+
+  const renderCompetences = () => (
+    <S.SectionCompetances>
+      <S.ExpTitle>
+        <Typography variant="h3">{t('resume.competence')}</Typography>
+      </S.ExpTitle>
+      <List sx={{ listStyleType: 'disc' }}>
+        {arrayCompetences.map(item => (
+          <Typography key={item} variant="h5" lineHeight="1.7" sx={competencesFontSx}>
+            <ListItem disablePadding sx={{ display: 'list-item' }}>
+              {t(`competences.${item}`)}
+            </ListItem>
+          </Typography>
+        ))}
+      </List>
+    </S.SectionCompetances>
+  );
+
+  const renderLanguages = () => (
+    <S.SectionLangueges>
+      <S.ExpTitle>
+        <Typography variant="h3">{t('resume.language')}</Typography>
+      </S.ExpTitle>
+      <List sx={{ listStyleType: 'disc' }}>
+        <Typography variant="h5" lineHeight="1.7" sx={languagesFontSx}>
+          {languageKeys.map(key => (
+            <ListItem key={key} disablePadding sx={{ display: 'list-item' }}>
+              {t(`languages.${key}`)}
+            </ListItem>
+          ))}
+        </Typography>
+      </List>
+    </S.SectionLangueges>
+  );
 
   return (
     <S.MainContainer>
@@ -76,7 +115,7 @@ const Resume: React.FC = () => {
           <S.TextBox>
             <List sx={{ listStyleType: 'disc' }}>
               {arrayResume.map(item => (
-                <ListItem disablePadding sx={{ display: 'list-item' }}>
+                <ListItem key={item} disablePadding sx={{ display: 'list-item' }}>
                   <S.StyledTypographyResume variant="h6">
                     <HighlightedText
                       phrase={t(`resume.${item}`)}
@@ -103,7 +142,7 @@ const Resume: React.FC = () => {
               <Typography variant="h3">{t('resume.experience')}</Typography>
             </S.ExpTitle>
             {arrayExperiences.map(item => (
-              <S.ExpMain>
+              <S.ExpMain key={item.dateEx}>
                 <S.SectionDates>
                   <Typography variant="h4" fontWeight="900" sx={{ fontSize: fontSizeH4 }}>
                     {t(item.dateEx)}
@@ -135,40 +174,10 @@ const Resume: React.FC = () => {
               </S.ExpMain>
             ))}
           </S.Experience>
-          {largeScreen && (
-            <S.SectionCompetances>
-              <S.ExpTitle>
-                <Typography variant="h3">{t('resume.competence')}</Typography>
-              </S.ExpTitle>
-              <List sx={{ listStyleType: 'disc' }}>
-                {arrayCompetences.map(item => (
-                  <Typography variant="h5" lineHeight="1.7">
-                    <ListItem disablePadding sx={{ display: 'list-item' }}>
-                      {t(`competences.${item}`)}
-                    </ListItem>
-                  </Typography>
-                ))}
-              </List>
-            </S.SectionCompetances>
-          )}
+          {largeScreen && renderCompetences()}
         </S.GridExpCompetences>
       </S.FlexInformationContainer>
-      {mediumScreen && (
-        <S.SectionCompetances>
-          <S.ExpTitle>
-            <Typography variant="h3">{t('resume.competence')}</Typography>
-          </S.ExpTitle>
-          <List sx={{ listStyleType: 'disc' }}>
-            {arrayCompetences.map(item => (
-              <Typography variant="h5" lineHeight="1.7" sx={{ fontSize: fontSizeH4 }}>
-                <ListItem disablePadding sx={{ display: 'list-item' }}>
-                  {t(`competences.${item}`)}
-                </ListItem>
-              </Typography>
-            ))}
-          </List>
-        </S.SectionCompetances>
-      )}
+      {mediumScreen && renderCompetences()}
 
       {largeScreen && <S.Empty />}
       <S.FlexInformationContainer>
@@ -178,7 +187,7 @@ const Resume: React.FC = () => {
               <Typography variant="h3">{t('resume.education')}</Typography>
             </S.ExpTitle>
             {arrayEducations.map(item => (
-              <S.EducMain>
+              <S.EducMain key={item.dataEd}>
                 <S.SectionDates>
                   <Typography variant="h4" fontWeight="900" sx={{ fontSize: fontSizeH4 }}>
                     {t(item.dataEd)}
@@ -210,60 +219,16 @@ const Resume: React.FC = () => {
             </S.CoursesTitle>
             <S.Courses>
               {arrayCourses.map(item => (
-                <Typography variant="h4" sx={{ fontSize: fontSizeH4 }}>
+                <Typography key={item} variant="h4" sx={{ fontSize: fontSizeH4 }}>
                   <li>{t(`education.${item}`)}</li>
                 </Typography>
               ))}
             </S.Courses>
           </S.Education>
-          {largeScreen && (
-            <S.SectionLangueges>
-              <S.ExpTitle>
-                <Typography variant="h3">{t('resume.language')}</Typography>
-              </S.ExpTitle>
-              <List sx={{ listStyleType: 'disc' }}>
-                <Typography variant="h5" lineHeight="1.7">
-                  <ListItem disablePadding sx={{ display: 'list-item' }}>
-                    {t('languages.en')}
-                  </ListItem>
-                  <ListItem disablePadding sx={{ display: 'list-item' }}>
-                    {t('languages.fr')}
-                  </ListItem>
-                  <ListItem disablePadding sx={{ display: 'list-item' }}>
-                    {t('languages.ukr')}
-                  </ListItem>
-                  <ListItem disablePadding sx={{ display: 'list-item' }}>
-                    {t('languages.ru')}
-                  </ListItem>
-                </Typography>
-              </List>
-            </S.SectionLangueges>
-          )}
+          {largeScreen && renderLanguages()}
         </S.GridEducLangueges>
       </S.FlexInformationContainer>
-      {mediumScreen && (
-        <S.SectionLangueges>
-          <S.ExpTitle>
-            <Typography variant="h3">{t('resume.language')}</Typography>
-          </S.ExpTitle>
-          <List sx={{ listStyleType: 'disc' }}>
-            <Typography variant="h5" lineHeight="1.7" sx={{ fontSize: fontSizeH4 }}>
-              <ListItem disablePadding sx={{ display: 'list-item' }}>
-                {t('languages.en')}
-              </ListItem>
-              <ListItem disablePadding sx={{ display: 'list-item' }}>
-                {t('languages.fr')}
-              </ListItem>
-              <ListItem disablePadding sx={{ display: 'list-item' }}>
-                {t('languages.ukr')}
-              </ListItem>
-              <ListItem disablePadding sx={{ display: 'list-item' }}>
-                {t('languages.ru')}
-              </ListItem>
-            </Typography>
-          </List>
-        </S.SectionLangueges>
-      )}
+      {mediumScreen && renderLanguages()}
       <S.Empty />
       <S.Hobby>
         <S.SectionHobbyMain
