@@ -262,4 +262,23 @@ export const imagesCarousel: Carousel3d[] = [
     category: 'architectural',
     role: 'Architecte technique',
   },
+  {
+    imageName: 'cityGames.webp',
+    descriptions: 'React|TypeScript', // TODO: confirm full stack
+    linkGit: '',
+    linkProject: 'https://citygamesapp.netlify.app',
+    linkVideo: '',
+    src: require('../../images/img1.webp'),
+    degY: 0,
+    alt: 'Application de jeux urbains',
+    projectName: 'cityGames',
+    projectTitre: 'City Games',
+    openProject: true,
+    openGit: false,
+    openVideo: false,
+    imageNameList: 'cityGamesl.webp',
+    srcList: require('../../images/img1.webp'),
+    category: 'architectural',
+    role: 'Architecte technique',
+  },
 ];

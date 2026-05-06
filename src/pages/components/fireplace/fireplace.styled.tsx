@@ -11,16 +11,14 @@ export const MainContainer = styled('div')`
 `;
 
 export const VideoAccueil = styled('video')`
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   object-fit: cover;
   text-align: center;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: -1;
-
-  @media (max-width: 1500px) {
-    width: auto;
-  }
 `;
 
 export const Title = styled('div')<{
@@ -110,16 +108,9 @@ export const TextRainbow = styled('div')`
   }
 `;
 
-export const CatContainer = styled('div')<{
-  //top 33%
-  windowHeight: number;
-}>`
+export const CatContainer = styled('div')`
   position: absolute;
-  bottom: ${({ windowHeight }) => `calc(520 * ${windowHeight}px/1080)`};
-
-  @media (max-width: 568px) {
-    bottom: 20%;
-  }
+  bottom: 58%;
 `;
 
 export const HistoryContainer = styled('div')<{
@@ -129,7 +120,7 @@ export const HistoryContainer = styled('div')<{
 }>`
   position: absolute;
   top: ${({ windowHeight }) => `calc(0.55px * ${windowHeight})`};
-  left: ${({ windowWidth }) => `calc(0.23px * ${windowWidth})`};
+  left: ${({ windowWidth }) => `calc(0.25px * ${windowWidth})`};
   color: ${({ theme }) => theme.palette.primary.main};
   text-align: center;
 `;
