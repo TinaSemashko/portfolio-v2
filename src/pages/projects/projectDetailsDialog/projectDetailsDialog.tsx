@@ -80,11 +80,10 @@ const ProjectDetailsDialog: React.FC<Props> = ({ open, project, onClose }) => {
           </S.Description>
 
           <S.Buttons>
-            {!isArchitectural && (
+            {project.openProject && (
               <S.ActionButton
                 startIcon={<LaunchIcon />}
                 onClick={() => openLink(project.linkProject ?? '')}
-                disabled={!project.openProject}
                 variant="contained">
                 {t('carousel2d.button_project')}
               </S.ActionButton>

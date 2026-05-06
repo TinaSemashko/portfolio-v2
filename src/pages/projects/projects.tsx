@@ -68,12 +68,12 @@ const Projects: React.FC = () => {
     const isArchitectural = item.category === 'architectural';
     const items: DataListMenu[] = [];
 
-    if (!isArchitectural) {
+    if (item.openProject) {
       items.push({
         MenuIcon: LaunchIcon,
         title: t('carousel2d.button_project'),
         variantTypography: 'body1',
-        disabled: !item.openProject,
+        disabled: false,
         clickHandler: () => openLink(item.linkProject ?? ''),
       });
     }
