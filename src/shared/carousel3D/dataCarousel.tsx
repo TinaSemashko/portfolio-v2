@@ -20,24 +20,6 @@ export const imagesCarousel: Carousel3d[] = [
     category: 'commercial',
   },
   {
-    imageName: 'img2.webp', //diamondCollection
-    descriptions: 'HTML|CSS|Javascript|Local storage for Basket|GitHub',
-    linkGit: 'https://github.com/TinaSemashko/ProjetJavascriptAssofac',
-    linkProject: 'https://loquacious-empanada-12b1c9.netlify.app/',
-    linkVideo: '',
-    src: require('../../images/img2.webp'),
-    degY: 0,
-    alt: 'Site e-commerce pour la société de bijoux (projet de formation)',
-    projectName: 'diamondCollection',
-    projectTitre: 'Diamond Collection',
-    openProject: true,
-    openGit: true,
-    openVideo: false,
-    imageNameList: 'img2l.webp',
-    srcList: require('../../images/img2l.webp'),
-    category: 'educational',
-  },
-  {
     imageName: 'img3.webp', //portfolio
     descriptions: 'React|Styled-components|Typescript|Mui-material|GitHub',
     linkGit: 'https://github.com/TinaSemashko/portfolio-clients',
@@ -54,24 +36,6 @@ export const imagesCarousel: Carousel3d[] = [
     imageNameList: 'img3l.webp',
     srcList: require('../../images/img3l.webp'),
     category: 'commercial',
-  },
-  {
-    imageName: 'img4.webp', //ekea
-    descriptions: 'HTML|CSS|Javascript|Bootstrap|JSON|Local storage for Basket|GitHub',
-    linkGit: 'https://github.com/Kaiju971/PROJET-NIVEAU-II',
-    linkProject: 'https://magical-cocada-6863e7.netlify.app/',
-    linkVideo: '',
-    src: require('../../images/img4.webp'),
-    degY: 0,
-    alt: 'Site e-commerce pour une entreprise de meuble (projet de formation)',
-    projectName: 'ekea',
-    projectTitre: 'E-kea',
-    openProject: true,
-    openGit: true,
-    openVideo: false,
-    imageNameList: 'img4l.webp',
-    srcList: require('../../images/img4l.webp'),
-    category: 'educational',
   },
   {
     imageName: 'img5.webp', //casinoGame
@@ -92,25 +56,6 @@ export const imagesCarousel: Carousel3d[] = [
     category: 'educational',
   },
   {
-    imageName: 'img6.webp', //garage
-    descriptions: 'React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub|CRUD',
-    linkGit: 'https://github.com/TinaSemashko/garage',
-    linkProject: 'https://www.tina-space.fr',
-    linkVideo: 'Garage',
-    src: require('../../images/img6.webp'),
-    degY: 0,
-    alt: 'Site e-commerce pour une entreprise de voitures (projet de formation)',
-    projectName: 'garage',
-    projectTitre: 'Garage',
-    openProject: false,
-    openGit: true,
-    openVideo: false,
-    imageNameList: 'img6l.webp',
-    srcList: require('../../images/img6l.webp'),
-    category: 'educational',
-  },
-
-  {
     imageName: 'img8.webp', //weather_react
     descriptions: 'HTML|CSS|React|Bootstrap|API|GitHub',
     linkGit: 'https://github.com/TinaSemashko/weather_react',
@@ -129,42 +74,6 @@ export const imagesCarousel: Carousel3d[] = [
     category: 'educational',
   },
 
-  {
-    imageName: 'img10.webp', //connectify
-    descriptions: 'React|Styled-components|Typecript|Mui-material|PostgreSQL|GitHub|CRUD',
-    linkGit: 'https://github.com/TinaSemashko/connectify-plus',
-    linkProject: '',
-    linkVideo: 'VideoConnectify',
-    src: require('../../images/img10.webp'),
-    degY: 0,
-    alt: 'projet de formation',
-    projectName: 'connectify',
-    projectTitre: 'Connectify',
-    openProject: false,
-    openGit: true,
-    openVideo: false,
-    imageNameList: 'img10l.webp',
-    srcList: require('../../images/img10l.webp'),
-    category: 'educational',
-  },
-  {
-    imageName: 'img11.webp', //assoFacTory
-    descriptions: 'React|Styled-components|Javascript|Mui-material|PostgreSQL|GitHub|Work in the team|CRUD',
-    linkGit: 'https://github.com/TinaSemashko/AssoFacTorySQL',
-    linkProject: '',
-    linkVideo: '',
-    src: require('../../images/img11.webp'),
-    degY: 0,
-    alt: 'un blog (projet de formation)',
-    projectName: 'assoFacTory',
-    projectTitre: 'AssoFacTory',
-    openProject: false,
-    openGit: true,
-    openVideo: false,
-    imageNameList: 'img11l.webp',
-    srcList: require('../../images/img11l.webp'),
-    category: 'educational',
-  },
   {
     imageName: 'img9.webp', //Nastya
     descriptions: 'React|Styled-components|Typescript|Mui-material|GitHub',

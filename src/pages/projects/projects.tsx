@@ -13,7 +13,6 @@ import CastConnectedIcon from '@mui/icons-material/CastConnected';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import { openLink } from '../../shared/utils';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import HighlightedText from '../../shared/highlightedText';
 import { DataCarousel2D } from '../dataCarousel2D/dataCarousel2D';
 import { DataCarousel2DBack } from '../dataCarousel2D/dataCarousel2Dback';
 import ListImages from '../../shared/listImages';
@@ -117,11 +116,6 @@ const Projects: React.FC = () => {
     setshowCarousel(!showCarousel);
   };
 
-  const wordsWithColors = [
-    { word: t('projects.coleur1'), color: `${theme.palette.primary.main}` },
-    { word: t('projects.coleur3'), color: `${theme.palette.colorTeal.main}` },
-    { word: t('projects.coleur2'), color: `${theme.palette.colorOrange.main}` },
-  ];
   return (
     <S.MainContainer>
       <Helmet>
@@ -163,9 +157,6 @@ const Projects: React.FC = () => {
             label={showCarousel ? t('projects.list') : t('projects.carousel')}
             onClick={handleCarousel}
           />
-          <Typography variant="h6">
-            <HighlightedText phrase={t('projects.realProjects')} wordsWithColors={wordsWithColors} />
-          </Typography>
           {showCarousel ? (
             <S.CarouselContainer>
               <Carousel />

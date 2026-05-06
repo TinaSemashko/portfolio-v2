@@ -1,17 +1,5 @@
 import { ImageList, ImageListItem } from '@mui/material';
-import { styled, Theme } from '@mui/material/styles';
-import { ProjectCategory } from '../../types/projects';
-
-const categoryBorderColor = (theme: Theme, category?: ProjectCategory): string => {
-  switch (category) {
-    case 'commercial':
-      return theme.palette.primary.main;
-    case 'architectural':
-      return theme.palette.colorTeal.main;
-    default:
-      return theme.palette.colorOrange.main;
-  }
-};
+import { styled } from '@mui/material/styles';
 
 export const StyledImageList = styled(ImageList)`
   width: 80%;
@@ -58,12 +46,11 @@ export const ThreeDotsBox = styled('div')`
   }
 `;
 
-export const StyledImage = styled('img')<{ category?: ProjectCategory }>`
+export const StyledImage = styled('img')`
   grid-column: 1;
   grid-row: 1;
   width: 100%;
-  border: solid 4px;
-  border-color: ${({ theme, category }) => categoryBorderColor(theme, category)};
+  border: solid 4px ${({ theme }) => theme.palette.primary.main};
   transition: opacity 0.3s ease;
   opacity: 1;
 `;

@@ -42,7 +42,6 @@ const ListImages: React.FC<ModalProps> = ({
           {item.role && <S.RoleBadge>{item.role}</S.RoleBadge>}
           <S.StyledImage
             className="styled-image"
-            category={item.category}
             srcSet={`${item.src}?w=248&fit=crop&auto=format&dpr=2 2x`}
             src={`${item.src}?w=248&fit=crop&auto=format`}
             alt={item.alt}
