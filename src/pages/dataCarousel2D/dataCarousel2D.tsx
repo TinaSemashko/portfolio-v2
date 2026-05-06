@@ -3,47 +3,6 @@ import { CarouselProjectImg } from '../../types/projects';
 export const DataCarousel2D: CarouselProjectImg[] = [
   {
     imageName: 'front1.webp',
-    description: 'test',
-    general: true,
-    src: require('../../images/MyProjects/Front/seaLife/front1.webp'),
-    alt: 'SeaLife front',
-    projectName: 'SeaLife',
-  },
-  {
-    imageName: 'front2.webp',
-    description: 'test',
-    general: true,
-    src: require('../../images/MyProjects/Front/seaLife/front2.webp'),
-    alt: 'SeaLife front',
-    projectName: 'SeaLife',
-  },
-  {
-    imageName: 'front3.webp',
-    description: 'test',
-    general: true,
-    src: require('../../images/MyProjects/Front/seaLife/front3.webp'),
-    alt: 'SeaLife front',
-    projectName: 'SeaLife',
-  },
-  {
-    imageName: 'front4.webp',
-    description: 'test',
-    general: true,
-    src: require('../../images/MyProjects/Front/seaLife/front4.webp'),
-    alt: 'SeaLife front',
-    projectName: 'SeaLife',
-  },
-  {
-    imageName: 'front5.webp',
-    description: 'test',
-    general: true,
-    src: require('../../images/MyProjects/Front/seaLife/front5.webp'),
-    alt: 'SeaLife front',
-    projectName: 'SeaLife',
-  },
-
-  {
-    imageName: 'front1.webp',
     description: 'main page',
     general: false,
     src: require('../../images/MyProjects/Front/teamChallenge/front1.webp'),
