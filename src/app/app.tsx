@@ -46,6 +46,9 @@ export let theme = createTheme({
     colorBlue: {
       main: '#16354D',
     },
+    colorTeal: {
+      main: '#10b981',
+    },
   },
   typography: {
     fontFamily: ['Helvetica', 'Arial', 'Roboto', 'sans-serif'].join(','),
@@ -92,8 +95,42 @@ theme = responsiveFontSizes(theme);
 
 const App: React.FC = () => (
   <ThemeProvider theme={responsiveFontSizes(theme)}>
+    <a
+      href="#main-content"
+      style={{
+        position: 'absolute',
+        left: '-9999px',
+        top: 'auto',
+        width: '1px',
+        height: '1px',
+        overflow: 'hidden',
+      }}
+      onFocus={e => {
+        e.currentTarget.style.position = 'fixed';
+        e.currentTarget.style.left = '10px';
+        e.currentTarget.style.top = '10px';
+        e.currentTarget.style.width = 'auto';
+        e.currentTarget.style.height = 'auto';
+        e.currentTarget.style.overflow = 'visible';
+        e.currentTarget.style.zIndex = '9999';
+        e.currentTarget.style.background = '#fff';
+        e.currentTarget.style.padding = '8px 16px';
+        e.currentTarget.style.color = '#436280';
+        e.currentTarget.style.fontWeight = 'bold';
+      }}
+      onBlur={e => {
+        e.currentTarget.style.position = 'absolute';
+        e.currentTarget.style.left = '-9999px';
+        e.currentTarget.style.width = '1px';
+        e.currentTarget.style.height = '1px';
+        e.currentTarget.style.overflow = 'hidden';
+      }}>
+      Skip to main content
+    </a>
     <Topbar />
-    <AppRoutes />
+    <main id="main-content">
+      <AppRoutes />
+    </main>
     <Scroll showBelow={250} />
     <Footer />
   </ThemeProvider>

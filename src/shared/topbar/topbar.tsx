@@ -22,6 +22,8 @@ import CodeIcon from '@mui/icons-material/Code';
 import SchoolIcon from '@mui/icons-material/School';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
+import { fontSizes } from '../../constants/responsiveFontSizes';
+
 import * as S from './topbar.styled';
 
 const menuItemsArray = Object.values(MenuItems);
@@ -34,15 +36,7 @@ const menuIconsArray = [
   <WhatsAppIcon />,
 ];
 
-const fontSizeMenu = {
-  xxs: '1.2rem',
-  xs: '1.6rem',
-  sm: '2rem',
-  md: '2.3rem',
-  lg: '2.4rem',
-  xl: '2.7rem',
-  xxl: '3rem',
-};
+const fontSizeMenu = fontSizes.menu;
 
 const topMargin = {
   xxs: '30vh',
@@ -68,7 +62,9 @@ const TopBar: React.FC = () => {
 
   const drawer = (
     <Box
+      role="presentation"
       onClick={handleDrawerToggle}
+      onKeyDown={handleDrawerToggle}
       sx={{
         textAlign: 'center',
         backgroundColor: 'colorBlack.main',
@@ -80,10 +76,13 @@ const TopBar: React.FC = () => {
         <Typography variant="h5" className="close" sx={{ fontSize: '2rem', color: 'colorGray.main' }}>
           {t('menu.close')}
         </Typography>
-        <CloseIcon sx={{ fontSize: '2rem', color: 'colorGray.main' }} />
+        <IconButton aria-label={t('menu.close')} onClick={handleDrawerToggle}>
+          <CloseIcon sx={{ fontSize: '2rem', color: 'colorGray.main' }} />
+        </IconButton>
       </S.CloseIconStyle>
 
       <List
+        aria-label="Navigation menu"
         sx={{
           display: 'flex',
           flexDirection: 'column',
@@ -144,9 +143,20 @@ const TopBar: React.FC = () => {
             <MenuIcon color="primary" />
           </IconButton>
           <S.FlexBox>
-            <img src={logo} alt="logo" width="40vw" onClick={() => navigate(Routes.home)} />
+            <img
+              src={logo}
+              alt="Home"
+              width="40vw"
+              onClick={() => navigate(Routes.home)}
+              onKeyDown={e => e.key === 'Enter' && navigate(Routes.home)}
+              tabIndex={0}
+              role="link"
+              style={{ cursor: 'pointer' }}
+            />
             <S.ListBox>
               <List
+                component="nav"
+                aria-label="Main navigation"
                 sx={{
                   display: {
                     xxs: 'none',

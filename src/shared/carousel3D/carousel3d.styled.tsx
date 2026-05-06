@@ -87,12 +87,10 @@ export const Slide = styled('div')<{
   }
 `;
 
-export const Picture = styled('img')<{ carouselWith: number; commercial: boolean }>`
+export const Picture = styled('img')<{ carouselWith: number }>`
   width: ${props => props.carouselWith}vw;
   height: ${props => props.carouselWith * 1.4}vh;
-  border: solid 4px;
-  border-color: ${({ theme, commercial }) =>
-    commercial ? theme.palette.primary.main : theme.palette.colorOrange.main};
+  border: solid 4px ${({ theme }) => theme.palette.primary.main};
   border-style: ridge;
 
   box-shadow: 0 0 15px 3px ${({ theme }) => theme.palette.colorBlue.main};

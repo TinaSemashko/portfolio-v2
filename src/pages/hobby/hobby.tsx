@@ -1,4 +1,5 @@
 import { Typography, useMediaQuery } from '@mui/material';
+import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import { Routes } from '../../app/routes';
@@ -16,11 +17,18 @@ const Hobby: React.FC = () => {
 
   return (
     <S.MainContainer>
+      <Helmet>
+        <title>Hobbies et loisirs créatifs</title>
+        <meta name="description" content="Hobbies et loisirs créatifs - cuir, perles, peinture, broderie, pâte à modeler" />
+        <meta property="og:title" content="Hobbies et loisirs créatifs" />
+        <meta property="og:description" content="Hobbies et loisirs créatifs - cuir, perles, peinture, broderie, pâte à modeler" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <S.VideoAccueil src={Video} autoPlay loop muted />
       <S.BackgroundContainer />
       <S.GridContainer>
         <S.ImgContainer1>
-          <S.StyledImg src={img} alt="" />
+          <S.StyledImg src={img} alt="Hobby category decoration" loading="lazy" />
           <S.StyleText>
             <Typography
               variant={SMScreen ? 'body2' : 'h4'}
@@ -35,7 +43,7 @@ const Hobby: React.FC = () => {
           </S.StyleText>
         </S.ImgContainer1>
         <S.ImgContainer2>
-          <S.StyledImg src={img} alt="" />
+          <S.StyledImg src={img} alt="Hobby category decoration" loading="lazy" />
           <S.StyleText>
             <Typography
               variant={SMScreen ? 'body2' : 'h4'}
@@ -50,7 +58,7 @@ const Hobby: React.FC = () => {
           </S.StyleText>
         </S.ImgContainer2>
         <S.ImgContainer3>
-          <S.StyledImg src={img} alt="" />
+          <S.StyledImg src={img} alt="Hobby category decoration" loading="lazy" />
           <S.StyleText>
             <Typography
               variant={SMScreen ? 'body2' : 'h4'}
@@ -65,7 +73,7 @@ const Hobby: React.FC = () => {
           </S.StyleText>
         </S.ImgContainer3>
         <S.ImgContainer4>
-          <S.StyledImg src={img} alt="" />
+          <S.StyledImg src={img} alt="Hobby category decoration" loading="lazy" />
           <S.StyleText>
             <Typography
               variant={SMScreen ? 'body2' : 'h4'}
@@ -80,7 +88,7 @@ const Hobby: React.FC = () => {
           </S.StyleText>
         </S.ImgContainer4>
         <S.ImgContainer5>
-          <S.StyledImg src={img} alt="" />
+          <S.StyledImg src={img} alt="Hobby category decoration" loading="lazy" />
           <S.StyleText>
             <Typography
               variant={SMScreen ? 'body2' : 'h4'}

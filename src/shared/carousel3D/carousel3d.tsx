@@ -27,7 +27,6 @@ const Carousel: React.FC = () => {
     const tempCar = imagesCarousel.map((el, index) => {
       return {
         ...el,
-        src: require(`../../images/${el.imageName}`),
         alt: `Image ${index + 1}`,
         degY: index * carouselParams.degKey,
       };
@@ -50,19 +49,25 @@ const Carousel: React.FC = () => {
   }, [radius]);
 
   const sortCarousel = (numberFirstEl: string) => {
-    if (numberFirstEl !== '0') {
+    if (numberFirstEl !== '0' && carouselParams) {
       let indexEOnChange =
-        Number(numberFirstEl) >= (carouselParams?.sidesQuantity ?? 0)
-          ? Number(numberFirstEl) - (carouselParams?.sidesQuantity ?? 0)
+        Number(numberFirstEl) >= (carouselParams.sidesQuantity ?? 0)
+          ? Number(numberFirstEl) - (carouselParams.sidesQuantity ?? 0)
           : Number(numberFirstEl);
 
-      const tempStart = imagesCarousel.slice(0, indexEOnChange);
-      const tempEnd = imagesCarousel.slice(indexEOnChange);
-      tempEnd.push(...tempStart);
-      imagesCarousel.splice(0, imagesCarousel.length, ...tempEnd);
+      const reordered = [
+        ...imagesCarousel.slice(indexEOnChange),
+        ...imagesCarousel.slice(0, indexEOnChange),
+      ];
+
+      const tempCar = reordered.map((el, index) => ({
+        ...el,
+        alt: `Image ${index + 1}`,
+        degY: index * carouselParams.degKey,
+      }));
+
+      setImageMap(tempCar);
     }
-    setImageMap(imagesCarousel);
-    if (carouselParams) makeCarousel(carouselParams);
   };
 
   const handleClick = (event: React.MouseEvent<HTMLImageElement>) => {
@@ -75,12 +80,6 @@ const Carousel: React.FC = () => {
       if (carouselParams) sortCarousel(indexElForChange);
     }
   };
-
-  // const openDescription = (project: Carousel3d): void => {
-  //   navigate(Routes.cartproject, {
-  //     state: { cartproject: { project } },
-  //   });
-  // };
 
   return (
     <S.MainContainer carouselWith={carouselParams?.cellsize ?? 0}>
@@ -95,12 +94,16 @@ const Carousel: React.FC = () => {
               radius={carouselParams?.radius ?? 0}
               carouselWith={carouselParams?.cellsize ?? 0}>
               <S.Picture
-                commercial={item.commercial ?? false}
                 carouselWith={carouselParams?.cellsize ?? 0}
                 src={item.src}
-                alt={item.alt}
+                alt={item.alt || `Project ${item.projectTitre || index + 1}`}
                 id={index.toString()}
+                loading="lazy"
                 onClick={handleClick}
+                tabIndex={0}
+                onKeyDown={e => e.key === 'Enter' && handleClick(e as unknown as React.MouseEvent<HTMLImageElement>)}
+                role="button"
+                aria-label={`View project: ${item.projectTitre || ''}`}
               />
               {/* <S.StyledButtonCarousel label={t('carousel3d.button_project')} onClick={() => openDescription(item)} /> */}
             </S.Slide>

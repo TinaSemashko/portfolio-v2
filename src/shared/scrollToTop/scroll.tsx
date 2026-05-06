@@ -17,28 +17,25 @@ const Scroll: React.FC<Props> = ({ showBelow }) => {
   const [show, setShow] = useState(showBelow ? false : true);
 
   const handleClick = () => {
-    window[`scrollTo`]({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleScroll = () => {
-    if (window.scrollY > showBelow) {
-      if (!show) setShow(true);
-    } else {
-      if (show) setShow(false);
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   useEffect(() => {
-    if (showBelow) {
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
-    }
-  });
+    if (!showBelow) return;
+
+    const handleScroll = () => {
+      setShow(window.scrollY > showBelow);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [showBelow]);
 
   return (
     <S.MainContainer>
       {show && (
         <IconButton
+          aria-label="Scroll to top"
           onClick={handleClick}
           sx={{
             height: '18vh',

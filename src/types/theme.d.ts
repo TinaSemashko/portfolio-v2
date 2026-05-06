@@ -8,6 +8,7 @@ declare module '@mui/material/styles' {
     colorLightBlue: Palette['primary'];
     colorBlue: Palette['primary'];
     colorGray: Palette['primary'];
+    colorTeal: Palette['primary'];
   }
 
   interface PaletteOptions {
@@ -17,5 +18,6 @@ declare module '@mui/material/styles' {
     colorLightBlue?: PaletteOptions['primary'];
     colorBlue?: PaletteOptions['primary'];
     colorGray?: PaletteOptions['primary'];
+    colorTeal?: PaletteOptions['primary'];
   }
 }

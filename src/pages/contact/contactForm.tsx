@@ -10,7 +10,7 @@ import * as S from './contact.styled';
 
 const ContactForm: React.FC = () => {
   const { t } = useTranslation();
-  const [state, handleSubmit] = useForm('mvoljqpq');
+  const [state, handleSubmit] = useForm(process.env.REACT_APP_FORMSPREE_ID || '');
   const mediumScreen = useMediaQuery(theme.breakpoints.down('md'));
   const [formData, setFormData] = useState({
     email: '',
@@ -53,10 +53,13 @@ const ContactForm: React.FC = () => {
     return <AfterSubmit />;
   }
 
+  const hasSubmissionError = state.errors && state.errors.length > 0;
+
   return (
     <Box
       onSubmit={handleSubmit}
       component="form"
+      aria-label="Contact form"
       sx={{
         width: { xs: '90%', sm: '80%', xxl: '100%' },
         justifyContent: 'center',
@@ -156,6 +159,12 @@ const ContactForm: React.FC = () => {
         value={formData.message}
         onChange={handleInputChange}
       />
+
+      {hasSubmissionError && (
+        <Typography variant="body2" sx={{ color: 'red', textAlign: 'center', mt: 1 }}>
+          {t('contact.error_submission', 'An error occurred. Please try again.')}
+        </Typography>
+      )}
 
       <Stack
         direction="row"

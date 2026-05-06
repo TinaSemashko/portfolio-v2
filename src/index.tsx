@@ -6,8 +6,9 @@ import { BrowserRouter } from "react-router-dom";
 
 import { createi18n } from "./i18n";
 
-// eslint-disable-next-line @typescript-eslint/no-floating-promises
-createi18n();
+createi18n().catch(() => {
+  // i18n will fall back to default language
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

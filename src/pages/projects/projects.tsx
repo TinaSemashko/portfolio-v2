@@ -10,24 +10,18 @@ import ProjectsMobile from './projectsMobile';
 import LaunchIcon from '@mui/icons-material/Launch';
 import CastIcon from '@mui/icons-material/Cast';
 import CastConnectedIcon from '@mui/icons-material/CastConnected';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import { openLink } from '../../shared/utils';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import HighlightedText from '../../shared/highlightedText';
 import { DataCarousel2D } from '../dataCarousel2D/dataCarousel2D';
 import { DataCarousel2DBack } from '../dataCarousel2D/dataCarousel2Dback';
 import ListImages from '../../shared/listImages';
 
+import { fontSizes } from '../../constants/responsiveFontSizes';
+
 import * as S from './projects.styled';
 
-const fontSizeDescription = {
-  xxs: '0.5rem',
-  xs: '0.5rem',
-  sm: '0.6rem',
-  md: '0.7rem',
-  lg: '0.7rem',
-  xl: '0.9rem',
-  xxl: '1.1rem',
-};
+const fontSizeDescription = fontSizes.projectDescription;
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();
@@ -41,10 +35,10 @@ const Projects: React.FC = () => {
   const lgScreen = useMediaQuery(theme.breakpoints.down('lg'));
 
   useEffect(() => {
-    const tempCar = imagesCarousel.map((el: Carousel3d, index: number) => {
+    const tempCar = imagesCarousel.map((el: Carousel3d) => {
       return {
         ...el,
-        src: require(`../../images/${el.imageNameList}`),
+        src: el.srcList || el.src,
       };
     });
 
@@ -53,14 +47,8 @@ const Projects: React.FC = () => {
 
   useEffect(() => {
     const tempCar2D = carouselBack
-      ? DataCarousel2DBack?.filter(el => el.projectName === selectedProjectName).map(item => ({
-          ...item,
-          src: require(`../../images/MyProjects/Back/${item.src}`),
-        }))
-      : DataCarousel2D?.filter(el => el.projectName === selectedProjectName).map(item => ({
-          ...item,
-          src: require(`../../images/MyProjects/Front/${item.src}`),
-        }));
+      ? DataCarousel2DBack?.filter(el => el.projectName === selectedProjectName)
+      : DataCarousel2D?.filter(el => el.projectName === selectedProjectName);
 
     setDataCarousel2D(tempCar2D);
   }, [carouselBack, selectedProjectName]);
@@ -72,48 +60,62 @@ const Projects: React.FC = () => {
   };
 
   const openCarouselDialog = (projectName: string): void => {
-    console.log(projectName);
     setSelectedProjectName(projectName);
     setOpenCarousel(true);
   };
 
-  const dataListMenu = (item: Carousel3d): DataListMenu[] => [
-    {
-      MenuIcon: LaunchIcon,
-      title: t('carousel2d.button_project'),
-      variantTypography: 'body1',
-      disabled: !item.openProject,
-      clickHandler: () => openLink(item.linkProject ?? ''),
-    },
-    {
+  const dataListMenu = (item: Carousel3d): DataListMenu[] => {
+    const isArchitectural = item.category === 'architectural';
+    const items: DataListMenu[] = [];
+
+    if (item.openProject) {
+      items.push({
+        MenuIcon: LaunchIcon,
+        title: t('carousel2d.button_project'),
+        variantTypography: 'body1',
+        disabled: false,
+        clickHandler: () => openLink(item.linkProject ?? ''),
+      });
+    }
+
+    items.push({
       MenuIcon: CastIcon,
       title: t('carousel2d.button_screenshots'),
       variantTypography: 'body1',
       disabled: false,
       clickHandler: () => openCarouselDialog(item.projectName ?? ''),
-    },
-    {
-      MenuIcon: CastConnectedIcon,
-      title: t('carousel2d.button_screenshots_back'),
-      variantTypography: 'body1',
-      disabled: false,
-      clickHandler: () => {
-        openCarouselDialog(item.projectName ?? '');
-        setCarouselBack(true);
-      },
-    },
-  ];
+    });
+
+    if (!isArchitectural) {
+      items.push({
+        MenuIcon: CastConnectedIcon,
+        title: t('carousel2d.button_screenshots_back'),
+        variantTypography: 'body1',
+        disabled: false,
+        clickHandler: () => {
+          openCarouselDialog(item.projectName ?? '');
+          setCarouselBack(true);
+        },
+      });
+    }
+
+    if (item.openVideo) {
+      items.push({
+        MenuIcon: PlayCircleOutlineIcon,
+        title: t('carousel2d.button_video'),
+        variantTypography: 'body1',
+        disabled: false,
+        clickHandler: () => openLink(item.linkVideo ?? ''),
+      });
+    }
+
+    return items;
+  };
 
   const handleCarousel = () => {
     setshowCarousel(!showCarousel);
   };
 
-  const wordsWithColors = [
-    { word: t('projects.coleur1'), color: `${theme.palette.primary.main}` },
-    { word: t('projects.coleur2'), color: `${theme.palette.colorOrange.main}` },
-  ];
-  console.log(selectedProjectName);
-  console.log(DataCarousel2D);
   return (
     <S.MainContainer>
       <Helmet>
@@ -123,6 +125,9 @@ const Projects: React.FC = () => {
           name="keywords"
           content="Mes projects, Full-stack, développeur web, portfolio, développeur react, développeur node.js"
         />
+        <meta property="og:title" content="Projets full stack développeur" />
+        <meta property="og:description" content="Mes projects Full-stack développeur web portfolio Il-de-France" />
+        <meta property="og:type" content="website" />
       </Helmet>
       <Typography
         variant="h1"
@@ -152,9 +157,6 @@ const Projects: React.FC = () => {
             label={showCarousel ? t('projects.list') : t('projects.carousel')}
             onClick={handleCarousel}
           />
-          <Typography variant="h6">
-            <HighlightedText phrase={t('projects.realProjects')} wordsWithColors={wordsWithColors} />
-          </Typography>
           {showCarousel ? (
             <S.CarouselContainer>
               <Carousel />

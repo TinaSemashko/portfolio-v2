@@ -83,7 +83,7 @@ const Carousel: React.FC<Props> = ({ dataCarousel2D, initialSlide }) => {
           <Slider {...settings} className="Slider">
             {dataCarousel2D?.map((item, index) => (
               <S.ImgCarouselContainer className="ImgCarouselContainer" key={index}>
-                <img src={item.src} alt={item.alt} width="100%" />
+                <img src={item.src} alt={item.alt} width="100%" loading="lazy" />
               </S.ImgCarouselContainer>
             ))}
           </Slider>

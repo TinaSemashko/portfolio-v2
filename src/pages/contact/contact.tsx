@@ -8,27 +8,17 @@ import telegram from '../../images/telegram.webp';
 import whatsapp from '../../images/whatsapp.webp';
 import { useTranslation } from 'react-i18next';
 
+import { fontSizes } from '../../constants/responsiveFontSizes';
+
 import * as S from './contact.styled';
 
-const fontSizeTitle = {
-  xxs: '2rem',
-  xs: '3rem',
-  sm: '5rem',
-  md: '7rem',
-  lg: '9rem',
-  xl: '10rem',
-  xxl: '12rem',
-};
+const fontSizeTitle = fontSizes.contactTitle;
+const fontSizeContact = fontSizes.contactInfo;
 
-const fontSizeContact = {
-  xxs: '0.9rem',
-  xs: '1rem',
-  sm: '1rem',
-  md: '0.9rem',
-  lg: '1rem',
-  xl: '1.2rem',
-  xxl: '1.2rem',
-};
+const CONTACT_EMAIL = process.env.REACT_APP_EMAIL || '';
+const LINKEDIN_URL = process.env.REACT_APP_LINKEDIN_URL || '';
+const TELEGRAM_URL = process.env.REACT_APP_TELEGRAM_URL || '';
+const WHATSAPP_NUMBER = process.env.REACT_APP_WHATSAPP_NUMBER || '';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
@@ -42,6 +32,9 @@ const Contact: React.FC = () => {
           name="keywords"
           content="Contacts, Full-stack, développeur web, portfolio, développeur react, développeur node.js"
         />
+        <meta property="og:title" content="Contacts full stack développeur" />
+        <meta property="og:description" content="Contacts Full-stack développeur web portfolio Il-de-France" />
+        <meta property="og:type" content="website" />
       </Helmet>
       <S.GridContainer>
         <S.Titre
@@ -54,13 +47,13 @@ const Contact: React.FC = () => {
 
         <S.ColorContainer />
         <S.ButtonContainer>
-          <S.LinkSocial1 href="mailto:tina.semashko@gmail.com" target="_blank" rel="noopener noreferrer">
-            <S.ImgSocial src={email} alt="email" width="50rem" />
+          <S.LinkSocial1 href={`mailto:${CONTACT_EMAIL}`} target="_blank" rel="noopener noreferrer">
+            <S.ImgSocial src={email} alt="email" width="50rem" loading="lazy" />
           </S.LinkSocial1>
           <S.TextContainer1 variant="h5" color="colorGray.main">
             --Email--
           </S.TextContainer1>
-          <S.ButtonText1 href="mailto:tina.semashko@gmail.com">
+          <S.ButtonText1 href={`mailto:${CONTACT_EMAIL}`}>
             <Typography
               variant="h5"
               sx={{
@@ -69,17 +62,17 @@ const Contact: React.FC = () => {
                 fontSize: fontSizeContact,
                 textAlign: 'center',
               }}>
-              tina.semashko@gmail.com
+              {CONTACT_EMAIL}
             </Typography>
           </S.ButtonText1>
 
-          <S.LinkSocial2 href="https://www.linkedin.com/in/tina-semashko/" target="_blank" rel="noopener noreferrer">
-            <S.ImgSocial src={linkedin} alt="linkedin" width="50rem" />
+          <S.LinkSocial2 href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+            <S.ImgSocial src={linkedin} alt="linkedin" width="50rem" loading="lazy" />
           </S.LinkSocial2>
           <S.TextContainer2 variant="h5" color="colorGray.main">
             --LinkedIn--
           </S.TextContainer2>
-          <S.ButtonText2 href="https://www.linkedin.com/in/tina-semashko/" sx={{ gridColumn: '2', gridRow: '4' }}>
+          <S.ButtonText2 href={LINKEDIN_URL} sx={{ gridColumn: '2', gridRow: '4' }}>
             <Typography
               variant="h5"
               sx={{
@@ -88,17 +81,17 @@ const Contact: React.FC = () => {
                 fontSize: fontSizeContact,
                 textAlign: 'center',
               }}>
-              https://www.linkedin.com/in/tina-semashko/
+              {LINKEDIN_URL}
             </Typography>
           </S.ButtonText2>
 
-          <S.LinkSocial3 href="https://t.me/SemashkoTina" target="_blank" rel="noopener noreferrer">
-            <S.ImgSocial src={telegram} alt="telegram" width="50rem" />
+          <S.LinkSocial3 href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
+            <S.ImgSocial src={telegram} alt="telegram" width="50rem" loading="lazy" />
           </S.LinkSocial3>
           <S.TextContainer3 variant="h5" color="colorGray.main">
             --Telegram--
           </S.TextContainer3>
-          <S.ButtonText3 href="https://t.me/SemashkoTina" sx={{ gridColumn: '2', gridRow: '6' }}>
+          <S.ButtonText3 href={TELEGRAM_URL} sx={{ gridColumn: '2', gridRow: '6' }}>
             <Typography
               variant="h5"
               sx={{
@@ -107,12 +100,12 @@ const Contact: React.FC = () => {
                 fontSize: fontSizeContact,
                 textAlign: 'center',
               }}>
-              https://t.me/SemashkoTina
+              {TELEGRAM_URL}
             </Typography>
           </S.ButtonText3>
 
-          <S.LinkSocial4 href="https://wa.me/33651870542" target="_blank" rel="noopener noreferrer">
-            <S.ImgSocial src={whatsapp} alt="whatsapp" />
+          <S.LinkSocial4 href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">
+            <S.ImgSocial src={whatsapp} alt="whatsapp" loading="lazy" />
           </S.LinkSocial4>
           <S.TextContainer4 variant="h5" color="colorGray.main">
             --WhatsApp--
@@ -120,7 +113,7 @@ const Contact: React.FC = () => {
         </S.ButtonContainer>
 
         <S.QrContainer>
-          <S.QrImg src={watsappQr} alt="whatsapp-qr" />
+          <S.QrImg src={watsappQr} alt="whatsapp-qr" loading="lazy" />
         </S.QrContainer>
 
         <S.FormContainer>
