@@ -66,9 +66,10 @@
     "garage": "E-commerce (projet de formation)",
     "kayayoga": "Modèle de projet",
     "myGIT": "Ouvrir mon GitHUB ",
-    "realProjects": "Le cadre bleu signifie qu'il s'agit de projets réels, le cadre orange signifie qu'il s'agit de projets éducatifs.",
+    "realProjects": "Cadre bleu : projets commerciaux. Cadre vert : projets architecturaux (architecture personnelle, code AI-assisté). Cadre orange : projets de formation.",
     "coleur1": "bleu",
-    "coleur2": "orange"
+    "coleur2": "orange",
+    "coleur3": "vert"
   },
   "resume": {
     "name": "Tina Semashko",

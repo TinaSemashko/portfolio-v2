@@ -66,9 +66,10 @@
     "garage": "E-commerce (educational project)",
     "kayayoga": "Template of project",
     "myGIT": "Open my GitHUB",
-    "realProjects": "The blue frame means that these are real projects, the orange one means that these are educational projects.",
-    "coleur1": "blue",
-    "coleur2": "orange"
+    "realProjects": "Blue frame: commercial projects. Teal frame: architectural projects (my architecture, AI-assisted code). Orange frame: training projects.",
+    "coleur1": "Blue",
+    "coleur2": "Orange",
+    "coleur3": "Teal"
   },
   "resume": {
     "name": "Tina Semashko",

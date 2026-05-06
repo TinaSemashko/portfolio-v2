@@ -1,5 +1,17 @@
-import { styled } from '@mui/material/styles';
+import { styled, Theme } from '@mui/material/styles';
 import PrimaryButton from '../primaryButton';
+import { ProjectCategory } from '../../types/projects';
+
+const categoryBorderColor = (theme: Theme, category?: ProjectCategory): string => {
+  switch (category) {
+    case 'commercial':
+      return theme.palette.primary.main;
+    case 'architectural':
+      return theme.palette.colorTeal.main;
+    default:
+      return theme.palette.colorOrange.main;
+  }
+};
 
 export const MainContainer = styled('div')<{ carouselWith: number }>`
   position: relative;
@@ -87,12 +99,11 @@ export const Slide = styled('div')<{
   }
 `;
 
-export const Picture = styled('img')<{ carouselWith: number; commercial: boolean }>`
+export const Picture = styled('img')<{ carouselWith: number; category?: ProjectCategory }>`
   width: ${props => props.carouselWith}vw;
   height: ${props => props.carouselWith * 1.4}vh;
   border: solid 4px;
-  border-color: ${({ theme, commercial }) =>
-    commercial ? theme.palette.primary.main : theme.palette.colorOrange.main};
+  border-color: ${({ theme, category }) => categoryBorderColor(theme, category)};
   border-style: ridge;
 
   box-shadow: 0 0 15px 3px ${({ theme }) => theme.palette.colorBlue.main};

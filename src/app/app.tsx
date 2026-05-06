@@ -46,6 +46,9 @@ export let theme = createTheme({
     colorBlue: {
       main: '#16354D',
     },
+    colorTeal: {
+      main: '#10b981',
+    },
   },
   typography: {
     fontFamily: ['Helvetica', 'Arial', 'Roboto', 'sans-serif'].join(','),

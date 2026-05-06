@@ -17,7 +17,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: true,
     imageNameList: 'img1l.webp',
     srcList: require('../../images/img1l.webp'),
-    commercial: true,
+    category: 'commercial',
   },
   {
     imageName: 'img2.webp', //diamondCollection
@@ -35,7 +35,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
     imageNameList: 'img2l.webp',
     srcList: require('../../images/img2l.webp'),
-    commercial: false,
+    category: 'educational',
   },
   {
     imageName: 'img3.webp', //portfolio
@@ -53,7 +53,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
     imageNameList: 'img3l.webp',
     srcList: require('../../images/img3l.webp'),
-    commercial: true,
+    category: 'commercial',
   },
   {
     imageName: 'img4.webp', //ekea
@@ -71,7 +71,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
     imageNameList: 'img4l.webp',
     srcList: require('../../images/img4l.webp'),
-    commercial: false,
+    category: 'educational',
   },
   {
     imageName: 'img5.webp', //casinoGame
@@ -89,7 +89,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
     imageNameList: 'img5l.webp',
     srcList: require('../../images/img5l.webp'),
-    commercial: false,
+    category: 'educational',
   },
   {
     imageName: 'img6.webp', //garage
@@ -107,7 +107,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
     imageNameList: 'img6l.webp',
     srcList: require('../../images/img6l.webp'),
-    commercial: false,
+    category: 'educational',
   },
 
   {
@@ -126,7 +126,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
     imageNameList: 'img8l.webp',
     srcList: require('../../images/img8l.webp'),
-    commercial: false,
+    category: 'educational',
   },
 
   {
@@ -145,7 +145,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
     imageNameList: 'img10l.webp',
     srcList: require('../../images/img10l.webp'),
-    commercial: false,
+    category: 'educational',
   },
   {
     imageName: 'img11.webp', //assoFacTory
@@ -163,7 +163,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: true,
     imageNameList: 'img11l.webp',
     srcList: require('../../images/img11l.webp'),
-    commercial: false,
+    category: 'educational',
   },
   {
     imageName: 'img9.webp', //Nastya
@@ -181,7 +181,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
     imageNameList: 'img9l.webp',
     srcList: require('../../images/img9l.webp'),
-    commercial: true,
+    category: 'commercial',
   },
   {
     imageName: 'img7.webp', //Karamon video
@@ -199,7 +199,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
     imageNameList: 'img7l.webp',
     srcList: require('../../images/img7l.webp'),
-    commercial: true,
+    category: 'commercial',
   },
   {
     imageName: 'img12.webp', //ABS
@@ -217,7 +217,7 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: true,
     imageNameList: 'img12l.webp',
     srcList: require('../../images/img12l.webp'),
-    commercial: true,
+    category: 'commercial',
   },
   {
     imageName: 'img13.webp', //Kaya-yoga
@@ -235,6 +235,6 @@ export const imagesCarousel: Carousel3d[] = [
     openVideo: false,
     imageNameList: 'img13l.webp',
     srcList: require('../../images/img13l.webp'),
-    commercial: true,
+    category: 'commercial',
   },
 ];

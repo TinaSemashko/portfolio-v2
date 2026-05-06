@@ -1,6 +1,8 @@
 import { SvgIconTypeMap, TypographyVariant } from '@mui/material';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 
+export type ProjectCategory = 'commercial' | 'architectural' | 'educational';
+
 export type Carousel3d = {
   imageName?: string;
   src: string;
@@ -17,7 +19,8 @@ export type Carousel3d = {
   openVideo?: boolean;
   imageNameList?: string;
   srcList?: string;
-  commercial?: boolean;
+  category?: ProjectCategory;
+  role?: string;
 };
 
 export type CarouselImg = {

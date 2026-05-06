@@ -1,5 +1,17 @@
 import { ImageList, ImageListItem } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { styled, Theme } from '@mui/material/styles';
+import { ProjectCategory } from '../../types/projects';
+
+const categoryBorderColor = (theme: Theme, category?: ProjectCategory): string => {
+  switch (category) {
+    case 'commercial':
+      return theme.palette.primary.main;
+    case 'architectural':
+      return theme.palette.colorTeal.main;
+    default:
+      return theme.palette.colorOrange.main;
+  }
+};
 
 export const StyledImageList = styled(ImageList)`
   width: 80%;
@@ -46,15 +58,34 @@ export const ThreeDotsBox = styled('div')`
   }
 `;
 
-export const StyledImage = styled('img')<{ commercial: boolean }>`
+export const StyledImage = styled('img')<{ category?: ProjectCategory }>`
   grid-column: 1;
   grid-row: 1;
   width: 100%;
   border: solid 4px;
-  border-color: ${({ theme, commercial }) =>
-    commercial ? theme.palette.primary.main : theme.palette.colorOrange.main};
+  border-color: ${({ theme, category }) => categoryBorderColor(theme, category)};
   transition: opacity 0.3s ease;
   opacity: 1;
+`;
+
+export const RoleBadge = styled('div')`
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 25;
+  background-color: ${({ theme }) => theme.palette.colorTeal.main};
+  color: ${({ theme }) => theme.palette.secondary.main};
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+  ${({ theme }) => theme.breakpoints.down('md')} {
+    font-size: 0.65rem;
+    padding: 3px 7px;
+  }
 `;
 
 export const Description = styled('div')`

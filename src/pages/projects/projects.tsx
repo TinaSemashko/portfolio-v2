@@ -64,32 +64,37 @@ const Projects: React.FC = () => {
     setOpenCarousel(true);
   };
 
-  const dataListMenu = (item: Carousel3d): DataListMenu[] => [
-    {
-      MenuIcon: LaunchIcon,
-      title: t('carousel2d.button_project'),
-      variantTypography: 'body1',
-      disabled: !item.openProject,
-      clickHandler: () => openLink(item.linkProject ?? ''),
-    },
-    {
-      MenuIcon: CastIcon,
-      title: t('carousel2d.button_screenshots'),
-      variantTypography: 'body1',
-      disabled: false,
-      clickHandler: () => openCarouselDialog(item.projectName ?? ''),
-    },
-    {
-      MenuIcon: CastConnectedIcon,
-      title: t('carousel2d.button_screenshots_back'),
-      variantTypography: 'body1',
-      disabled: false,
-      clickHandler: () => {
-        openCarouselDialog(item.projectName ?? '');
-        setCarouselBack(true);
+  const dataListMenu = (item: Carousel3d): DataListMenu[] => {
+    const items: DataListMenu[] = [
+      {
+        MenuIcon: LaunchIcon,
+        title: t('carousel2d.button_project'),
+        variantTypography: 'body1',
+        disabled: !item.openProject,
+        clickHandler: () => openLink(item.linkProject ?? ''),
       },
-    },
-  ];
+      {
+        MenuIcon: CastIcon,
+        title: t('carousel2d.button_screenshots'),
+        variantTypography: 'body1',
+        disabled: false,
+        clickHandler: () => openCarouselDialog(item.projectName ?? ''),
+      },
+    ];
+    if (item.category !== 'architectural') {
+      items.push({
+        MenuIcon: CastConnectedIcon,
+        title: t('carousel2d.button_screenshots_back'),
+        variantTypography: 'body1',
+        disabled: false,
+        clickHandler: () => {
+          openCarouselDialog(item.projectName ?? '');
+          setCarouselBack(true);
+        },
+      });
+    }
+    return items;
+  };
 
   const handleCarousel = () => {
     setshowCarousel(!showCarousel);
@@ -97,6 +102,7 @@ const Projects: React.FC = () => {
 
   const wordsWithColors = [
     { word: t('projects.coleur1'), color: `${theme.palette.primary.main}` },
+    { word: t('projects.coleur3'), color: `${theme.palette.colorTeal.main}` },
     { word: t('projects.coleur2'), color: `${theme.palette.colorOrange.main}` },
   ];
   return (

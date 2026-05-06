@@ -94,7 +94,7 @@ const Carousel: React.FC = () => {
               radius={carouselParams?.radius ?? 0}
               carouselWith={carouselParams?.cellsize ?? 0}>
               <S.Picture
-                commercial={item.commercial ?? false}
+                category={item.category}
                 carouselWith={carouselParams?.cellsize ?? 0}
                 src={item.src}
                 alt={item.alt || `Project ${item.projectTitre || index + 1}`}
