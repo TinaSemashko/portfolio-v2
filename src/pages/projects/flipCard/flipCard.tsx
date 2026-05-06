@@ -1,41 +1,39 @@
-import React, { useState } from 'react';
-import DescriptionCarouselContainer from '../../../shared/descriptionCarouselContainer';
+import AddIcon from '@mui/icons-material/Add';
 import { Carousel3d } from '../../../types/projects';
 
 import * as S from './flipCard.styled';
 
 interface CardProps {
   project?: Carousel3d;
+  onOpen?: () => void;
 }
 
-const FlipCard: React.FC<CardProps> = ({ project }) => {
-  const [flipped, setFlipped] = useState(false);
+const FlipCard: React.FC<CardProps> = ({ project, onOpen }) => {
+  if (!project) return null;
 
-  const flipOpen = () => {
-    setFlipped(true);
+  const handleActivate = () => {
+    onOpen?.();
   };
 
-  const flipClose = () => {
-    setFlipped(false);
-  };
-
-  const handleClose = () => {
-    setFlipped(false);
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleActivate();
+    }
   };
 
   return (
     <S.MainContainer
-      onMouseEnter={flipOpen}
-      onTouchStart={flipOpen}
-      onMouseOut={flipClose}
-      onTouchEnd={flipClose}
-      flipped={flipped}>
-      <S.Front>
-        <S.Picture src={project?.src} alt={project?.alt} loading="lazy" />
-      </S.Front>
-      <S.Back>
-        <DescriptionCarouselContainer project={project ?? null} onCloseDescription={handleClose} />
-      </S.Back>
+      onClick={handleActivate}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      aria-label={`Open details for ${project.projectTitre ?? 'project'}`}>
+      {project.role && <S.RoleBadge>{project.role}</S.RoleBadge>}
+      <S.Picture src={project.src} alt={project.alt ?? ''} loading="lazy" />
+      <S.OpenIndicator aria-hidden="true">
+        <AddIcon />
+      </S.OpenIndicator>
     </S.MainContainer>
   );
 };

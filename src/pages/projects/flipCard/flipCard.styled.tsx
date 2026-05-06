@@ -1,41 +1,19 @@
-import styled, { css } from 'styled-components';
+import { styled } from '@mui/material/styles';
 
-interface MainContainerProps {
-  flipped: boolean;
-}
-
-export const MainContainer = styled.div<MainContainerProps>`
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 100%;
-
+export const MainContainer = styled('div')`
   position: relative;
-  width: 49%;
-  height: 100%;
-  perspective: 1000px;
-  box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.2);
-  transform-style: preserve-3d;
-  transition: transform 0.5s, background-color 0.5s;
-
-  ${props =>
-    props.flipped &&
-    css`
-      transform: rotateY(-180deg);
-    `}
-
-  @media (max-width: 760px) {
-    width: 100%;
-
-    box-shadow: none;
-  }
-`;
-
-export const Front = styled('div')`
   width: 100%;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  grid-column: 1;
-  grid-row: 1;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+
+  &:active {
+    transform: scale(0.99);
+  }
+
+  &:focus-visible {
+    outline: 3px solid ${({ theme }) => theme.palette.colorTeal.main};
+    outline-offset: 2px;
+  }
 `;
 
 export const Picture = styled('img')`
@@ -43,13 +21,43 @@ export const Picture = styled('img')`
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   width: 100%;
+  display: block;
 `;
 
-export const Back = styled('div')`
-  width: 100%;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  transform: rotateY(-180deg);
-  grid-column: 1;
-  grid-row: 1;
+export const RoleBadge = styled('div')`
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: ${({ theme }) => theme.palette.colorTeal.main};
+  color: ${({ theme }) => theme.palette.secondary.main};
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.02em;
+  z-index: 2;
+  pointer-events: none;
+`;
+
+export const OpenIndicator = styled('div')`
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid ${({ theme }) => theme.palette.secondary.main};
+  background-color: ${({ theme }) => theme.palette.primary.main};
+  color: ${({ theme }) => theme.palette.secondary.main};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  pointer-events: none;
+
+  & svg {
+    font-size: 1.6rem;
+  }
 `;
