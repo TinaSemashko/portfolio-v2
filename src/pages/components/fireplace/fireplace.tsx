@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Button, Typography, useMediaQuery } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
@@ -17,15 +16,8 @@ const Fireplace: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { width, height } = useWindowSize(true);
-  const [heightVideo, setHeightVideo] = useState(height);
 
   const MDScreen = useMediaQuery(theme.breakpoints.up('xxl'));
-
-  useEffect(() => {
-    const videoElement = document.getElementById('videoAccueil');
-    setHeightVideo(videoElement?.offsetHeight ?? 0);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [window]);
 
   return (
     <S.MainContainer>
@@ -42,7 +34,7 @@ const Fireplace: React.FC = () => {
           {t('not_found.btn_go_home')}
         </Button>
       </S.Title>
-      <S.CatContainer windowHeight={heightVideo}>
+      <S.CatContainer>
         <WalkingCat />
       </S.CatContainer>
       {MDScreen && (
