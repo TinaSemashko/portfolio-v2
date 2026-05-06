@@ -21,24 +21,15 @@ export const VideoAccueil = styled('video')`
   z-index: -1;
 `;
 
-export const Title = styled('div')<{
-  //top 20%
-  windowWidth: number;
-  windowHeight: number;
-}>`
+export const Title = styled('div')`
   position: absolute;
   width: 90%;
-  top: ${({ windowHeight }) => `calc(0.20 * ${windowHeight}px)`};
-  left: ${({ windowWidth }) => `calc(0.03 * ${windowWidth}px)`};
+  top: 20vh;
+  left: 3vw;
   text-align: center;
   color: ${({ theme }) => theme.palette.primary.main};
   -webkit-animation: swirl-in-fwd 0.6s ease-out both;
   animation: swirl-in-fwd 0.6s ease-out both;
-
-  @media (max-width: 1500px) {
-    top: 30%;
-    left: 0;
-  }
 
   @-webkit-keyframes swirl-in-fwd {
     0% {
@@ -67,7 +58,8 @@ export const Title = styled('div')<{
 
   @media (max-width: 1500px) {
     width: 95%;
-    left: ${({ windowWidth }) => `calc(0.05px * ${windowWidth})`};
+    top: 30vh;
+    left: 5vw;
   }
 `;
 
@@ -113,25 +105,17 @@ export const CatContainer = styled('div')`
   bottom: 58%;
 `;
 
-export const HistoryContainer = styled('div')<{
-  //top 55%
-  windowWidth: number;
-  windowHeight: number;
-}>`
+export const HistoryContainer = styled('div')`
   position: absolute;
-  top: ${({ windowHeight }) => `calc(0.55px * ${windowHeight})`};
-  left: ${({ windowWidth }) => `calc(0.25px * ${windowWidth})`};
+  top: 55vh;
+  left: 25vw;
   color: ${({ theme }) => theme.palette.primary.main};
   text-align: center;
 `;
 
-export const Langbt = styled('div')<{
-  //top 0
-  windowWidth: number;
-  windowHeight: number;
-}>`
-  left: ${({ windowWidth }) => `calc(0.40px * ${windowWidth})`};
-  height: ${({ windowHeight }) => `calc(0.5px * ${windowHeight})`};
+export const Langbt = styled('div')`
+  left: 40vw;
+  height: 50vh;
   color: ${({ theme }) => theme.palette.colorBlack.main};
   text-align: center;
 `;

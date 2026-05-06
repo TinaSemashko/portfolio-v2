@@ -8,24 +8,22 @@ import Video from '../../../images/production_id 4076130 (1080p).mp4';
 import Book from './book';
 import WalkingCat from '../walkingCat';
 import LangButton from '../../../shared/langButton';
-import useWindowSize from '../../../shared/useWindowSize/useWindowSize';
 
 import * as S from './fireplace.styled';
 
 const Fireplace: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { width, height } = useWindowSize(true);
 
   const MDScreen = useMediaQuery(theme.breakpoints.up('xxl'));
 
   return (
     <S.MainContainer>
       <S.VideoAccueil id="videoAccueil" src={Video} autoPlay loop muted />
-      <S.Langbt windowWidth={width} windowHeight={height}>
+      <S.Langbt>
         <LangButton colorPrime={true} iconWithoutSlash={false} selectMode={false} />
       </S.Langbt>
-      <S.Title windowWidth={width} windowHeight={height}>
+      <S.Title>
         <S.TextRainbow>
           <Typography variant="h2">{t('not_found.title')}</Typography>
           <Typography variant="h2">{t('not_found.description')}</Typography>
@@ -38,7 +36,7 @@ const Fireplace: React.FC = () => {
         <WalkingCat />
       </S.CatContainer>
       {MDScreen && (
-        <S.HistoryContainer windowWidth={width} windowHeight={height}>
+        <S.HistoryContainer>
           <Typography variant="h3"> {parse(t('about.subtitle3'))}</Typography>
           <Book />
         </S.HistoryContainer>
