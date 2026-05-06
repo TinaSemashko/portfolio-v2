@@ -243,4 +243,23 @@ export const imagesCarousel: Carousel3d[] = [
     category: 'architectural',
     role: 'Architecte technique',
   },
+  {
+    imageName: 'massageLanding.webp',
+    descriptions: 'React|TypeScript', // TODO: fill actual stack
+    linkGit: '',
+    linkProject: '',
+    linkVideo: '',
+    src: require('../../images/img1.webp'),
+    degY: 0,
+    alt: 'Site-vitrine pour une masseuse',
+    projectName: 'massageLanding',
+    projectTitre: 'Massage Landing', // TODO: replace with brand/person name if any
+    openProject: false,
+    openGit: false,
+    openVideo: false,
+    imageNameList: 'massageLandingl.webp',
+    srcList: require('../../images/img1.webp'),
+    category: 'architectural',
+    role: 'Architecte technique',
+  },
 ];
