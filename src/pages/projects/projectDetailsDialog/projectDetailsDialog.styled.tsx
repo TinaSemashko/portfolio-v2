@@ -32,8 +32,8 @@ export const Content = styled('div')`
 
 export const RoleBadge = styled('div')`
   align-self: center;
-  background-color: ${({ theme }) => theme.palette.colorTeal.main};
-  color: ${({ theme }) => theme.palette.secondary.main};
+  background-color: ${({ theme }) => theme.palette.colorLightBlue.main};
+  color: ${({ theme }) => theme.palette.colorBlue.main};
   padding: 6px 14px;
   font-size: 0.85rem;
   font-weight: 600;
@@ -86,8 +86,8 @@ export const Buttons = styled('div')`
 
 export const ActionButton = styled(Button)`
   &.MuiButton-root {
-    background-color: ${({ theme }) => theme.palette.colorTeal.main};
-    color: ${({ theme }) => theme.palette.secondary.main};
+    background-color: ${({ theme }) => theme.palette.colorLightBlue.main};
+    color: ${({ theme }) => theme.palette.colorBlue.main};
     text-transform: uppercase;
     padding: 0.8rem 1.25rem;
     font-size: 0.85rem;
@@ -97,12 +97,12 @@ export const ActionButton = styled(Button)`
     justify-content: flex-start;
 
     &:hover {
-      background-color: ${({ theme }) => theme.palette.colorBlue.main};
+      background-color: ${({ theme }) => theme.palette.secondary.main};
     }
 
     &.Mui-disabled {
       opacity: 0.45;
-      color: ${({ theme }) => theme.palette.secondary.main};
+      color: ${({ theme }) => theme.palette.colorBlue.main};
       border-color: ${({ theme }) => theme.palette.secondary.main};
     }
   }

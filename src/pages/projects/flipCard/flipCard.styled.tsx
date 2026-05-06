@@ -28,8 +28,8 @@ export const RoleBadge = styled('div')`
   position: absolute;
   top: 8px;
   left: 8px;
-  background-color: ${({ theme }) => theme.palette.colorTeal.main};
-  color: ${({ theme }) => theme.palette.secondary.main};
+  background-color: ${({ theme }) => theme.palette.colorLightBlue.main};
+  color: ${({ theme }) => theme.palette.colorBlue.main};
   padding: 4px 10px;
   font-size: 0.7rem;
   font-weight: 600;

@@ -8,7 +8,7 @@ export const MainContainer = styled('div')<{ isParallax: boolean }>`
   width: 100%;
   z-index: -1;
   background-color: ${({ theme }) => theme.palette.colorBlack.main};
-  height: 15vh;
+  height: max(15vh, 160px);
   display: grid;
   grid-template-columns: 15% 70% 15%;
   grid-template-rows: 80% 20%;
