@@ -10,6 +10,7 @@ import ProjectsMobile from './projectsMobile';
 import LaunchIcon from '@mui/icons-material/Launch';
 import CastIcon from '@mui/icons-material/Cast';
 import CastConnectedIcon from '@mui/icons-material/CastConnected';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import { openLink } from '../../shared/utils';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import HighlightedText from '../../shared/highlightedText';
@@ -65,23 +66,28 @@ const Projects: React.FC = () => {
   };
 
   const dataListMenu = (item: Carousel3d): DataListMenu[] => {
-    const items: DataListMenu[] = [
-      {
+    const isArchitectural = item.category === 'architectural';
+    const items: DataListMenu[] = [];
+
+    if (!isArchitectural) {
+      items.push({
         MenuIcon: LaunchIcon,
         title: t('carousel2d.button_project'),
         variantTypography: 'body1',
         disabled: !item.openProject,
         clickHandler: () => openLink(item.linkProject ?? ''),
-      },
-      {
-        MenuIcon: CastIcon,
-        title: t('carousel2d.button_screenshots'),
-        variantTypography: 'body1',
-        disabled: false,
-        clickHandler: () => openCarouselDialog(item.projectName ?? ''),
-      },
-    ];
-    if (item.category !== 'architectural') {
+      });
+    }
+
+    items.push({
+      MenuIcon: CastIcon,
+      title: t('carousel2d.button_screenshots'),
+      variantTypography: 'body1',
+      disabled: false,
+      clickHandler: () => openCarouselDialog(item.projectName ?? ''),
+    });
+
+    if (!isArchitectural) {
       items.push({
         MenuIcon: CastConnectedIcon,
         title: t('carousel2d.button_screenshots_back'),
@@ -93,6 +99,17 @@ const Projects: React.FC = () => {
         },
       });
     }
+
+    if (item.openVideo) {
+      items.push({
+        MenuIcon: PlayCircleOutlineIcon,
+        title: t('carousel2d.button_video'),
+        variantTypography: 'body1',
+        disabled: false,
+        clickHandler: () => openLink(item.linkVideo ?? ''),
+      });
+    }
+
     return items;
   };
 

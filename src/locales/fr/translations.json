@@ -65,6 +65,11 @@
     "assoFacTory": "Un blog (projet de formation)",
     "garage": "E-commerce (projet de formation)",
     "kayayoga": "Modèle de projet",
+    "mcpServer": "Serveur MCP unifié pour intégrations de systèmes de gestion hôtelière",
+    "pmsGateway": "API gateway centralisant les intégrations PMS via architecture MCP",
+    "n8nWorkflows": "Workflows d'automatisation avec agents IA — orchestration de processus métiers via webhooks, bases de données et code",
+    "lucioleQuest": "Application mobile de chasses au trésor familiales — énigmes générées par IA adaptées à l'âge de l'enfant ; modes coopératif et compétition entre équipes",
+    "alexartia": "Service de création et d'impression de livres uniques pour enfants générés par IA",
     "myGIT": "Ouvrir mon GitHUB ",
     "realProjects": "Cadre bleu : projets commerciaux. Cadre vert : projets architecturaux (architecture personnelle, code AI-assisté). Cadre orange : projets de formation.",
     "coleur1": "bleu",
@@ -118,11 +123,9 @@
   "carousel2d": {
     "button_git": "Ouvrir GIT",
     "button_project": "Ouvrir le projet",
-    "button_video": "Regarder la video",
-    "button_code": "Regarder le code du projet",
-    "button_front": "Regarder l'interface utilisateur du projet",
-    "button_screenshots": "Regarder les screenshots du site",
-    "button_screenshots_back": "Regarder les screenshots du code"
+    "button_screenshots": "Voir les images du projet",
+    "button_screenshots_back": "Voir les images du code",
+    "button_video": "Regarder la vidéo"
   },
   "experience": {
     "dataEx1": "Octobre 2025 - Mai 2026",

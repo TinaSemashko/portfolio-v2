@@ -65,6 +65,11 @@
     "assoFacTory": "A blog (educational project)",
     "garage": "E-commerce (educational project)",
     "kayayoga": "Template of project",
+    "mcpServer": "Unified MCP server for hotel management system integrations",
+    "pmsGateway": "API gateway centralizing PMS integrations via MCP architecture",
+    "n8nWorkflows": "Automation workflows with AI agents — orchestrating business processes via webhooks, databases and code",
+    "lucioleQuest": "Mobile app for family treasure hunts — AI-generated riddles adapted to the child's age; cooperative and team competition modes",
+    "alexartia": "Service for creating and printing unique AI-generated children's books",
     "myGIT": "Open my GitHUB",
     "realProjects": "Blue frame: commercial projects. Teal frame: architectural projects (my architecture, AI-assisted code). Orange frame: training projects.",
     "coleur1": "Blue",
@@ -119,11 +124,9 @@
   "carousel2d": {
     "button_git": "Open GIT",
     "button_project": "Open the project",
-    "button_video": "Watch the video",
-    "button_code": "Watch the project code",
-    "button_front": "Watch the project user interface",
-    "button_screenshots": "Watch the screenshots of the site",
-    "button_screenshots_back": "Watch the screenshots of the code"
+    "button_screenshots": "View project images",
+    "button_screenshots_back": "View code images",
+    "button_video": "Watch the video"
   },
   "experience": {
     "dataEx1": "October 2025 - May 2026",

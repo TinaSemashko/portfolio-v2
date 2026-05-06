@@ -84,15 +84,17 @@ const DescriptionCarouselContainer: React.FC<Props> = ({ project, onCloseDescrip
           }}>
           {t(`projects.${project?.projectName}`)}
         </Typography>
-        <Button
-          variant="text"
-          onClick={() => openLink(linkProject ?? '')}
-          disabled={!(project && project?.openProject)}
-          sx={{ cursor: 'pointer' }}>
-          <Typography variant="h4" sx={{ cursor: 'pointer', fontSize: fontSizeH4, pb: '2%', color: 'secondary.main' }}>
-            {t('carousel2d.button_project')}
-          </Typography>
-        </Button>
+        {project?.category !== 'architectural' && (
+          <Button
+            variant="text"
+            onClick={() => openLink(linkProject ?? '')}
+            disabled={!(project && project?.openProject)}
+            sx={{ cursor: 'pointer' }}>
+            <Typography variant="h4" sx={{ cursor: 'pointer', fontSize: fontSizeH4, pb: '2%', color: 'secondary.main' }}>
+              {t('carousel2d.button_project')}
+            </Typography>
+          </Button>
+        )}
         <Button
           variant="text"
           onClick={() => setOpenCarousel(true)}
@@ -107,23 +109,39 @@ const DescriptionCarouselContainer: React.FC<Props> = ({ project, onCloseDescrip
             {t('carousel2d.button_screenshots')}
           </Typography>
         </Button>
-        <Button
-          variant="text"
-          onClick={() => {
-            setOpenCarousel(true);
-            setCarouselBack(true);
-          }}
-          disabled={!project}
-          sx={{
-            cursor: 'pointer',
-            display: { xxs: 'flex', xs: 'flex', sm: 'flex', md: 'none' },
-            pb: '2%',
-            color: 'secondary.main',
-          }}>
-          <Typography variant="h4" sx={{ cursor: 'pointer', fontSize: fontSizeH4 }}>
-            {t('carousel2d.button_screenshots_back')}
-          </Typography>
-        </Button>
+        {project?.category !== 'architectural' && (
+          <Button
+            variant="text"
+            onClick={() => {
+              setOpenCarousel(true);
+              setCarouselBack(true);
+            }}
+            disabled={!project}
+            sx={{
+              cursor: 'pointer',
+              display: { xxs: 'flex', xs: 'flex', sm: 'flex', md: 'none' },
+              pb: '2%',
+              color: 'secondary.main',
+            }}>
+            <Typography variant="h4" sx={{ cursor: 'pointer', fontSize: fontSizeH4 }}>
+              {t('carousel2d.button_screenshots_back')}
+            </Typography>
+          </Button>
+        )}
+        {project?.openVideo && (
+          <Button
+            variant="text"
+            onClick={() => openLink(project.linkVideo ?? '')}
+            sx={{
+              cursor: 'pointer',
+              pb: '2%',
+              color: 'secondary.main',
+            }}>
+            <Typography variant="h4" sx={{ cursor: 'pointer', fontSize: fontSizeH4 }}>
+              {t('carousel2d.button_video')}
+            </Typography>
+          </Button>
+        )}
         <Typography
           variant="h4"
           textAlign="center"

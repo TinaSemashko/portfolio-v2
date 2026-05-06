@@ -6,7 +6,6 @@ export enum Routes {
   hobby = '/hobby',
   contact = '/contact',
   galery = '/galery',
-  videopage = '/videopage',
   cartproject = '/cartproject',
   conditions = '/conditions',
   certificates = '/certificates',
