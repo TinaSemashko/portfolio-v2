@@ -901,4 +901,20 @@ export const DataCarousel2D: CarouselProjectImg[] = [
     alt: 'PMS Gateway API',
     projectName: 'pmsGateway',
   },
+  {
+    imageName: 'front7.webp',
+    description: '',
+    general: false,
+    src: require('../../images/MyProjects/Front/pmsGateway/front7.webp'),
+    alt: 'PMS Gateway API',
+    projectName: 'pmsGateway',
+  },
+  {
+    imageName: 'front8.webp',
+    description: '',
+    general: false,
+    src: require('../../images/MyProjects/Front/pmsGateway/front8.webp'),
+    alt: 'PMS Gateway API',
+    projectName: 'pmsGateway',
+  },
 ];
