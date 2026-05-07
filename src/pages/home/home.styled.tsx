@@ -204,7 +204,6 @@ export const ImgNode = styled('img')`
 export const SubTitre = styled(Typography)`
   grid-column: 2 / span 2;
   grid-row: 4;
-  text-transform: lowercase;
   padding-top: 2vh;
 
   background: ${({ theme }) =>

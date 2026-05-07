@@ -16,7 +16,7 @@
   },
   "main": {
     "title": "Tina",
-    "subtitle1": "full-stack developer",
+    "subtitle1": "Full-stack | AI Integrations",
     "title2ecran": "\"Choose a job you love and you will never have to work a day in your life.\" Confucius",
     "author2ecran": "Confucius",
     "lang": "Language",
@@ -26,6 +26,7 @@
   "about": {
     "title": "Hi! I'm Tina, ",
     "subtitle1": "a full-stack developer,",
+    "subtitle13": "AI integrations,",
     "subtitle12": "based in France",
     "subtitle2": "And God created the developer...",
     "subtitle3": "This story began a long time ago, <br />when computers were big and programs were small",

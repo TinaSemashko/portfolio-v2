@@ -50,6 +50,14 @@ const Parallax: React.FC = () => {
                 fontSize: fontSizeShort,
               }}
             >
+              {t("about.subtitle13")}
+            </Typography>
+            <Typography
+              variant="h1"
+              sx={{
+                fontSize: fontSizeShort,
+              }}
+            >
               {t("about.subtitle12")}
             </Typography>
           </S.TextRainbow>
