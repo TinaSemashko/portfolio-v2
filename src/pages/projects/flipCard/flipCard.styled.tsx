@@ -11,7 +11,7 @@ export const MainContainer = styled('div')`
   }
 
   &:focus-visible {
-    outline: 3px solid ${({ theme }) => theme.palette.colorTeal.main};
+    outline: 3px solid ${({ theme }) => theme.palette.primary.main};
     outline-offset: 2px;
   }
 `;

@@ -50,6 +50,9 @@ export const StyledImage = styled('img')`
   grid-column: 1;
   grid-row: 1;
   width: 100%;
+  max-height: 50vh;
+  object-fit: cover;
+  object-position: center top;
   border: solid 4px ${({ theme }) => theme.palette.primary.main};
   transition: opacity 0.3s ease;
   opacity: 1;
@@ -60,8 +63,8 @@ export const RoleBadge = styled('div')`
   top: 8px;
   left: 8px;
   z-index: 25;
-  background-color: ${({ theme }) => theme.palette.colorTeal.main};
-  color: ${({ theme }) => theme.palette.secondary.main};
+  background-color: ${({ theme }) => theme.palette.colorLightBlue.main};
+  color: ${({ theme }) => theme.palette.colorBlue.main};
   padding: 4px 10px;
   font-size: 0.75rem;
   font-weight: 600;
