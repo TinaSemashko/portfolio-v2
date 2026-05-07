@@ -45,6 +45,14 @@ export const ImgCarouselContainer = styled('div')`
   justify-content: center;
   align-items: center;
 
+  & img {
+    max-width: 100%;
+    max-height: 90vh;
+    width: auto !important;
+    height: auto;
+    object-fit: contain;
+  }
+
   ${({ theme }) => theme.breakpoints.down('md')} {
     width: 100%;
   }
