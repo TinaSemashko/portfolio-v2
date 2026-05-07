@@ -16,7 +16,7 @@
   },
   "main": {
     "title": "Tina",
-    "subtitle1": "full-stack développeur",
+    "subtitle1": "Full-stack | Intégrations IA",
     "title2ecran": "\"Choisissez un travail que vous aimez, et vous n'aurez pas à travailler un seul jour de votre vie.\" Confucius",
     "author2ecran": "Confucius",
     "lang": "Langue",
@@ -25,8 +25,9 @@
   },
   "about": {
     "title": "Salut ! Je suis Tina, ",
-    "subtitle1": "full-stack développeur,",
-    "subtitle12": " basé en France",
+    "subtitle1": "full-stack développeuse,",
+    "subtitle13": "intégrations IA,",
+    "subtitle12": " basée en France",
     "subtitle2": "Et Dieu a créé le développeur...",
     "subtitle3": "Cette histoire a commencé il y a longtemps,  <br />lorsque les ordinateurs étaient grands et que les programmes étaient petits",
     "bible": "Au début, il y avait un mot, et le mot faisait 2 octets, mais il n'y avait rien d'autre.\n Et Dieu sépara un de zéro et vit que c'était bon.\n Et Dieu dit : qu'il y ait des données, et il en fut ainsi.\n Et Dieu dit : que chaque donnée soit collectée à sa place et créée disquettes, disques durs et CD.\n Et Dieu a dit : qu'il y ait des ordinateurs, pour qu'il y ait un endroit où mettre les disquettes, les disques durs et les CD, et il a créé les ordinateurs, et les a appelés durs, et a séparé le dur du logiciel.\n Il n'existait pas encore de logiciel, mais Dieu s'est rapidement corrigé et a créé des programmes petits et grands, et leur a dit : soyez féconds, multipliez-vous et remplissez toute la mémoire.\n Mais Il en avait assez de créer lui-même des programmes, et Dieu a dit : créons un programmeur à notre image et à notre ressemblance, et laissons-le régner sur les ordinateurs, les programmes et les données. Et Dieu a créé un développeur...",

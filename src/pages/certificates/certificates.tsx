@@ -15,10 +15,12 @@ import cert6 from '../../images/Certificates/cert6.webp';
 import cert7 from '../../images/Certificates/cert7.webp';
 import cert8 from '../../images/Certificates/cert8.webp';
 import cert10 from '../../images/Certificates/cert10.webp';
+import cert11 from '../../images/Certificates/cert11.webp';
 
 import * as S from './certificates.styled';
 
 const itemData: Carousel3d[] | CarouselProjectImg[] = [
+  { src: cert11, alt: 'lettre de recommandation' },
   { src: cert0, alt: 'diplôme vlidée' },
   { src: cert1, alt: 'diplôme uk' },
   { src: cert2, alt: 'diplôme fr' },
@@ -51,6 +53,7 @@ const Certificates: React.FC = () => {
         <meta property="og:type" content="website" />
       </Helmet>
       <S.StyledImageList
+        variant="masonry"
         cols={matchDownSm ? 1 : matchDownMd ? 2 : 3}
         gap={matchDownSm ? 5 : matchDownMd ? 5 : 20}
         sx={{ p: { xxs: 2, xs: 2, sm: 4, md: 10 } }}>
