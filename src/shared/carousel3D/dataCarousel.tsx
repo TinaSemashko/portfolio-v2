@@ -1,5 +1,7 @@
 import { Carousel3d } from '../../types/projects';
 
+const GITHUB = process.env.REACT_APP_GITHUB_URL || 'https://github.com/TinaSemashko';
+
 export const imagesCarousel: Carousel3d[] = [
   {
     imageName: 'front1.webp', //teamchallenge
@@ -22,7 +24,7 @@ export const imagesCarousel: Carousel3d[] = [
   {
     imageName: 'front1.webp', //portfolio
     descriptions: 'React|Styled-components|Typescript|Mui-material|GitHub',
-    linkGit: 'https://github.com/TinaSemashko/portfolio-clients',
+    linkGit: `${GITHUB}/portfolio-clients`,
     linkProject: 'https://creation-de-sites-web.netlify.app/',
     linkVideo: '',
     src: require('../../images/MyProjects/Front/portfolio/front1.webp'),
@@ -40,7 +42,7 @@ export const imagesCarousel: Carousel3d[] = [
   {
     imageName: 'front1.webp', //casinoGame
     descriptions: 'HTML|CSS|Javascript|Bootstrap|GitHub',
-    linkGit: 'https://github.com/TinaSemashko/AssofacCasinoGame',
+    linkGit: `${GITHUB}/AssofacCasinoGame`,
     linkProject: 'https://aquamarine-gnome-52ee5d.netlify.app/',
     linkVideo: '',
     src: require('../../images/MyProjects/Front/casinoGame/front1.webp'),
@@ -58,7 +60,7 @@ export const imagesCarousel: Carousel3d[] = [
   {
     imageName: 'front1.webp', //weather_react
     descriptions: 'HTML|CSS|React|Bootstrap|API|GitHub',
-    linkGit: 'https://github.com/TinaSemashko/weather_react',
+    linkGit: `${GITHUB}/weather_react`,
     linkProject: 'https://stately-sopapillas-d6d214.netlify.app/',
     linkVideo: '',
     src: require('../../images/MyProjects/Front/weatherReact/front1.webp'),

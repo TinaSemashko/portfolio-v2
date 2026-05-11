@@ -144,7 +144,7 @@ const Projects: React.FC = () => {
           variant="h4"
           target="_blank"
           rel="noreferrer"
-          href="https://github.com/TinaSemashko"
+          href={process.env.REACT_APP_GITHUB_URL || 'https://github.com/TinaSemashko'}
           sx={{ color: 'colorBlack.main' }}>
           {t('projects.myGIT')}
         </Link>
