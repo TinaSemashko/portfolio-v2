@@ -68,3 +68,19 @@ export const ArrowWrapper = styled('div')`
   padding: 1rem !important;
   background-color: #f9f9f988 !important;
 `;
+
+export const Caption = styled('div')`
+  width: 100%;
+  background-color: ${({ theme }) => theme.palette.colorBlue.main};
+  color: ${({ theme }) => theme.palette.secondary.main};
+  padding: 1rem 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: left;
+  box-sizing: border-box;
+
+  ${({ theme }) => theme.breakpoints.down('md')} {
+    font-size: 0.85rem;
+    padding: 0.75rem 1rem;
+  }
+`;

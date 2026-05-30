@@ -116,8 +116,7 @@
   "carousel2d": {
     "button_git": "Ouvrir GIT",
     "button_project": "Ouvrir le projet",
-    "button_screenshots": "Voir les images du projet",
-    "button_screenshots_back": "Voir les images du code",
+    "button_screenshots": "Voir le travail réalisé",
     "button_video": "Regarder la vidéo"
   },
   "experience": {
