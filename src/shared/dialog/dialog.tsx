@@ -19,6 +19,7 @@ const DialogCarousel: React.FC<ModalProps> = ({ open, handleClose, dataCarousel2
       onClose={handleClose}
       fullScreen
       aria-label="Project screenshots"
+      PaperProps={{ sx: { display: 'flex', flexDirection: 'column' } }}
     >
       <S.ColorContainer>
         <IconButton aria-label="Close dialog" onClick={handleClose} autoFocus>
