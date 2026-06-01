@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import { Routes } from '../../../app/routes';
 import { theme } from '../../../app/app';
 import parse from 'html-react-parser';
-import Video from '../../../images/production_id 4076130 (1080p).mp4';
+import Video from '../../../images/fireplace.mp4';
 import Book from './book';
 import WalkingCat from '../walkingCat';
 import LangButton from '../../../shared/langButton';
@@ -19,7 +19,7 @@ const Fireplace: React.FC = () => {
 
   return (
     <S.MainContainer>
-      <S.VideoAccueil id="videoAccueil" src={Video} autoPlay loop muted />
+      <S.VideoAccueil id="videoAccueil" src={Video} autoPlay loop muted playsInline />
       <S.Langbt>
         <LangButton colorPrime={true} iconWithoutSlash={false} selectMode={false} />
       </S.Langbt>

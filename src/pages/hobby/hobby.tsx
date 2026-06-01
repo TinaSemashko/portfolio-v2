@@ -24,7 +24,7 @@ const Hobby: React.FC = () => {
         <meta property="og:description" content="Hobbies et loisirs créatifs - cuir, perles, peinture, broderie, pâte à modeler" />
         <meta property="og:type" content="website" />
       </Helmet>
-      <S.VideoAccueil src={Video} autoPlay loop muted />
+      <S.VideoAccueil src={Video} autoPlay loop muted playsInline />
       <S.BackgroundContainer />
       <S.GridContainer>
         <S.ImgContainer1>
