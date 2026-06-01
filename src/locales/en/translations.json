@@ -117,8 +117,7 @@
   "carousel2d": {
     "button_git": "Open GIT",
     "button_project": "Open the project",
-    "button_screenshots": "View project images",
-    "button_screenshots_back": "View code images",
+    "button_screenshots": "View the work",
     "button_video": "Watch the video"
   },
   "experience": {
@@ -210,6 +209,41 @@
     "paint": "Drawings",
     "plasticine": "Plasticine",
     "embroidery": "Embroidery"
+  },
+  "slides": {
+    "teamChallenge": {
+      "stripe_di": "Wrapper class for the Stripe SDK (customers, subscriptions, payment intents, checkout sessions, billing portal, invoices). The Stripe instance is passed through the constructor instead of being created inside — refactored from new Stripe() to new StripeService(stripeInstance). That let us pass a mocked SDK in tests, without network calls.",
+      "stripe_transformer": "Helper functions converting Stripe API responses into our own DTOs (transformStripeSubscription, transformStripeInvoice). Parsers inside validate Stripe statuses against our enums and return null for unknown values. Idea: the client sees our types, not Stripe's — if Stripe changes their API, we only update one file.",
+      "stripe_reconcile": "Helper that returns or recreates the Stripe customer for a user. Handles the case where the customer was deleted on Stripe's side but we still have the old ID in our DB — checks the deleted flag and catches StripeInvalidRequestError, then creates a new customer. Found this bug while testing payments.",
+      "stripe_typing": "Enums for Stripe statuses (subscription, invoice, payment) and a full ISO-4217 CurrencyCode. Paired with a __fixtures__/prices, products folder feeding ~370 lines of service tests. Compiler catches forgotten statuses — basic but useful at the external boundary.",
+      "stripe_endpoints": "REST endpoints for the client: list subscriptions and invoices for the logged-in customer. Auth via existing middlewares, pagination using Stripe's native cursor, responses already passed through the transformer functions — no Stripe types leaking to the client.",
+      "cert_template": "generateCertificateBuffer service fills an AcroForm PDF template using pdf-lib. We set named fields (userName, userRole, userProject, dateCertificate), then call form.flatten() so the resulting PDF isn't editable. Adaptive template selection by name length: certificate.pdf for short names, certificate_long.pdf past 35 characters — simpler than auto-scaling the font. Without flatten, recipients could tamper with their certificate using any PDF reader.",
+      "cert_authz": "The issueCertificate controller verifies three conditions before generating the PDF: logged-in user, active member of that specific project, and project status READY. Each check returns a distinct 400/404 with a readable message. A certificate can only be issued by an active member of a completed project.",
+      "cert_validation": "Date format validation with a Joi regex (Month Day, Year), with a custom error message. Keeps presentation formatting out of the PDF layer — the controller rejects badly-formatted dates before even opening the template.",
+      "auth_guard": "withAuthGuard HOC wrapping Auth0's withAuthenticationRequired, plus redirect-loop protection: a fromAuthRedirect flag stamped into window.history.state lets us detect that we just came back from login but still aren't authenticated — in that case we redirect home instead of re-redirecting to login. We also capture window.location.pathname into Auth0's appState before redirecting to login, so Auth0 knows where to send the user — otherwise deep-link context would be lost on every login.",
+      "auth_refresh": "Auth0 configured with refresh tokens and silent token strategy (useRefreshTokens, cacheLocation: localstorage, offline_access scope). We explicitly handle the invalid_grant error: if the refresh token expired or was revoked, we force a prompt: 'login' to re-trigger normal auth. Otherwise the user would be silently stuck.",
+      "auth_public": "Public routes: isPublicRoute and isMatchingRoute helpers let token-less visitors view certain public pages (project description), while still attaching the token to requests when it's there. Also avoids the Auth0 callback race: if the URL contains ?code=, we early-return and don't try to fetch a token mid-callback.",
+      "rq_factory": "createUseQuery factory taking { queryKey, fetcher, selector } and generating consistent React Query hooks for each endpoint. Eliminates boilerplate (every hook was doing the same thing) and forces consistent queryKeys across the codebase — useful for caching and invalidations.",
+      "rq_userstatus": "useUserStatus hook combining auth readiness (isReady && isAuthenticated) with the query's enabled flag, and collapsing the loading/error/success matrix into a single MenuStatus enum that the topbar consumes directly. The refactor pulled ~50 lines of tangled status logic out of topbar.tsx and home.tsx.",
+      "rq_gating": "Query gating via the enabled flag: the user-status request doesn't fire until auth is ready. Avoids wasted requests that would return 401 and pollute the logs.",
+      "team_stepper": "State machine for the team join flow (steps.enum.ts, overallStep, templateStep). Each step has its own isolated validation, and the machine decides when we can move to the next. Avoids the spaghetti if (step === 1) ... else if (step === 2) ... you often see in wizards.",
+      "team_pagination": "Backend pagination with a getPage util and limit/offset plumbed through useTeamApi and fetchProjectsByUserIdApi. Before, we loaded all teams/projects at once — didn't scale.",
+      "team_decisions": "Vacancies UI: list of open roles, candidate cards with their profiles, decision statuses (accepted, declined, pending). Candidates see where they stand, admins see the whole pool at a glance.",
+      "test_combinatorial": "Combinatorial test scenario generation via flatMap over roles × types × quotas. Instead of writing each case by hand and forgetting some, we do the cartesian product and test all combinations. Way more coverage for the same effort.",
+      "test_fixtures": "Shared fixtures: __mocks__/mockCandidates for matching tests, __fixtures__ folder for Stripe objects (prices, products, subscriptions), model mocking via jest.fn(). We don't invent data in each test — we share the same realistic set.",
+      "test_drove_design": "Tests changed the production code: it's because I wanted to write unit tests that I injected Stripe through the constructor and extracted matching into a pure helper. The logic became testable, and incidentally cleaner — decoupled and easier to understand.",
+      "ui_styled": "Styles via MUI styled with theme tokens (palette, breakpoints) everywhere — no scattered CSS classes. Tech detail: gradient border via mask-composite with an explicit -webkit-mask-composite Safari fallback on the certificate button.",
+      "ui_mobile": "Dedicated mobile components instead of CSS-only hacks (tableProjectsMobileCard, mobile team page). For complex tables that don't gracefully shrink in CSS, we render a fully different mobile card. More code, but mobile UX actually works.",
+      "ui_i18n": "i18n from day one: every feature ships its en/uk translation keys from the start — not retrofitted. When we add a new locale later, we just fill in a JSON file instead of hunting through the whole codebase for hardcoded strings.",
+      "menu_config": "Side menu (topbar + drawer) — each entry lives in a config array with displayForAuthUsers / displayForUnAuthUsers flags. Rendering is a single .map, not a cascade of if isAuthenticated. To add or remove an item, you touch one line of data — no JSX changes.",
+      "menu_lazy": "The user-status badge in the drawer only fetches when the drawer is actually open (useUserStatus with enabled: open). Before, every page sent an authenticated request to render a badge nobody was looking at. Small decision, but it removes one API call per navigation.",
+      "main_hero": "First landing screen — hero with the tagline \"Junior? Find the team for your pet project here\", Join button leading to the multi-step signup flow. On the right, an interactive 6-role grid (Backend, Frontend, QA, Designer, PM, Mentor) — each tile shows its description on hover, violet/pink gradient on selection. Responsive grid layout, CSS animations.",
+      "main_screen2": "Second screen — a \"Create your own project\" card linking to a dedicated landing for the client flow (create your own project). I built only that card, not the custom-project landing behind it. Next to it, a \"What is Team Challenge?\" explainer in 4 numbered steps (Login, Choose and join, Wait for team, Work on project).",
+      "main_screen3": "Third screen — \"Choose your project\" section with 4 project-type buttons (Random, Marketplace, Chat, Online store). Each click opens a modal with the detailed description and a Join button to enter the signup flow.",
+      "main_modal": "Modal opened from a button on screen 3 — shows the full project description: concept, required functionality, optional functionality, estimated effort, Join button. React component with local state, closes via overlay click or X button.",
+      "my_projects": "\"My Projects\" page fully built on the frontend: header with invitation banner, filter dropdown, table of the user's projects (ID, name, dates, role, user status, project status). On mobile, the table becomes cards stacked by status (searching, active, inactive) — dedicated mobile component instead of a responsive CSS table. Status legend (Accepted/Declined/Unresponsive/Requested) at the bottom.",
+      "footer_privacy": "Footer with links to the legal pages (privacy policy, terms), social media, contact. The privacy page itself holds the legal text translated en/uk — not the most exciting work, but necessary for a production product to be GDPR-compliant."
+    }
   },
   "contact": {
     "submit": "Submit",

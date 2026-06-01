@@ -10,13 +10,13 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
     "sourceMap": true
   },
-  "include": ["src", "./src/declaration.d.ts", "notistack.d.ts"],
-  "exclude": ["node_modules", "./**/*.test.ts"]
+  "include": ["src"],
+  "exclude": ["node_modules", "./**/*.test.{ts,tsx}"]
 }

@@ -9,12 +9,10 @@ import { theme } from '../../app/app';
 import ProjectsMobile from './projectsMobile';
 import LaunchIcon from '@mui/icons-material/Launch';
 import CastIcon from '@mui/icons-material/Cast';
-import CastConnectedIcon from '@mui/icons-material/CastConnected';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import { openLink } from '../../shared/utils';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { DataCarousel2D } from '../dataCarousel2D/dataCarousel2D';
-import { DataCarousel2DBack } from '../dataCarousel2D/dataCarousel2Dback';
 import ListImages from '../../shared/listImages';
 
 import { fontSizes } from '../../constants/responsiveFontSizes';
@@ -26,7 +24,6 @@ const fontSizeDescription = fontSizes.projectDescription;
 const Projects: React.FC = () => {
   const { t } = useTranslation();
   const [openCarousel, setOpenCarousel] = useState(false);
-  const [carouselBack, setCarouselBack] = useState(false);
   const [selectedProjectName, setSelectedProjectName] = useState<string | null>(null);
   const [imageMapList, setImageMapList] = useState<Carousel3d[]>([]);
   const [dataCarousel2D, setDataCarousel2D] = useState<CarouselProjectImg[]>([]);
@@ -46,16 +43,11 @@ const Projects: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const tempCar2D = carouselBack
-      ? DataCarousel2DBack?.filter(el => el.projectName === selectedProjectName)
-      : DataCarousel2D?.filter(el => el.projectName === selectedProjectName);
-
-    setDataCarousel2D(tempCar2D);
-  }, [carouselBack, selectedProjectName]);
+    setDataCarousel2D(DataCarousel2D?.filter(el => el.projectName === selectedProjectName));
+  }, [selectedProjectName]);
 
   const handleClose = (): void => {
     setOpenCarousel(false);
-    setCarouselBack(false);
     setSelectedProjectName(null);
   };
 
@@ -65,7 +57,6 @@ const Projects: React.FC = () => {
   };
 
   const dataListMenu = (item: Carousel3d): DataListMenu[] => {
-    const isArchitectural = item.category === 'architectural';
     const items: DataListMenu[] = [];
 
     if (item.openProject) {
@@ -85,19 +76,6 @@ const Projects: React.FC = () => {
       disabled: false,
       clickHandler: () => openCarouselDialog(item.projectName ?? ''),
     });
-
-    if (!isArchitectural) {
-      items.push({
-        MenuIcon: CastConnectedIcon,
-        title: t('carousel2d.button_screenshots_back'),
-        variantTypography: 'body1',
-        disabled: false,
-        clickHandler: () => {
-          openCarouselDialog(item.projectName ?? '');
-          setCarouselBack(true);
-        },
-      });
-    }
 
     if (item.openVideo) {
       items.push({

@@ -117,8 +117,7 @@
   "carousel2d": {
     "button_git": "До GIT",
     "button_project": "До проекту",
-    "button_screenshots": "Переглянути зображення проєкту",
-    "button_screenshots_back": "Переглянути зображення коду",
+    "button_screenshots": "Переглянути роботу",
     "button_video": "Дивитися відео"
   },
   "experience": {
@@ -210,6 +209,41 @@
     "paint": "Малюнки",
     "plasticine": "Пластілін",
     "embroidery": "Вишивка"
+  },
+  "slides": {
+    "teamChallenge": {
+      "stripe_di": "Клас-обгортка для Stripe SDK (customers, subscriptions, payment intents, checkout sessions, billing portal, invoices). Stripe-інстанс передається через конструктор замість того щоб створюватися всередині — рефактор з new Stripe() на new StripeService(stripeInstance). Це дозволило передавати mock SDK у тестах, без мережевих викликів.",
+      "stripe_transformer": "Функції-хелпери, що конвертують відповіді Stripe API у наші власні DTO (transformStripeSubscription, transformStripeInvoice). Парсери всередині валідують статуси Stripe проти наших enum-ів і повертають null для невідомих значень. Ідея: клієнт бачить наші типи, не Stripe-овські — якщо Stripe змінить API, ми правимо в одному файлі.",
+      "stripe_reconcile": "Хелпер, що повертає або пересоздає Stripe customer-а для користувача. Обробляє випадок коли customer був видалений на стороні Stripe, але у нас в БД залишився старий ID — перевіряє прапор deleted і ловить StripeInvalidRequestError, потім створює нового customer-а. Знайшла цей баг коли тестувала платежі.",
+      "stripe_typing": "Enum-и для статусів Stripe (subscription, invoice, payment) і повний CurrencyCode за ISO-4217. Разом із папкою __fixtures__/prices, products, що живить ~370 рядків тестів сервісу. Компілятор ловить забуті статуси — базово, але корисно на зовнішній межі.",
+      "stripe_endpoints": "REST-ендпоінти для клієнта: список subscription-ів та invoice-ів залогіненого customer-а. Auth через існуючі middleware, пагінація через нативний курсор Stripe, відповіді вже пройшли через transformer-функції — типи Stripe не протікають клієнту.",
+      "cert_template": "Сервіс generateCertificateBuffer заповнює AcroForm PDF-шаблон через pdf-lib. Встановлюємо іменовані поля (userName, userRole, userProject, dateCertificate), потім викликаємо form.flatten() щоб PDF не можна було редагувати. Адаптивний вибір шаблону за довжиною імені: certificate.pdf для коротких імен, certificate_long.pdf для імен довших за 35 символів — простіше ніж авто-скейлити шрифт. Без flatten отримувачі могли б змінювати свій сертифікат у будь-якому PDF-рідері.",
+      "cert_authz": "Контролер issueCertificate перевіряє три умови перед генерацією PDF: залогінений користувач, активний учасник цього конкретного проєкту, статус проєкту READY. Кожна перевірка повертає окремий 400/404 з читабельним повідомленням. Сертифікат може видатися лише активному учаснику завершеного проєкту.",
+      "cert_validation": "Валідація формату дати через Joi-regex (Month Day, Year) з кастомним повідомленням про помилку. Так форматування презентації не тягнеться у PDF-шар — контролер відхиляє неправильно форматовані дати ще до відкриття шаблону.",
+      "auth_guard": "HOC withAuthGuard обгортає withAuthenticationRequired з Auth0, плюс захист від redirect-циклів: прапор fromAuthRedirect, виставлений у window.history.state, дозволяє виявити, що ми щойно повернулися з login, але все ще не автентифіковані — в такому випадку перенаправляємо додому замість повторного редіректу на login. Також захоплюємо window.location.pathname в appState Auth0 перед редіректом на login, щоб Auth0 знав куди відправити користувача — інакше контекст deep-link'ів губився б при кожному login.",
+      "auth_refresh": "Auth0 налаштований з refresh tokens та silent token strategy (useRefreshTokens, cacheLocation: localstorage, scope offline_access). Явно обробляємо помилку invalid_grant: якщо refresh-токен прострочився або був відкликаний, форсуємо prompt: 'login' для повторного запуску auth. Інакше користувач застряг би непомітно.",
+      "auth_public": "Публічні маршрути: хелпери isPublicRoute і isMatchingRoute дозволяють відвідувачам без токена бачити деякі публічні сторінки (опис проєкту), при цьому додають токен до запитів коли він є. Також уникає race condition з Auth0 callback: якщо URL містить ?code=, ми робимо early-return і не намагаємось отримати токен посередині callback'у.",
+      "rq_factory": "Фабрика createUseQuery, що приймає { queryKey, fetcher, selector } і генерує консистентні React Query хуки для кожного endpoint'а. Усуває boilerplate (кожен хук робив те ж саме) і форсить консистентні queryKey по всьому коду — корисно для кешу та інвалідацій.",
+      "rq_userstatus": "Хук useUserStatus, що поєднує готовність auth (isReady && isAuthenticated) з прапором enabled query, і зводить матрицю loading/error/success в одну enum MenuStatus, яку безпосередньо споживає topbar. Рефактор виніс ~50 рядків заплутаної status-логіки з topbar.tsx і home.tsx.",
+      "rq_gating": "Гейтинг queries через прапор enabled: запит user-status не запускається поки auth не готовий. Уникає зайвих запитів, які повертали б 401 і засмічували логи.",
+      "team_stepper": "State machine для flow приєднання до команди (steps.enum.ts, overallStep, templateStep). Кожен крок має власну ізольовану валідацію, машина вирішує коли можна переходити до наступного. Уникає спагеті if (step === 1) ... else if (step === 2) ..., який часто бачимо у wizards.",
+      "team_pagination": "Бекенд-пагінація з утилітою getPage і limit/offset, прокинутими через useTeamApi і fetchProjectsByUserIdApi. До цього ми завантажували всі команди/проєкти одразу — не скейлилося.",
+      "team_decisions": "UI вакансій: список відкритих ролей, картки кандидатів з їхніми профілями, статуси рішень (accepted, declined, pending). Кандидати бачать свій статус, адміни — весь пул одним поглядом.",
+      "test_combinatorial": "Комбінаторна генерація тестових сценаріїв через flatMap над ролі × типи × квоти. Замість писати кожен випадок вручну і деякі пропускати, робимо декартів добуток і тестуємо всі комбінації. Значно більше покриття за ту ж саму зусиль.",
+      "test_fixtures": "Спільні фікстури: __mocks__/mockCandidates для тестів матчингу, папка __fixtures__ для Stripe-об'єктів (prices, products, subscriptions), мокінг моделей через jest.fn(). Не вигадуємо дані в кожному тесті — ділимо один реалістичний набір.",
+      "test_drove_design": "Тести змінили production-код: саме через бажання писати юніт-тести я зробила Stripe injection через конструктор і винесла matching в чистий helper. Логіка стала тестованою, а заодно й чистішою — розв'язана, простіша для розуміння.",
+      "ui_styled": "Стилі через MUI styled з токенами теми (palette, breakpoints) скрізь — без розкиданих CSS-класів. Технічна деталь: gradient-бордер через mask-composite з явним fallback -webkit-mask-composite для Safari на кнопці сертифіката.",
+      "ui_mobile": "Окремі мобільні компоненти замість CSS-хаків (tableProjectsMobileCard, мобільна сторінка team). Для складних таблиць, що погано стискаються через CSS, рендеримо повністю інший мобільний card. Більше коду, але мобільний UX реально працює.",
+      "ui_i18n": "i18n з першої фічі: кожна фіча виходить з ключами en/uk перекладів з самого початку — не дороблюється потім. Коли пізніше додаємо нову локаль, просто заповнюємо JSON-файл, а не полюємо за хардкодженими рядками по всьому коду.",
+      "menu_config": "Бокове меню (topbar + drawer) — кожен пункт живе в config-масиві з прапорами displayForAuthUsers / displayForUnAuthUsers. Рендеринг — один .map, не каскад if isAuthenticated. Щоб додати або прибрати пункт, чіпаємо один рядок даних — без правок JSX.",
+      "menu_lazy": "Бейдж статусу користувача в drawer завантажується лише коли drawer реально відкритий (useUserStatus з enabled: open). До цього кожна сторінка слала auth-запит, щоб відрендерити бейдж, на який ніхто не дивиться. Маленьке рішення, але прибирає один API-виклик на кожну навігацію.",
+      "main_hero": "Перший екран лендингу — hero зі слоганом «Junior? Find the team for your pet project here», кнопка Join веде до багатокрокового flow реєстрації. Праворуч інтерактивна сітка з 6 ролей (Backend, Frontend, QA, Designer, PM, Mentor) — кожна плитка показує опис при наведенні, фіолетово-рожевий градієнт на виділенні. Responsive grid layout, CSS-анімації.",
+      "main_screen2": "Другий екран — картка «Create your own project», що веде на окремий лендинг для клієнтського flow (створити свій проєкт). Я зробила лише цю картку, не сам лендинг custom-project. Поруч секція «What is Team Challenge?» з 4 пронумерованих кроків (Login, Choose and join, Wait for team, Work on project).",
+      "main_screen3": "Третій екран — секція «Choose your project» з 4 кнопками типу проєкту (Random, Marketplace, Chat, Online store). Кожен клік відкриває modal з детальним описом і кнопкою Join для входу у flow.",
+      "main_modal": "Modal, що відкривається з кнопки на екрані 3 — показує повний опис проєкту: концепт, обов'язкова функціональність, опціональна, оцінка в місяцях, кнопка Join. React-компонент з local state, закривається кліком по overlay або кнопкою X.",
+      "my_projects": "Сторінка «My Projects» повністю зроблена на фронті: header з банером запрошення, filter dropdown, таблиця проєктів користувача (ID, назва, дати, роль, статус user, статус проєкту). На мобайлі таблиця стає картками, згрупованими за статусом (в пошуку, активні, неактивні) — окремий мобільний компонент замість responsive CSS-таблиці. Легенда статусів (Accepted/Declined/Unresponsive/Requested) знизу.",
+      "footer_privacy": "Footer з посиланнями на легальні сторінки (privacy policy, terms), соцмережі, контакт. Сама privacy-сторінка містить юридичний текст, перекладений en/uk — не найцікавіша робота, але необхідна щоб production-продукт відповідав GDPR."
+    }
   },
   "contact": {
     "submit": "Відправити",
