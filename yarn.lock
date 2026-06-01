@@ -9265,11 +9265,6 @@ react-refresh@^0.11.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.11.0.tgz#77198b944733f0f1f1a90e791de4541f9f074046"
   integrity sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==
 
-react-responsive-spritesheet@^2.3.9:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/react-responsive-spritesheet/-/react-responsive-spritesheet-2.4.0.tgz#eb32198f753c8b307853789b0377501045eabbd9"
-  integrity sha512-yAwSKX4JFIhKq5q9mwWWQLBm4PGVXFTqdfFRtXyODapGUtySoIWS7QyIaAH0EUmOmDy4FG+Ts3HEAQ4pX/vitg==
-
 react-router-dom@^6.18.0:
   version "6.30.3"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.30.3.tgz#42ae6dc4c7158bfb0b935f162b9621b29dddf740"
