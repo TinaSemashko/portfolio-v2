@@ -15,7 +15,6 @@ interface CarouselParams {
 
 const Carousel: React.FC = () => {
   const [animationPause, setAnimationPause] = useState(false);
-  const [indexState, setIndexState] = useState('');
   const [carouselParams, setCarouselParams] = useState<CarouselParams>();
   const [imageMap, setImageMap] = useState<Carousel3d[]>([]);
   const mediumScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -48,36 +47,32 @@ const Carousel: React.FC = () => {
     if (paramTemp) makeCarousel(paramTemp);
   }, [radius]);
 
-  const sortCarousel = (numberFirstEl: string) => {
-    if (numberFirstEl !== '0' && carouselParams) {
-      let indexEOnChange =
-        Number(numberFirstEl) >= (carouselParams.sidesQuantity ?? 0)
-          ? Number(numberFirstEl) - (carouselParams.sidesQuantity ?? 0)
-          : Number(numberFirstEl);
+  const sortCarousel = (clickedIndex: number) => {
+    if (!carouselParams) return;
 
-      const reordered = [
-        ...imagesCarousel.slice(indexEOnChange),
-        ...imagesCarousel.slice(0, indexEOnChange),
-      ];
+    // Reorder the currently displayed slides so the clicked one becomes index 0.
+    // On pause the container snaps to rotateY(0deg), where the slide at degY 0
+    // (index 0) faces front — so this centers the clicked slide.
+    const reordered = [
+      ...imageMap.slice(clickedIndex),
+      ...imageMap.slice(0, clickedIndex),
+    ];
 
-      const tempCar = reordered.map((el, index) => ({
+    setImageMap(
+      reordered.map((el, index) => ({
         ...el,
         alt: `Image ${index + 1}`,
         degY: index * carouselParams.degKey,
-      }));
-
-      setImageMap(tempCar);
-    }
+      })),
+    );
   };
 
   const handleClick = (event: React.MouseEvent<HTMLImageElement>) => {
     setAnimationPause(prev => !prev);
-    let indexElForChange = indexState;
 
     if (!animationPause) {
-      indexElForChange = (event.target as HTMLTextAreaElement).id;
-      setIndexState(indexElForChange);
-      if (carouselParams) sortCarousel(indexElForChange);
+      const clickedIndex = Number((event.target as HTMLElement).id);
+      sortCarousel(clickedIndex);
     }
   };
 
