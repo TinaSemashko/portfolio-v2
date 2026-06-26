@@ -28,6 +28,6 @@ export const arrayEducations: Education[] = range(4).map(n => ({
 
 export const arrayCompetences: string[] = range(16).map(n => `competence${n}`);
 
-export const arrayResume: string[] = range(6).map(n => `resume${n}`);
+export const arrayResume: string[] = range(7).map(n => `resume${n}`);
 
 export const arrayCourses: string[] = range(3).map(n => `cours${n}`);
