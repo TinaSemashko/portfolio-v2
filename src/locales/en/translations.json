@@ -124,12 +124,12 @@
     "dataEx1": "October 2025 - May 2026",
     "post1": "AI Developer (Apprenticeship)",
     "nameOrg1": "WISE-AI, Fresnes, France",
-    "exp1": "- Design and technical lead of the PMS Gateway, the heart of integrations with hotel management systems.\n- Integration of four major PMS (MisterBooking, Thaïs, MEWS, Medialog) via a unified MCP architecture — full booking, modification and cancellation cycles.\n- n8n automation workflows with an AI agent for intelligent processing of customer emails.",
+    "exp1": "- Design and technical lead of the PMS Gateway (Python/FastAPI), the heart of integrations with hotel management systems.\n- Integration of five major PMS (MisterBooking, Thaïs, MEWS, Medialog, Clock) via a unified MCP architecture — full booking, modification and cancellation cycles.\n- n8n automation workflows with an AI agent. Spec-driven development with Claude Code (Plan/Code/Review).",
 
     "dataEx2": "August 2022 - October 2025",
     "post2": "Full-Stack Developer",
     "nameOrg2": "Team Challenge, start-up, online",
-    "exp2": "- Development of the user interface in React.js / TypeScript, integration of @mui/material and customization of UI components.\n- Implementation of API calls to PostgreSQL via React Query.",
+    "exp2": "Full-stack development (React/TypeScript, Node.js, PostgreSQL, React Query, @mui/material) on a production platform for 3+ years, 88 merged pull requests.",
 
     "dataEx3": "November 2023 - February 2024",
     "post3": "Full-Stack Web Developer (3-month internship)",
@@ -139,12 +139,12 @@
     "dataEx4": "March 2020 - May 2022",
     "post4": "ERP Database Developer",
     "nameOrg4": "ROSHEN Confectionery Corporation, Kyiv, Ukraine",
-    "exp4": "Production process automation via ERP tools, integration of databases into the modular commerce application.",
+    "exp4": "Distributed database architecture for a multi-country ERP (Ukraine — 33 subsidiaries, Hungary, Bulgaria), 500+ users; reports based on complex queries, data exchange with mobile app.",
 
     "dataEx5": "July 2016 - March 2020",
     "post5": "ERP Database Developer",
     "nameOrg5": "3 Bears Ltd, Kyiv, Ukraine",
-    "exp5": "Production process automation, development of exchange interfaces between internal and external systems.",
+    "exp5": "Distributed relational database architecture, data exchange between systems; complex reports, technical documentation, 200+ users.",
 
     "dataEx6": "June 2014 - November 2019",
     "post6": "System administrator / Sales analyst (remote)",
