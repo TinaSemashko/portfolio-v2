@@ -123,12 +123,12 @@
     "dataEx1": "Octobre 2025 - Mai 2026",
     "post1": "Développeuse IA (Alternance)",
     "nameOrg1": "WISE-AI, Fresnes, France",
-    "exp1": "- Conception et pilotage technique du PMS Gateway, cœur des intégrations avec les systèmes de gestion hôtelière.\n- Intégration de quatre PMS majeurs (MisterBooking, Thaïs, MEWS, Medialog) via une architecture MCP unifiée — cycles complets de réservation, modification, annulation.\n- Workflows n8n d'automatisation avec agent IA pour le traitement intelligent des emails clients.",
+    "exp1": "- Conception et pilotage technique du PMS Gateway (Python/FastAPI), cœur des intégrations avec les systèmes de gestion hôtelière.\n- Intégration de cinq PMS majeurs (MisterBooking, Thaïs, MEWS, Medialog, Clock) via une architecture MCP unifiée — cycles complets de réservation, modification, annulation.\n- Workflows n8n d'automatisation avec agent IA. Développement piloté par specs avec Claude Code (Plan/Code/Review).",
 
     "dataEx2": "Août 2022 - Octobre 2025",
     "post2": "Développeuse Full-Stack",
     "nameOrg2": "Team Challenge, start-up, en ligne",
-    "exp2": "- Développement de l'interface utilisateur en React.js / TypeScript, intégration de @mui/material et personnalisation des composants UI.\n- Implémentation des appels API à PostgreSQL via React Query.",
+    "exp2": "Développement full-stack (React/TypeScript, Node.js, PostgreSQL, React Query, @mui/material) sur une plateforme en production 3+ ans, 88 pull requests mergées.",
 
     "dataEx3": "Novembre 2023 - Février 2024",
     "post3": "Développeuse Web Full-Stack (Stage 3 mois)",
@@ -138,12 +138,12 @@
     "dataEx4": "Mars 2020 - Mai 2022",
     "post4": "Développeuse base de données ERP",
     "nameOrg4": "ROSHEN Confectionery Corporation, Kiev, Ukraine",
-    "exp4": "Automatisation des processus de production via outils ERP, intégration des bases de données dans l'application commerciale modulaire.",
+    "exp4": "Architecture de bases de données distribuée pour un ERP multi-pays (Ukraine — 33 filiales, Hongrie, Bulgarie), 500+ utilisateurs ; rapports basés sur requêtes complexes, échange de données avec appli mobile.",
 
     "dataEx5": "Juillet 2016 - Mars 2020",
     "post5": "Développeuse base de données ERP",
     "nameOrg5": "3 Ours Ltd, Kiev, Ukraine",
-    "exp5": "Automatisation des processus de production, développement d'interfaces d'échange entre systèmes internes et externes.",
+    "exp5": "Architecture de bases de données relationnelles distribuées, échanges de données entre systèmes ; rapports complexes, documentation technique, 200+ utilisateurs.",
 
     "dataEx6": "Juin 2014 - Novembre 2019",
     "post6": "Administratrice système / Analyste des ventes (à distance)",
