@@ -72,20 +72,20 @@
   "resume": {
     "name": "Tina Semashko",
     "title": "FULL-STACK | INTÉGRATIONS IA",
-    "resume1": "TypeScript, React.js, Next.js, Node.js, Express, REST API, React Query, n8n, PostgreSQL, MongoDB, MUI, styled-components, Figma",
-    "resume2": "Expérience récente en architecture IA et intégrations : MCP, agents IA, intégration LLM, intégrations PMS",
-    "resume3": "8+ ans d'expérience en bases de données et automatisation des processus métiers",
-    "resume4": "Développement Full-Stack en environnement startup et alternance",
-    "resume5": "POO, SOLID, MVC, REST, CRUD, Scrum / Agile",
-    "resume6": "Autonome, rigoureuse, pragmatique",
-    "resume7": "",
+    "resume1": "TypeScript, React.js, Next.js, Node.js, Express, REST API, React Query, n8n, PostgreSQL, MongoDB, MUI, styled-components, Figma, Claude Code",
+    "resume2": "Expérience récente en architecture IA et intégrations : MCP (5 PMS intégrés, 8 utilitaires), agents IA, intégration LLM, n8n",
+    "resume3": "3 ans de développement full-stack en production — 88 pull requests mergées, plateforme 3+ ans sur le marché",
+    "resume4": "6 ans de développement ERP et bases de données distribuées (200–500+ utilisateurs selon les projets, systèmes multi-pays) ; background étendu en administration de données depuis 2005",
+    "resume5": "Développement Full-Stack en environnement startup et alternance",
+    "resume6": "POO, SOLID, MVC, REST, CRUD, Scrum / Agile",
+    "resume7": "Autonome, rigoureuse, pragmatique, persévérante face aux problèmes complexes",
     "download": "Télécharger PDF",
     "experience": "EXPÉRIENCE",
     "education": "FORMATION",
     "competence": "COMPÉTENCES",
     "language": "LANGUES",
     "hobby": "HOBBIES",
-    "highlitingWords": "TypeScript, React.js, Node.js, Next.js, MCP, agents IA, n8n, intégrations PMS, 8+ ans d'expérience, autonome, rigoureuse, pragmatique"
+    "highlitingWords": "TypeScript, React.js, Node.js, Next.js, Claude Code, MCP, agents IA, n8n, 5 PMS intégrés, 88 pull requests, 8+ ans, 500+ utilisateurs, autonome, rigoureuse, pragmatique, persévérante"
   },
   "menu": {
     "home": "accueil",
@@ -156,7 +156,7 @@
     "exp7": "Maintenance du système de reporting des succursales, administration réseau, administration de bases de données côté client (Oracle)."
   },
   "education": {
-    "dataEd1": "2025 - 2026 (en cours)",
+    "dataEd1": "2025 - 2027 (en cours)",
     "nameEd1": "Développeur concepteur logiciel — RNCP niveau 6, parcours Développeur IA",
     "nameOrg1": "OpenClassrooms, France",
     "dataEd2": "Février 2023 - Mars 2024",
