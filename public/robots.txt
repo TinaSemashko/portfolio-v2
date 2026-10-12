@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://akateria.fr/sitemap.xml
+Sitemap: https://portfolio.akateria.fr/sitemap.xml

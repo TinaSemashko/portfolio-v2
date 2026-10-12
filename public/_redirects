@@ -1,2 +1,4 @@
-https://tina-dev-portfolio.netlify.app/* https://akateria.fr/:splat 301!
+https://tina-dev-portfolio.netlify.app/* https://portfolio.akateria.fr/:splat 301!
+https://akateria.fr/* https://portfolio.akateria.fr/:splat 301!
+https://www.akateria.fr/* https://portfolio.akateria.fr/:splat 301!
 /* /index.html 200
