@@ -1,4 +1,5 @@
 import { useLocation } from "react-router";
+import { Helmet } from "react-helmet";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "@mui/material";
 import { theme } from "../../app/app";
@@ -19,6 +20,9 @@ const Galery: React.FC = () => {
 
   return (
     <S.MainContainer>
+      <Helmet>
+        <meta name="robots" content="noindex" />
+      </Helmet>
       <S.StyledImageList
         variant="masonry"
         cols={matchDownSm ? 1 : matchDownMd ? 2 : 3}

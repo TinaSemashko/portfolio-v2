@@ -1,10 +1,12 @@
 import { Typography, useMediaQuery } from '@mui/material';
 import { Helmet } from 'react-helmet';
+import { SITE_URL } from '../../constants/site';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 import { Routes } from '../../app/routes';
 import Video from '../../images/videohome.mp4';
 import { theme } from '../../app/app';
+import { visuallyHidden } from '../../shared/utils';
 import { dataLeather, dataBiser, dataPaint, dataEmbroidery, dataPlasticine } from './dataHobby';
 import img from '../../images/perle.webp';
 
@@ -23,7 +25,12 @@ const Hobby: React.FC = () => {
         <meta property="og:title" content="Hobbies et loisirs créatifs" />
         <meta property="og:description" content="Hobbies et loisirs créatifs - cuir, perles, peinture, broderie, pâte à modeler" />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/hobby`} />
+        <link rel="canonical" href={`${SITE_URL}/hobby`} />
       </Helmet>
+      <Typography variant="h1" sx={visuallyHidden}>
+        {t('resume.hobby')}
+      </Typography>
       <S.VideoAccueil src={Video} autoPlay loop muted playsInline />
       <S.BackgroundContainer />
       <S.GridContainer>

@@ -1,9 +1,12 @@
-import { useMediaQuery } from '@mui/material';
+import { Typography, useMediaQuery } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
+import { SITE_URL } from '../../constants/site';
 import { theme } from '../../app/app';
 import { useState } from 'react';
 import { Carousel3d, CarouselProjectImg } from '../../types/projects';
 import DialogCarousel from '../../shared/dialog';
+import { visuallyHidden } from '../../shared/utils';
 
 import cert0 from '../../images/Certificates/cert0.webp';
 import cert1 from '../../images/Certificates/cert1.webp';
@@ -36,6 +39,7 @@ const itemData: Carousel3d[] | CarouselProjectImg[] = [
 const Certificates: React.FC = () => {
   const matchDownSm = useMediaQuery(theme.breakpoints.down('sm'));
   const matchDownMd = useMediaQuery(theme.breakpoints.down('md'));
+  const { t } = useTranslation();
   const [openCarousel, setOpenCarousel] = useState(false);
   const [initialSlide, setInitialSlide] = useState(0);
 
@@ -47,11 +51,16 @@ const Certificates: React.FC = () => {
     <S.MainContainer>
       <Helmet>
         <title>Certificats et diplômes</title>
-        <meta name="description" content="Certificats et diplômes - Full-stack développeur web Il-de-France" />
+        <meta name="description" content="Certificats et diplômes - Full-stack développeur web Île-de-France" />
         <meta property="og:title" content="Certificats et diplômes" />
-        <meta property="og:description" content="Certificats et diplômes - Full-stack développeur web Il-de-France" />
+        <meta property="og:description" content="Certificats et diplômes - Full-stack développeur web Île-de-France" />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/certificates`} />
+        <link rel="canonical" href={`${SITE_URL}/certificates`} />
       </Helmet>
+      <Typography variant="h1" sx={visuallyHidden}>
+        {t('menu.certificates')}
+      </Typography>
       <S.StyledImageList
         variant="masonry"
         cols={matchDownSm ? 1 : matchDownMd ? 2 : 3}

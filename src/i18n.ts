@@ -43,6 +43,10 @@ export const createI18nConfig = (): InitOptions => ({
   },
 });
 
+i18n.on("languageChanged", lng => {
+  document.documentElement.lang = lng;
+});
+
 export const createi18n = (): Promise<TFunction> =>
   i18n.use(LanguageDetector).use(initReactI18next).init(createI18nConfig());
 export { default } from "i18next";

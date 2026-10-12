@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import Avatar from '../../images/avatar.jpg';
 import { Helmet } from 'react-helmet';
+import { SITE_URL } from '../../constants/site';
 import { fontSizes } from '../../constants/responsiveFontSizes';
 import Divider from '@mui/material/Divider';
 import { List, ListItem, Typography, useMediaQuery } from '@mui/material';
@@ -67,14 +68,16 @@ const Resume: React.FC = () => {
     <S.MainContainer>
       <Helmet>
         <title>CV full stack développeur</title>
-        <meta name="description" content="Mon CV Resume Full-stack développeur web portfolio Il-de-France" />
+        <meta name="description" content="Mon CV Full-stack développeur web portfolio Île-de-France" />
         <meta
           name="keywords"
           content="Mon CV, Resume , Full-stack, développeur web, portfolio, développeur react, développeur node.js"
         />
         <meta property="og:title" content="CV full stack développeur" />
-        <meta property="og:description" content="Mon CV Resume Full-stack développeur web portfolio Il-de-France" />
+        <meta property="og:description" content="Mon CV Full-stack développeur web portfolio Île-de-France" />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/resume`} />
+        <link rel="canonical" href={`${SITE_URL}/resume`} />
       </Helmet>
       <S.MainGridContainer>
         <S.ResumeContainer>
@@ -82,7 +85,7 @@ const Resume: React.FC = () => {
             <S.Photo src={Avatar} alt="Portrait photo" loading="lazy" />
           </S.PhotoBox>
           <S.Title>
-            <Typography variant="h3" textAlign="center" sx={{ color: 'colorBlack.main' }}>
+            <Typography variant="h3" component="h1" textAlign="center" sx={{ color: 'colorBlack.main' }}>
               {t('resume.name')}
             </Typography>
             <Typography
