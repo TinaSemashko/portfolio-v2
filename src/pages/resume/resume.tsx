@@ -85,7 +85,7 @@ const Resume: React.FC = () => {
             <S.Photo src={Avatar} alt="Portrait photo" loading="lazy" />
           </S.PhotoBox>
           <S.Title>
-            <Typography variant="h3" textAlign="center" sx={{ color: 'colorBlack.main' }}>
+            <Typography variant="h3" component="h1" textAlign="center" sx={{ color: 'colorBlack.main' }}>
               {t('resume.name')}
             </Typography>
             <Typography
