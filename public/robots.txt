@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://tina-dev-portfolio.netlify.app/sitemap_index.xml
+Sitemap: https://tina-dev-portfolio.netlify.app/sitemap.xml

@@ -10,9 +10,6 @@
   <loc>https://tina-dev-portfolio.netlify.app/</loc>
 </url>
 <url>
-<loc>https://tina-dev-portfolio.netlify.app/home</loc>
-</url>
-<url>
 <loc>https://tina-dev-portfolio.netlify.app/projects</loc>
 </url>
 <url>
@@ -28,6 +25,6 @@
 <loc>https://tina-dev-portfolio.netlify.app/resume</loc>
 </url>
 <url>
-<loc>https://tina-dev-portfolio.netlify.app/conditions</loc>
+<loc>https://tina-dev-portfolio.netlify.app/certificates</loc>
 </url>
 </urlset>
