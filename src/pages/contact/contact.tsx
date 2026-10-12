@@ -1,5 +1,6 @@
 import { Typography } from '@mui/material';
 import { Helmet } from 'react-helmet';
+import { SITE_URL } from '../../constants/site';
 import watsappQr from '../../images/watsapp-qr.png';
 import ContactForm from './contactForm';
 import email from '../../images/email.webp';
@@ -27,14 +28,16 @@ const Contact: React.FC = () => {
     <S.MainContainer>
       <Helmet>
         <title>Contacts full stack développeur</title>
-        <meta name="description" content="Contacts Full-stack développeur web portfolio Il-de-France" />
+        <meta name="description" content="Contacts Full-stack développeur web portfolio Île-de-France" />
         <meta
           name="keywords"
           content="Contacts, Full-stack, développeur web, portfolio, développeur react, développeur node.js"
         />
         <meta property="og:title" content="Contacts full stack développeur" />
-        <meta property="og:description" content="Contacts Full-stack développeur web portfolio Il-de-France" />
+        <meta property="og:description" content="Contacts Full-stack développeur web portfolio Île-de-France" />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/contact`} />
+        <link rel="canonical" href={`${SITE_URL}/contact`} />
       </Helmet>
       <S.GridContainer>
         <S.Titre

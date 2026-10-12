@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import { Helmet } from "react-helmet";
+import { SITE_URL } from "../../constants/site";
 import { useTranslation } from "react-i18next";
 import flag from "../../images/Nuvola_France_Ukraine_flags.svg.png";
 
@@ -17,10 +18,12 @@ const Parallax: React.FC = () => {
     <S.MainContainer>
       <Helmet>
         <title>À propos - full stack développeur</title>
-        <meta name="description" content="À propos de moi - Full-stack développeur web Il-de-France" />
+        <meta name="description" content="À propos de moi - Full-stack développeur web Île-de-France" />
         <meta property="og:title" content="À propos - full stack développeur" />
-        <meta property="og:description" content="À propos de moi - Full-stack développeur web Il-de-France" />
+        <meta property="og:description" content="À propos de moi - Full-stack développeur web Île-de-France" />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/about`} />
+        <link rel="canonical" href={`${SITE_URL}/about`} />
       </Helmet>
       <S.ImgMainContainer>
         <S.TextContainerShort0>
@@ -77,6 +80,7 @@ const Parallax: React.FC = () => {
         <S.TextContainerShort1>
           <Typography
             variant="h1"
+            component="p"
             sx={{
               fontSize: fontSizeShort,
             }}
@@ -99,6 +103,7 @@ const Parallax: React.FC = () => {
         <S.TextContainerShort2>
           <Typography
             variant="h1"
+            component="p"
             sx={{
               fontSize: fontSizeShort,
             }}
@@ -121,6 +126,7 @@ const Parallax: React.FC = () => {
         <S.TextContainerShort3>
           <Typography
             variant="h1"
+            component="p"
             sx={{
               fontSize: fontSizeShort,
             }}
@@ -143,6 +149,7 @@ const Parallax: React.FC = () => {
         <S.TextContainerShort4>
           <Typography
             variant="h1"
+            component="p"
             sx={{
               fontSize: fontSizeShort,
             }}
@@ -165,6 +172,7 @@ const Parallax: React.FC = () => {
         <S.TextContainerShort5>
           <Typography
             variant="h1"
+            component="p"
             sx={{
               fontSize: fontSizeShort,
             }}
@@ -187,6 +195,7 @@ const Parallax: React.FC = () => {
         <S.TextContainerShort6>
           <Typography
             variant="h1"
+            component="p"
             sx={{
               fontSize: fontSizeShort,
             }}

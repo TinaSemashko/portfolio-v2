@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, Typography, useMediaQuery } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet';
+import { SITE_URL } from '../../constants/site';
 import { Carousel3d, CarouselProjectImg, DataListMenu } from '../../types/projects';
 import { imagesCarousel } from '../../shared/carousel3D/dataCarousel';
 import Carousel from '../../shared/carousel3D/carousel3d';
@@ -98,14 +99,16 @@ const Projects: React.FC = () => {
     <S.MainContainer>
       <Helmet>
         <title>Projets full stack développeur</title>
-        <meta name="description" content="Mes projects Full-stack développeur web portfolio Il-de-France" />
+        <meta name="description" content="Mes projets Full-stack développeur web portfolio Île-de-France" />
         <meta
           name="keywords"
-          content="Mes projects, Full-stack, développeur web, portfolio, développeur react, développeur node.js"
+          content="Mes projets, Full-stack, développeur web, portfolio, développeur react, développeur node.js"
         />
         <meta property="og:title" content="Projets full stack développeur" />
-        <meta property="og:description" content="Mes projects Full-stack développeur web portfolio Il-de-France" />
+        <meta property="og:description" content="Mes projets Full-stack développeur web portfolio Île-de-France" />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/projects`} />
+        <link rel="canonical" href={`${SITE_URL}/projects`} />
       </Helmet>
       <Typography
         variant="h1"
